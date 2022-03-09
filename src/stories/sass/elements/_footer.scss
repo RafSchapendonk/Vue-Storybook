@@ -1,0 +1,191 @@
+$linkFontSize: 16px;
+$linkLineHeight: 18px;
+$titleFontSize: 24px;
+$titleLineHeight: 28px;
+$socialFontSize: 17px;
+$copyrightFontSize: 12px;
+$copyrightColor: #ffffff;
+
+footer {
+    @apply mt-3xl;
+    background: transparent linear-gradient(98deg, #c826f3 0%, #6d79f6 61%, #00defa 100%) 0% 0% no-repeat padding-box;
+
+    &.no--cta {
+        @apply mt-0 pt-xl;
+        @apply md:pt-lg;
+
+        .footer__inner {
+            @apply mt-0;
+        }
+    }
+}
+
+.footer {
+    @apply container;
+    @apply lg:px-def;
+    @apply sm:px-mob;
+
+    h3 {
+        @apply font-normal text-white;
+        padding-bottom: 46px;
+        @apply lg:pb-def;
+        margin-top: 4px;
+
+        font-size: clamp(
+            calc(22px * 0.9),
+            calc(calc(22px * 0.9) + ((22 - 27) * ((100vw - 360px) / (1230 - 360)))),
+            22px
+        );
+
+        line-height: clamp(
+            calc(30px * 0.9),
+            calc(calc(30px * 0.9) + ((30 - 27) * ((100vw - 360px) / (1230 - 360)))),
+            30px
+        );
+
+        letter-spacing: -0.88px;
+    }
+
+    .footer__inner {
+        @apply grid grid-cols-12 gap-def;
+        margin-top: -12px;
+    }
+
+    .footer__socials {
+        @apply mt-def;
+        a {
+            @apply text-white;
+            @apply hover:text-dark;
+            font-size: $socialFontSize;
+
+            &:not(:last-child) {
+                @apply mr-sm;
+            }
+        }
+    }
+
+    .footer__sitemap--services {
+        a:last-of-type {
+            @apply font-bold;
+            margin-top: 42px;
+            @apply mob:mt-sm;
+        }
+    }
+
+    .footer__contact {
+        @apply text-white;
+        @apply mob:text-center;
+        font-size: 18px;
+
+        .logo {
+            @apply block mb-md;
+
+            svg {
+                @apply mob:mx-auto;
+            }
+        }
+    }
+
+    .footer__contact--location,
+    .footer__contact--phone,
+    .footer__contact--email {
+        @apply flex;
+        @apply mob:justify-center;
+
+        i {
+            @apply mr-sm mt-xs;
+        }
+
+        a {
+            @apply hover:underline;
+        }
+    }
+
+    .footer__contact-link {
+        @apply block whitespace-nowrap;
+
+        i {
+            @apply mr-xs;
+        }
+    }
+
+    .footer__contact {
+        @apply col-span-3;
+        @apply lg:col-span-12;
+    }
+
+    .footer__sitemaps {
+        @apply grid grid-cols-12 gap-def col-span-9;
+        @apply lg:col-span-12;
+
+        .footer__sitemap {
+            @apply col-span-3;
+            @apply md:col-span-4;
+            @apply mob:col-span-12 mob:text-center;
+            a {
+                @apply block mb-sm text-white;
+                @apply hover:underline;
+                font-size: $linkFontSize;
+                line-height: $linkLineHeight;
+                letter-spacing: -0.32px;
+
+                @media screen and (max-width: 600px) {
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .footer__sitemap--extended {
+            @apply col-span-6;
+            @apply mob:col-span-12;
+        }
+
+        .footer__sitemap--twocol {
+            @apply grid grid-cols-12 gap-def gap-y-0;
+
+            > a {
+                @apply col-span-6;
+                @apply mob:col-span-12;
+            }
+        }
+    }
+
+    .copyright {
+        @apply grid grid-cols-12 gap-def py-2xl;
+        @apply md:py-lg;
+        @apply mob:py-def;
+    }
+
+    .copyright-left,
+    .copyright-right {
+        @apply col-span-6;
+        @apply md:col-span-12 md:text-center;
+
+        a,
+        span {
+            @apply opacity-40;
+            @apply mob:block;
+            font-size: $copyrightFontSize;
+            color: $copyrightColor;
+        }
+
+        a {
+            @apply hover:opacity-100;
+        }
+
+        span + a,
+        a + a {
+            &:before {
+                @apply pr-sm ml-xs;
+                @apply mob:hidden;
+                content: "|";
+                color: $copyrightColor;
+            }
+        }
+    }
+
+    .copyright-right {
+        @apply text-right;
+        @apply md:text-center;
+    }
+}

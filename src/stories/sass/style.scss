@@ -1,0 +1,41 @@
+* {
+    @include box-sizing();
+}
+
+body {
+    @apply relative font-fontText text-text text-default bg-white;
+
+    &.overlay--active {
+        @apply overflow-hidden;
+
+        #overlay {
+            left: 0;
+        }
+    }
+}
+
+main {
+    @media screen and (max-width: 1176px) {
+        margin-top: 60px;
+    }
+}
+
+a {
+    @apply transition-all duration-500;
+}
+
+strong {
+    @apply font-bold;
+}
+
+em {
+    @apply italic;
+}
+
+.bg-gradient--grey {
+    background: transparent linear-gradient(90deg, #f2f2f2 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
+}
+
+.disabled {
+    @apply opacity-50 pointer-events-none;
+}

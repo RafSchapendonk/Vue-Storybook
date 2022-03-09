@@ -1,0 +1,83 @@
+.company-introduction {
+    @apply container mb-3xl;
+    @apply lg:px-def;
+    @apply md:mb-lg;
+    @apply sm:px-mob;
+}
+
+.company-introduction__inner {
+    @apply grid grid-cols-12 gap-md pr-1-col;
+    @apply sm:gap-def;
+    @apply md:pr-0;
+}
+
+.company-introduction__inner-visual {
+    @apply col-span-6 gap-def relative;
+    @apply sm:col-span-12;
+    @apply mob:flex mob:flex-col mob:gap-y-0;
+
+    .asp-base {
+        @apply absolute inset-0;
+        @apply sm:relative sm:w-1/2;
+        @apply sm:w-full mob:order-1;
+    }
+
+    picture.content {
+        @apply sm:relative;
+    }
+
+    img {
+        @apply rounded-full h-full w-auto;
+        @apply lg:h-auto lg:w-full;
+    }
+}
+
+.company-introduction__inner-content {
+    @apply col-span-6 gap-def;
+    @apply sm:col-span-12;
+
+    h2 {
+        letter-spacing: -1.92px;
+    }
+
+    p {
+        @apply mb-md;
+    }
+
+    .btn-gradient {
+        @apply mr-xs;
+    }
+
+    .btn {
+        @apply mt-xs;
+    }
+}
+
+.company-introduction__usps {
+    @apply z-1 bg-white rounded-sm absolute bottom-def right-0 px-md py-lg;
+    @apply mob:relative mob:order-2;
+    box-shadow: -6px 12px 36px rgba(0, 0, 0, 0.16);
+
+    .company-introduction__usps-item {
+        @apply relative;
+
+        &:not(:last-child) {
+            @apply mb-sm;
+        }
+
+        i {
+            @apply pt-xs inline-block;
+            font-size: 16px;
+            margin-right: 4px;
+            background: transparent linear-gradient(104deg, #c826f3 0%, #00defa 100%) 0% 0% no-repeat padding-box;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        margin-top: -48px;
+        bottom: unset;
+    }
+}

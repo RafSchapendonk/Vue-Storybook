@@ -1,0 +1,107 @@
+@mixin border-radius($iRadius: 5px){
+  -webkit-border-radius: $iRadius;
+     -moz-border-radius: $iRadius;
+      -ms-border-radius: $iRadius;
+          border-radius: $iRadius;
+}
+
+@mixin border-radius-topleft($iRadius: 5px){
+  -webkit-border-top-left-radius: $iRadius;
+     -moz-border-top-left-radius: $iRadius;
+      -ms-border-top-left-radius: $iRadius;
+          border-top-left-radius: $iRadius;
+}
+
+@mixin border-radius-topright($iRadius: 5px){
+  -webkit-border-top-right-radius: $iRadius;
+     -moz-border-top-right-radius: $iRadius;
+      -ms-border-top-right-radius: $iRadius;
+          border-top-right-radius: $iRadius;
+}
+
+@mixin border-radius-bottomleft($iRadius: 5px){
+  -webkit-border-bottom-left-radius: $iRadius;
+     -moz-border-bottom-left-radius: $iRadius;
+      -ms-border-bottom-left-radius: $iRadius;
+          border-bottom-left-radius: $iRadius;
+}
+
+@mixin border-radius-bottomright($iRadius: 5px){
+  -webkit-border-bottom-right-radius: $iRadius;
+     -moz-border-bottom-right-radius: $iRadius;
+      -ms-border-bottom-right-radius: $iRadius;
+          border-bottom-right-radius: $iRadius;
+}
+
+@mixin box-sizing($cType:border-box){
+  -webkit-box-sizing: $cType;
+     -moz-box-sizing: $cType;
+      -ms-box-sizing: $cType;
+          box-sizing: $cType;
+}
+
+@mixin box-shadow($cHoff:0,$cVoff:0,$cBlur:'',$cSpread:'',$cColor:#000,$cInset:''){
+  -webkit-box-shadow: $cHoff $cVoff #{$cBlur} #{$cSpread} $cColor #{$cInset};
+     -moz-box-shadow: $cHoff $cVoff #{$cBlur} #{$cSpread} $cColor #{$cInset};
+          box-shadow: $cHoff $cVoff #{$cBlur} #{$cSpread} $cColor #{$cInset};
+}
+
+@mixin font-face($cFontName,$cFileName,$iWeight,$cStyle:normal){
+	@font-face {
+		font-family: '#{$cFontName}';
+    font-display: swap;
+		src: url('../fonts/#{$cFileName}.eot');
+		src: url('../fonts/#{$cFileName}.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/#{$cFileName}.woff') format('woff'),
+			 url('../fonts/#{$cFileName}.ttf') format('truetype');
+		font-style: $cStyle;
+		font-weight: $iWeight;
+	}
+}
+
+@mixin transition($cAttr: all, $cDuration: 0.3s, $cEasing: ease-in-out) {
+	-webkit-transition:$cAttr $cDuration $cEasing;
+	-moz-transition:$cAttr $cDuration $cEasing;
+	-ms-transition:$cAttr $cDuration $cEasing;
+	-o-transition:$cAttr $cDuration $cEasing;
+	transition:$cAttr $cDuration $cEasing;
+}
+
+@mixin rotate($iDeg:0){
+	-webkit-transform:rotate(#{$iDeg}deg);
+	-ms-transform:rotate(#{$iDeg}deg);
+	-o-transform:rotate(#{$iDeg}deg);
+	transform:rotate(#{$iDeg}deg);
+}
+
+@mixin translate($cHorizontal,$cVertical){
+    -ms-transform: translate($cHorizontal,$cVertical);
+    -webkit-transform: translate($cHorizontal,$cVertical);
+    transform: translate($cHorizontal,$cVertical);
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@mixin line-clamp($int) {
+    @apply overflow-hidden pb-0;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $int;
+    line-clamp: $int;
+    -webkit-box-orient: vertical;
+}

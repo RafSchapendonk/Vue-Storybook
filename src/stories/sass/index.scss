@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './libs/family';
+@import './libs/rbmixins';
+@import './libs/rbnotification';
+@import './libs/rbreset';
+
+@import './style.scss';

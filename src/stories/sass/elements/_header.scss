@@ -1,0 +1,367 @@
+//TopNavbar
+$topNavFontSize: 15px;
+$topNavItemSpacing: 0px 13px;
+$topNavHeight: 48px;
+$topNavBackground: #fff;
+
+//BottomNavbar
+$bottomNavFontSize: 19px;
+$bottomNavItemSpacing: 0px 26px;
+$bottomNavHeight: 76px;
+$bottomNavBackground: transparent;
+
+//Fixednavbar
+$fixedNavHeight: 74px;
+$fixedLogoHeight: 30px;
+
+//Mobile Navigation
+$navResponsiveHeight: 60px;
+$navIconFontSize: 20px;
+$navResponsiveLogo: 50px;
+
+//Other
+$logoHeight: 74px;
+
+header {
+    #topNavbar {
+        @apply w-full;
+        @apply lg:hidden;
+        background: $topNavBackground;
+
+        > div {
+            @apply flex items-center;
+            height: $topNavHeight;
+
+            > a {
+                @apply text-lead font-bold;
+                @apply hover:text-dgrey;
+                font-size: $topNavFontSize;
+                margin-left: 13px;
+            }
+
+            nav {
+                @apply ml-auto;
+
+                ul {
+                    @apply text-right;
+
+                    > li {
+                        @apply inline-block;
+
+                        a {
+                            @apply font-fontText text-dgrey font-normal inline-block;
+                            @apply hover:text-lead;
+                            font-size: $topNavFontSize;
+                            padding: $topNavItemSpacing;
+                        }
+
+                        &.active {
+                            a {
+                                @apply text-lead;
+                                @apply hover:text-dgrey;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #bottomNavbar {
+        @apply w-full relative z-10;
+        background: $bottomNavBackground;
+
+        &.bottomNavbar--transp {
+            @apply bg-transparent;
+
+            nav {
+                li {
+                    a {
+                        @apply text-white;
+                    }
+                }
+            }
+        }
+
+        .fa-bars {
+            @apply cursor-pointer absolute inset-y-0 left-def flex items-center z-99;
+            @apply xl:hidden;
+            font-size: $navIconFontSize;
+        }
+
+        .fa-envelope {
+            @apply cursor-pointer absolute inset-y-0 right-def flex items-center z-99;
+            @apply xl:hidden;
+            font-size: $navIconFontSize;
+        }
+
+        > div {
+            @apply flex items-center;
+            height: $bottomNavHeight;
+
+            nav {
+                @apply ml-auto;
+                @apply lg:hidden;
+
+                ul {
+                    @apply float-right;
+
+                    > li {
+                        @apply inline-block;
+
+                        a {
+                            @apply font-fontText text-dark font-semibold inline-block;
+                            @apply hover:text-lead;
+                            font-size: $bottomNavFontSize;
+                            line-height: 52px;
+                            padding: $bottomNavItemSpacing;
+                        }
+
+                        &.active {
+                            a {
+                                @apply text-lead;
+                                @apply hover:text-dark;
+                            }
+                        }
+                    }
+
+                    &:first-child {
+                        > li {
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .logo {
+                @apply block z-50 transition-none rounded-bl rounded-br;
+                @apply lg:mx-auto;
+                width: 258px;
+
+                > svg {
+                    @apply mx-auto;
+                    height: $logoHeight;
+                    width: 200px;
+                }
+
+                &:not(.logo--color) {
+                    @apply block;
+                    @apply lg:hidden;
+                }
+
+                @media screen and (min-width: 1177px) {
+                    background: transparent
+                        linear-gradient(106deg, #c826f3 0%, #00defa 100%) 0% 0%
+                        no-repeat padding-box;
+                }
+            }
+
+            .logo--color {
+                @apply xl:hidden;
+            }
+        }
+
+        &:before {
+            @apply absolute left-0 w-full right-0;
+            content: "";
+            height: 1px;
+            top: 1px;
+            background: linear-gradient(
+                90deg,
+                rgba(190, 65, 0, 1) 0%,
+                rgba(200, 38, 243, 1) 9%,
+                rgba(200, 38, 243, 1) 10%,
+                rgba(0, 222, 250, 1) 29%,
+                rgba(14, 209, 249, 1) 30%,
+                rgba(22, 215, 195, 1) 62%,
+                rgba(102, 201, 158, 1) 100%
+            );
+            @apply lg:hidden;
+        }
+    }
+}
+
+.language--toggler {
+    @apply font-fontText text-dgrey font-normal transition-colors duration-300 cursor-pointer;
+    @apply hover:text-lead;
+    font-size: $topNavFontSize;
+    padding: $topNavItemSpacing;
+
+    i {
+        font-size: 12px;
+
+        &:first-child {
+            @apply mr-xs;
+        }
+
+        &:last-child {
+            @apply ml-xs;
+        }
+    }
+}
+
+.mobile-menu {
+    @apply fixed inset-y-0 bg-white hidden transition-all duration-500 px-mob;
+    @apply lg:block;
+    @include box-shadow(0, 0, 12px, 0, rgba(0, 0, 0, 0.2));
+    width: 300px;
+    left: -400px;
+    z-index: 1000;
+
+    .language--toggler {
+        @apply px-0 mt-def;
+    }
+
+    nav {
+        @apply mt-def;
+
+        ul {
+            list-style: none;
+
+            a {
+                @apply font-bold;
+            }
+        }
+
+        li.active {
+            a {
+                @apply text-lead;
+            }
+        }
+
+        + nav {
+            @apply mt-sm;
+
+            a,
+            + a {
+                @apply font-normal;
+                font-size: 14px;
+            }
+
+            + a {
+                @apply font-bold text-lead;
+            }
+        }
+    }
+
+    .logo {
+        @apply block mt-lg;
+    }
+
+    #close-menu {
+        @apply absolute top-0 right-0 text-lead cursor-pointer p-def;
+    }
+}
+
+#overlay {
+    @apply fixed inset-y-0 w-full z-999;
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    left: -100%;
+}
+
+.mobile-open {
+    .mobile-menu {
+        @apply left-0;
+    }
+
+    #overlay {
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 1177px) {
+    .fixed-nav {
+        header {
+            #topNavbar {
+                position: fixed;
+                top: -$topNavHeight;
+            }
+
+            #bottomNavbar {
+                @apply bg-white;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
+
+                > div {
+                    height: $fixedNavHeight;
+
+                    .logo {
+                        background: none;
+
+                        > svg {
+                            height: $fixedLogoHeight;
+                        }
+
+                        &:not(.logo--color) {
+                            @apply hidden;
+                        }
+                    }
+
+                    .logo--color {
+                        @apply block;
+                    }
+
+                    nav {
+                        padding-bottom: 0;
+
+                        li {
+                            a {
+                                @apply text-dark;
+                            }
+                        }
+                    }
+                }
+
+                &:before {
+                    @apply top-0 right-0 w-full;
+                    background: linear-gradient(
+                        90deg,
+                        rgba(190, 65, 0, 1) 0%,
+                        rgba(200, 38, 243, 1) 9%,
+                        rgba(200, 38, 243, 1) 10%,
+                        rgba(0, 222, 250, 1) 29%,
+                        rgba(14, 209, 249, 1) 30%,
+                        rgba(22, 215, 195, 1) 62%,
+                        rgba(102, 201, 158, 1) 100%
+                    );
+                }
+
+                &:after {
+                    @apply hidden;
+                }
+            }
+        }
+
+        main {
+            padding-top: 98px;
+        }
+    }
+}
+
+@media screen and (max-width: 1176px) {
+    header {
+        @apply fixed top-0 inset-x-0 z-99 bg-white;
+        @include box-shadow(0, 0, 24px, 0, rgba(0, 0, 0, 0.2));
+
+        #bottomNavbar {
+            > div {
+                height: $navResponsiveHeight;
+
+                .logo {
+                    @apply mt-0;
+
+                    > svg {
+                        height: $navResponsiveLogo;
+                    }
+                }
+            }
+        }
+    }
+}
