@@ -61,6 +61,25 @@ const customViewports = {
   },
 };
 
+const palettes = {
+  RBMediaPalette: {
+    "Primary": {
+      "RB-Blue": "#0074FF",
+      "RB-BlueLight": "#00E2FF",
+      "RB-Green": "#43FF43"
+    },
+    "Secondary": {
+      " 500": "#4D4D4D",
+      " 400": "#858585",
+      " 300": "#AAAAAA",
+      " 200": "#D3D3D3",
+      " 100": "#F7F6F5",
+      "white": "#FFFFFF",
+      "black": "#000000"
+    }
+  }
+}
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -77,4 +96,12 @@ export const parameters = {
     maxWidth: '1024px',
   },
   viewport: { defaultViewport: 'responsive', viewports: customViewports },
+  colorPicker: {
+    palettes: [
+      {
+        name: 'RB-Media', // string
+        palette: palettes.RBMediaPalette, // Palette as an Object or an Array. See bellow.
+      },
+    ]
+  }
 }

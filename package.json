@@ -22,6 +22,7 @@
     "sass": "^1.49.9",
     "sass-loader": "^10.2.1",
     "storybook-addon-grid": "^0.0.14",
+    "storybook-color-picker": "^2.3.1",
     "vue": "^3.2.13",
     "vue-style-loader": "^4.1.3"
   },
