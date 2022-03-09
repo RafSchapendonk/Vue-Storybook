@@ -54,5 +54,6 @@ module.exports = {
       },
     },
   ],
+  staticDirs: ['./assets'],
   "framework": "@storybook/vue3"
 }
