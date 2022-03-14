@@ -95,7 +95,7 @@ export const parameters = {
     gutter: '50px',
     maxWidth: '1024px',
   },
-  viewport: { defaultViewport: 'responsive', viewports: customViewports },
+  viewport: { viewports: customViewports },
   colorPicker: {
     palettes: [
       {

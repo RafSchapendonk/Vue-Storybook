@@ -10,3 +10,10 @@
 @import './style.scss';
 @import './header.scss';
 @import './page.scss';
+
+$fa-font-path: "./fontawesome/fonts";
+@import "./fontawesome/scss/fontawesome";
+@import "./fontawesome/scss/light";
+@import "./fontawesome/scss/regular";
+@import "./fontawesome/scss/solid";
+@import "./fontawesome/scss/brands";
