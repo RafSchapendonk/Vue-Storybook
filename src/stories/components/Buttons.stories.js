@@ -31,4 +31,10 @@ export const Icon = Template.bind({});
 Icon.args = {
     icon: true,
     label: 'Button',
+};
+
+export const LoadMore = Template.bind({});
+LoadMore.args = {
+    Loadmore: true,
+    label: 'Button'
 }

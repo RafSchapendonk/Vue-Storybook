@@ -1,7 +1,13 @@
 <template>
-  <button href="" type="button" :class="classes">
+  <button v-if="!loadmore" href="" type="button" :class="classes">
     {{ label }}
   </button>
+
+  <div v-if="loadmore" class="loadmore">
+    <a :class="classes" class="" onclick="loadMorePosts('');" id="loadMoreBtn">
+      Load more
+    </a>
+  </div>
 </template>
 
 <script>
@@ -29,6 +35,10 @@ export default {
       default: false,
     },
     icon: {
+      type: Boolean,
+      default: false,
+    },
+    loadmore: {
       type: Boolean,
       default: false,
     },
