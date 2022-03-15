@@ -89,6 +89,12 @@ function initSwiper(swiperElm) {
                         useLoop = true;
                     }
 
+                    var useScrollbar = false;
+                    if (swiperElm.classList.contains("active-scrollbar")) {
+                        useScrollbar = true;
+                    }
+
+
                     var useAutoPlay = false;
                     if (swiperElm.classList.contains("active-autoplay")) {
                         useAutoPlay = true;
@@ -117,7 +123,7 @@ function initSwiper(swiperElm) {
                         speed: speed,
                         slidesPerView: 'auto',
                         grabCursor: true,
-                        scrollbarHide: false,
+                        scrollbarHide: useScrollbar,
                         initialSlide: activeSlideNr,
                         centeredSlides: centeredSlides,
                         loop: useLoop,
@@ -133,6 +139,11 @@ function initSwiper(swiperElm) {
                         navigation: {
                             nextEl: '[data-slider-name="' + sliderName + '"] .swiper-button-next',
                             prevEl: '[data-slider-name="' + sliderName + '"] .swiper-button-prev',
+                        },
+                        scrollbar: {
+                            el: '.swiper-scrollbar',
+                            draggable: true,
+                            hide: false,
                         },
                     });
 

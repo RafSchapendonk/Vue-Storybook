@@ -1,0 +1,37 @@
+
+.grids {
+    @apply grid;
+    
+    &--1 { @apply grid-cols-1; }
+    &--2 { @apply grid-cols-2; }
+    &--3 { @apply grid-cols-3; }
+    &--4 { @apply grid-cols-4; }
+    &--5 { @apply grid-cols-5; }
+    &--6 { @apply grid-cols-6; }
+    &--7 { @apply grid-cols-7; }
+    &--8 { @apply grid-cols-8; }
+    &--9 { @apply grid-cols-9; }
+    &--10 { @apply grid-cols-10; }
+    &--11 { @apply grid-cols-11; }
+    &--12 { @apply grid-cols-12; }
+
+    &--x-xs { @apply gap-x-xs }
+    &--x-sm { @apply gap-x-sm }
+    &--x-mob { @apply gap-x-mob }
+    &--x-def { @apply gap-x-def }
+    &--x-md { @apply gap-x-md }
+    &--x-lg { @apply gap-x-lg }
+    &--x-xl { @apply gap-x-xl }
+
+    &--y-xs { @apply gap-y-xs }
+    &--y-sm { @apply gap-y-sm }
+    &--y-mob { @apply gap-y-mob }
+    &--y-def { @apply gap-y-def }
+    &--y-md { @apply gap-y-md }
+    &--y-lg { @apply gap-y-lg }
+    &--y-xl { @apply gap-y-xl }
+}
+
+.card {
+    @apply grid text-white justify-items-center items-center font-fontTitle font-bold text-h2 h-3xl;
+}

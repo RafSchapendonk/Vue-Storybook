@@ -1,11 +1,5 @@
 <template>
-  <button
-    href=""
-    type="button"
-    :class="classes"
-    @click="onClick"
-    :style="style"
-  >
+  <button href="" type="button" :class="classes" @click="onClick">
     {{ label }}
   </button>
 </template>
@@ -31,9 +25,6 @@ export default {
       validator: function (value) {
         return ["small", "medium", "large"].indexOf(value) !== -1;
       },
-    },
-    backgroundColor: {
-      type: String,
     },
   },
 

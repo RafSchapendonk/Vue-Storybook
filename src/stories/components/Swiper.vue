@@ -1,38 +1,55 @@
 <template>
-  <div
-    class="swiper-container"
-    data-slider-max-width="9999"
-    data-slider-name="storybook-slider"
+  <swiper
+    :slides-per-view="3"
+    :space-between="50"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
   >
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"></div>
-    </div>
-    <div class="swiper__arrows--wrapper">
-      <div class="swiper-button-prev">
-        <i class="fa-solid fa-arrow-left"></i>
+    <swiper-slide v-for="item in imgs" :key="item.url">
+      <img :src="item.url" />
+      <div>
+        <h2>Howdy</h2>
       </div>
-      <div class="swiper-button-next">
-        <i class="fa-solid fa-arrow-right"></i>
-      </div>
-    </div>
-  </div>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script>
 import { reactive, computed } from "vue";
-import "../sass/elements/_swiper.scss";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+// import "../sass/elements/_swiper.scss";
 
 export default {
-  name: "swiper",
-
+  name: "swiper-comp",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  data() {
+    return {
+      imgs: [
+        { url: "https://picsum.photos/id/237/200" },
+        { url: "https://picsum.photos/id/237/200" },
+        { url: "https://picsum.photos/id/237/200" },
+        { url: "https://picsum.photos/id/237/200" },
+        { url: "https://picsum.photos/id/237/200" },
+      ],
+    };
+  },
   props: {},
-
-  imgs: [],
-
   setup(props) {
     props = reactive(props);
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    const onSlideChange = () => {
+      console.log("slide change");
+    };
     return {
       classes: computed(() => ({})),
+      onSwiper,
+      onSlideChange,
     };
   },
 };

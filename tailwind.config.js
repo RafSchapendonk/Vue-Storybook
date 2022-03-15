@@ -33,8 +33,7 @@ const font = {
 }
 
 module.exports = {
-    mode: 'jit',
-    content: ["./../src/stories/**/*"],
+    content: ["./src/**/*.{scss,js,vue}"],
     theme: {
         screens: {
             // '2xl': null, 
@@ -58,12 +57,6 @@ module.exports = {
                 leadLight: '#20C3D2',
                 secondary: '#43FF43',
                 dark: '#17252D',
-                // purple: '#C826F3',
-                // text: '#667380',
-                // borderGrey: '#D4D8D9',
-                // error: 'rgba(255, 0, 0, 0.5)',
-                // dgrey: '#3D3D3D',
-                // lgrey: '#EEEEEE',
                 placeholder: '#667380',
             },
             margin: {
@@ -134,7 +127,6 @@ module.exports = {
                 'sm': '12px',
                 'mob': '18px',
                 'def': '24px',
-                '30': '30px',
                 'md': '36px',
                 'lg': '48px',
                 'xl': '60px',
