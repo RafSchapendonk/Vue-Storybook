@@ -24,27 +24,33 @@ export default {
   props: {
     colCount: {
       type: Number,
-      validator: function (value) {
-        return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].indexOf(value) !== -1;
+      validator: function () {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      },
+    },
+    colSpan: {
+      type: Number,
+      validator: function () {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       },
     },
     xGap: {
       type: String,
-      validator: function (value) {
-        return (
-          ["xs", "sm", "mob", "def", "md", "lg", "xl"].indexOf(value) !== -1
-        );
-      },
-    },
-    yGap: {
-      type: String,
-      validator: function (value) {
-        return (
-          ["xs", "sm", "mob", "def", "md", "lg", "xl"].indexOf(value) !== -1
-        );
+      validator: function () {
+        return ["xs", "sm", "mob", "def", "md", "lg", "xl"];
       },
     },
     toggleBottomRow: {
+      type: Boolean,
+      default: false,
+    },
+    yGap: {
+      type: String,
+      validator: function () {
+        return ["xs", "sm", "mob", "def", "md", "lg", "xl"];
+      },
+    },
+    responsive: {
       type: Boolean,
       default: false,
     },
@@ -55,12 +61,15 @@ export default {
     return {
       colWidth: props.colCount,
       classesGrid: computed(() => ({
-        [`grids grids--${props.colCount || "12"}`]: true,
+        grids: true,
+        [`grid-cols-${props.colCount || "12"}`]: true,
         [`gap-x-${props.xGap || "def"}`]: true,
         [`gap-y-${props.yGap || "def"}`]: true,
       })),
       classesCard: computed(() => ({
-        "card bg-lead": true,
+        card: true,
+        [`col-span-${props.colSpan || "1"}`]: true,
+        responsive: props.responsive,
       })),
     };
   },

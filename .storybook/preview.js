@@ -13,12 +13,12 @@ const customViewports = {
   xl: {
     name: 'xl',
     styles: {
-      width: '1776px',
+      width: '1777px',
       height: screenHeight
     },
   },
   lg: {
-    name: 'xl',
+    name: 'lg',
     styles: {
       width: '1776px',
       height: screenHeight

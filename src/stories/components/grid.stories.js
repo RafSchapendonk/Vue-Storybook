@@ -1,10 +1,27 @@
 import Grid from './Grid.vue'
 
 export default {
-    title: 'Components/Grid',
+    title: 'Components/Grids',
     component: Grid,
     argTypes: {
         colCount: {
+            control: { type: 'select' },
+            options: [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+            ],
+        },
+        colSpan: {
             control: { type: 'select' },
             options: [
                 1,
@@ -58,5 +75,16 @@ const Template = (args) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-    colCount: 12
+    colCount: 12,
+    colSpan: 1,
+}
+
+export const Responsive = Template.bind({});
+
+Responsive.args = {
+    colCount: 12,
+    responsive: true,
+}
+Responsive.paramaters = {
+    controls: { exclude: [colSpan, colCount] }
 }
