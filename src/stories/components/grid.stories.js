@@ -80,11 +80,8 @@ Primary.args = {
 }
 
 export const Responsive = Template.bind({});
-
+Responsive.parameters = { controls: { exclude: ['colSpan', 'colCount'] } };
 Responsive.args = {
     colCount: 12,
     responsive: true,
-}
-Responsive.paramaters = {
-    controls: { exclude: [colSpan, colCount] }
 }
