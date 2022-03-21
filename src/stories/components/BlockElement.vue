@@ -1,6 +1,6 @@
 <template>
   <div class="stb-block__wrapper">
-    <div class="stb-block__item">
+    <div :class="blockItemClasses" class="stb-block__item">
       <div>
         <img v-if="image" src="https://picsum.photos/id/237/1920/1080" />
       </div>
@@ -13,7 +13,12 @@
         <i v-if="icon" class="fa-solid fa-arrow-right"></i>
       </div>
     </div>
-    <div v-for="item in extraBlocks" :key="item" class="stb-block__item">
+    <div
+      v-for="item in extraBlocks"
+      :key="item"
+      :class="blockItemClasses"
+      class="stb-block__item"
+    >
       <div>
         <img v-if="image" src="https://picsum.photos/id/237/1920/1080" />
       </div>
@@ -51,12 +56,22 @@ export default {
     },
     extraBlocks: {
       type: Number,
+      default: 0,
     },
     image: {
       type: Boolean,
+      default: false,
     },
     icon: {
       type: Boolean,
+      default: false,
+    },
+    colSpan: {
+      type: String,
+      validator: function () {
+        return ["col-span-3", "col-span-4", "col-span-12"];
+      },
+      default: "col-span-4",
     },
   },
 
@@ -65,6 +80,9 @@ export default {
     return {
       contentClasses: computed(() => ({
         "pb-lg": props.icon,
+      })),
+      blockItemClasses: computed(() => ({
+        [`${props.colSpan}`]: true,
       })),
     };
   },

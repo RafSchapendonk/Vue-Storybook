@@ -1,11 +1,11 @@
 @import '../libs/rbmixins';
 
 .tailwind-config {
-    @apply pb-lg;
+    @apply pb-lg col-span-3 col-span-4 col-span-12;
 }
 
 .stb-block__item {
-    @apply bg-lead col-span-4 transition-all duration-300 relative text-white;
+    @apply bg-lead transition-all duration-300 relative text-white;
     @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
 
     .stb-block__inner {
