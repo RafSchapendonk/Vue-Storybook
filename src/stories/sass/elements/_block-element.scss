@@ -1,12 +1,21 @@
 @import '../libs/rbmixins';
 
 .tailwind-config {
-    @apply pb-lg col-span-3 col-span-4 col-span-12;
+    @apply pb-lg;
+    @apply col-span-3 col-span-4 col-span-12;
+    @apply rounded-none rounded-t-lg rounded-b-lg rounded-lg;
 }
 
 .stb-block__item {
-    @apply bg-lead transition-all duration-300 relative text-white;
+    @apply bg-lead transition-all overflow-hidden duration-300 relative text-white;
     @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
+
+    &--responsive {
+        @apply xl:col-span-3;
+        @apply lg:col-span-4;
+        @apply md:col-span-6;
+        @apply sm:col-span-12;
+    }
 
     .stb-block__inner {
         padding: 40px 36px 60px 48px;
@@ -21,7 +30,8 @@
     }
 
     p {
-        @apply font-fontText;
+        @apply font-fontText overflow-hidden;
+        @include line-clamp(5)
     }
 
     i {
@@ -32,7 +42,7 @@
         @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.2));
 
         i {
-            @apply text-secondary;
+            @apply text-dark;
         }
     }
 }

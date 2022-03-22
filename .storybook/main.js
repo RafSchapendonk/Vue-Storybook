@@ -40,6 +40,7 @@ module.exports = {
     "@pbutlewski/storybook-html",
     "@storybook/addon-a11y",
     "storybook-color-picker",
+    "storybook-code-panel/register",
     require.resolve('storybook-addon-grid/preset'),
     {
       name: '@storybook/addon-postcss',
