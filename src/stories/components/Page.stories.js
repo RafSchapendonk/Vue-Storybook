@@ -1,5 +1,5 @@
 import MyPage from './Page.vue';
-import * as HeaderStories from './Header.stories';
+import * as HeaderStories from './HeaderExample.stories';
 
 export default {
   title: 'RB-Media/Page',

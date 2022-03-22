@@ -1,4 +1,3 @@
-import { Description } from '@storybook/components';
 import BlockElement from './BlockElement.vue'
 
 export default {
@@ -93,7 +92,6 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({});
-// Primary.args = {}
 
 export const Responsive = Template.bind({});
 Responsive.parameters = { controls: { exclude: ['colSpan'] } };

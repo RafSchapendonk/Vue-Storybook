@@ -3,6 +3,17 @@ import Grid from './Grid.vue'
 export default {
     title: 'Components/Grids',
     component: Grid,
+    parameters: {
+        storybookCodePanel: {
+            disabled: false,
+            files: [
+                {
+                    fileName: '_block-element.scss',
+                    code: require('!!raw-loader!../sass/elements/_grid.scss')
+                },
+            ]
+        }
+    },
     argTypes: {
         colCount: {
             control: { type: 'select' },

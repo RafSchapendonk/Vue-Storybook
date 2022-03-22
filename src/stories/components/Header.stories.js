@@ -1,28 +1,33 @@
-import MyHeader from './Header.vue';
+import Header from './Header.vue'
 
 export default {
-  title: 'RB-Media/Header',
-  component: MyHeader,
-};
+    title: 'Components/Header',
+    component: Header,
+    parameters: {
+        storybookCodePanel: {
+            disabled: false,
+            files: [
+                {
+                    fileName: '_header.scss',
+                    code: require('!!raw-loader!../sass/elements/_header.scss')
+                },
+            ]
+        }
+    },
+    argTypes: {
+
+    },
+    args: {
+
+    },
+}
 
 const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
-  components: { MyHeader },
-  // The story's `args` need to be mapped into the template through the `setup()` method
-  setup() {
-    // Story args can be spread into the returned object
-    return { ...args };
-  },
-  // Then, the spread values can be accessed directly in the template
-  template: '<my-header :user="user" />',
-});
+    components: { Header },
+    setup() {
+        return { args };
+    },
+    template: '<header v-bind="args" />',
+})
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
-};
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {
-  user: null,
-};
+export const Primary = Template.bind({});
