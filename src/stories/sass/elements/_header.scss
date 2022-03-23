@@ -136,7 +136,7 @@ header {
 
                 margin-top: -44px;
 
-                > svg {
+                > img {
                     height: $logoHeight;
                 }
             }
@@ -262,4 +262,8 @@ header {
             }
         }
     }
+}
+
+.content-filler {
+    @apply h-screen bg-lead;
 }

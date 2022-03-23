@@ -1,8 +1,8 @@
-import Header from './Header.vue'
+import HeaderElement from './Header.vue'
 
 export default {
     title: 'Components/Header',
-    component: Header,
+    component: HeaderElement,
     parameters: {
         storybookCodePanel: {
             disabled: false,
@@ -23,11 +23,11 @@ export default {
 }
 
 const Template = (args) => ({
-    components: { Header },
+    components: { HeaderElement },
     setup() {
         return { args };
     },
-    template: '<header v-bind="args" />',
+    template: '<header-element v-bind="args" />',
 })
 
 export const Primary = Template.bind({});
