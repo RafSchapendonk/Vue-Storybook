@@ -39,7 +39,7 @@
 }
 
 .btn-solid {
-  @apply bg-leadLight font-fontTitle text-center;
+  @apply bg-leadDark font-fontTitle text-center;
   @apply xs:w-full;
 
   &--lead {

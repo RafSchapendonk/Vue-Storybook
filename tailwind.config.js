@@ -53,8 +53,8 @@ module.exports = {
                 fontAwesome: ['"Font Awesome 6 Pro"']
             },
             colors: {
-                lead: '#00C5FF',
-                leadLight: '#20C3D2',
+                lead: '#00E2FF',
+                leadDark: '#0074FF',
                 secondary: '#43FF43',
                 dark: '#17252D',
                 placeholder: '#667380',

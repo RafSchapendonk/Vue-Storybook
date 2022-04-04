@@ -47,8 +47,8 @@ header {
                         padding: $topNavItemSpacing;
 
                         a {
-                            @apply font-fontText text-lead font-normal;
-                            @apply hover:text-lead;
+                            @apply font-fontText text-lead font-normal transition-all duration-300;
+                            @apply hover:text-leadDark;
                             font-size: $topNavFontSize;
                         }
 
@@ -106,8 +106,8 @@ header {
                         padding: $bottomNavItemSpacing;
 
                         a {
-                            @apply font-fontText text-lead font-semibold;
-                            @apply hover:text-lead;
+                            @apply font-fontText text-lead font-semibold transition-all duration-300;
+                            @apply hover:text-leadDark;
                             font-size: $bottomNavFontSize;
                             line-height: 52px;
                         }
