@@ -57,6 +57,7 @@ module.exports = {
                 leadDark: '#0074FF',
                 secondary: '#43FF43',
                 dark: '#17252D',
+                hoverBlue: '#009ecc',
                 placeholder: '#667380',
             },
             margin: {

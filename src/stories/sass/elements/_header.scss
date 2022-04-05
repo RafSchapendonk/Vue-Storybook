@@ -2,6 +2,7 @@
 
 /* TopNavbar */
 $topNavFontSize: 15px;
+$topNavFontSize--Center: 12px;
 $topNavItemSpacing: 0px 14px;
 $topNavHeight: 46px;
 $topNavBackground: #fff;
@@ -10,6 +11,7 @@ $topNavBackground: #fff;
 $bottomNavFontSize: 19px;
 $bottomNavItemSpacing: 0px 26px;
 $bottomNavHeight: 52px;
+$bottomNavHeight--Center: 74px;
 $bottomNavBackground: #fff;
 
 /* Fixednavbar */
@@ -48,7 +50,7 @@ header {
 
                         a {
                             @apply font-fontText text-lead font-normal transition-all duration-300;
-                            @apply hover:text-leadDark;
+                            @apply hover:text-hoverBlue;
                             font-size: $topNavFontSize;
                         }
 
@@ -63,7 +65,23 @@ header {
                         &.active {
                             a {
                                 @apply text-lead;
-                                @apply hover:text-lead;
+                                @apply hover:text-hoverBlue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.topNavbar--center {
+            > div {
+                nav {
+                    ul {
+                        > li {
+                            a {
+                                @apply font-fontText text-lead font-normal transition-all duration-300;
+                                @apply hover:text-hoverBlue;
+                                font-size: $topNavFontSize--Center;
                             }
                         }
                     }
@@ -107,7 +125,7 @@ header {
 
                         a {
                             @apply font-fontText text-lead font-semibold transition-all duration-300;
-                            @apply hover:text-leadDark;
+                            @apply hover:text-hoverBlue;
                             font-size: $bottomNavFontSize;
                             line-height: 52px;
                         }
@@ -115,7 +133,7 @@ header {
                         &.active {
                             a {
                                 @apply text-lead;
-                                @apply hover:text-lead;
+                                @apply hover:text-hoverBlue;
                             }
                         }
                     }
@@ -138,6 +156,36 @@ header {
 
                 > img {
                     height: $logoHeight;
+                }
+            }
+        }
+
+        &.bottomNavbar--center {
+            @apply bg-leadDark;
+            > div {
+                @apply flex justify-between;
+                height: $bottomNavHeight--Center;
+        
+                nav {
+                    @apply ml-0 pb-0;
+
+                    ul {
+                        li {
+                        }
+
+                        &:first-child {
+                            > li {
+                                &:last-child {
+                                    padding-right: 26px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .logo {
+                    @apply mt-0;
+                    margin-bottom: calc($logoHeight/-2);
                 }
             }
         }
@@ -265,5 +313,6 @@ header {
 }
 
 .content-filler {
-    @apply h-screen bg-lead;
+    @apply bg-gradient-to-br from-leadDark via-lead to-secondary;
+    height: 3000px;
 }
