@@ -28,7 +28,7 @@
   </header>
 
   <header v-if="center">
-    <div id="topNavbar" class="topNavbar--center">
+    <div id="topNavbar" class="topNavbar--center test">
       <div class="container">
         <nav>
           <ul>
