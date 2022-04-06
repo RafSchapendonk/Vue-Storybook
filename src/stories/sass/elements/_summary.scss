@@ -1,0 +1,27 @@
+.summary__ul {
+    @apply pl-xs ml-0 font-fontText;
+
+    &--decimal {
+        @apply list-decimal;
+    }
+
+    &--no-bullet {
+        @apply list-none;
+    }
+
+    li {
+        &.summary__li--icon {
+            @apply flex flex-row
+        }
+
+        i {
+            @apply text-lead pt-xs;
+        }
+
+        h4 {
+            @apply text-default font-normal pl-sm;
+            color: #4d4d4d;
+            break-inside: avoid;
+        }
+    }
+}

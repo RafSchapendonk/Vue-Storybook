@@ -29,6 +29,7 @@ const Template = (args) => ({
     },
     template: '<header-element v-bind="args" />',
 })
+
 export const Primary = Template.bind({});
 Primary.args = {
     primary: true

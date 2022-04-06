@@ -28,24 +28,24 @@ export const Primary = Template.bind({});
 Primary.parameters = { controls: { include: ['label', 'icon'] } };
 Primary.args = {
     lead: true,
-    pill: true,
-    rounded: false,
+    pill: false,
+    rounded: true,
     label: 'Primary',
 };
 
 export const Ghost = Template.bind({});
 Ghost.parameters = { controls: { include: ['label', 'icon'] } };
 Ghost.args = {
-    pill: true,
-    rounded: false,
+    pill: false,
+    rounded: true,
     label: 'Ghost',
 };
 
 export const Icon = Template.bind({});
 Icon.parameters = { controls: { include: ['label', 'lead'] } };
 Icon.args = {
-    pill: true,
-    rounded: false,
+    pill: false,
+    rounded: true,
     icon: true,
     lead: true,
     label: 'Primary',
@@ -54,11 +54,20 @@ Icon.args = {
 export const LoadMore = Template.bind({});
 LoadMore.parameters = { controls: { include: ['label', 'icon', 'lead'] } };
 LoadMore.args = {
-    pill: true,
-    rounded: false,
+    pill: false,
+    rounded: true,
     lead: true,
     loadmore: true,
     label: 'Load more'
+}
+
+export const NotRounded = Template.bind({});
+NotRounded.parameters = { controls: { include: ['label', 'icon', 'lead'] } };
+NotRounded.args = {
+    lead: true,
+    pill: false,
+    rounded: false,
+    label: 'Not rounded'
 }
 
 export const Rounded = Template.bind({});
