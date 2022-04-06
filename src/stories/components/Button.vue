@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">
+  <button href="" type="button" :class="classes" @click="onClick">
     {{ label }}
   </button>
 </template>
@@ -16,7 +16,7 @@ export default {
       type: String,
       required: true,
     },
-    primary: {
+    lead: {
       type: Boolean,
       default: false,
     },
@@ -25,9 +25,6 @@ export default {
       validator: function (value) {
         return ["small", "medium", "large"].indexOf(value) !== -1;
       },
-    },
-    backgroundColor: {
-      type: String,
     },
   },
 
@@ -38,8 +35,8 @@ export default {
     return {
       classes: computed(() => ({
         "storybook-button": true,
-        "storybook-button--primary": props.primary,
-        "storybook-button--secondary": !props.primary,
+        "storybook-button--lead": props.lead,
+        "storybook-button--secondary": !props.lead,
         [`storybook-button--${props.size || "medium"}`]: true,
       })),
       style: computed(() => ({

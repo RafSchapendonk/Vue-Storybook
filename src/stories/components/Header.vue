@@ -1,70 +1,128 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <div>
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g fill="none" fill-rule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+  <header v-if="primary">
+    <div id="topNavbar">
+      <div class="container">
+        <nav>
+          <ul>
+            <li v-for="index in topNavItems" :key="index">
+              <a>Nav item {{ index }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div>
-        <my-button
-          size="small"
-          @click="$emit('logout')"
-          label="Log out"
-          v-if="user"
-        />
-        <my-button
-          size="small"
-          @click="$emit('login')"
-          label="Log in"
-          v-if="!user"
-        />
-        <my-button
-          primary
-          size="small"
-          @click="$emit('createAccount')"
-          label="Sign up"
-          v-if="!user"
-        />
+    </div>
+    <div id="bottomNavbar">
+      <div class="container">
+        <a class="logo" href="" title="">
+          <img src="/rbmedia_logo_payoff.svg" alt="" />
+        </a>
+        <nav>
+          <ul>
+            <li v-for="index in botNavItems" :key="index">
+              <a>Nav item {{ index }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
+
+  <header v-if="center">
+    <div id="topNavbar" class="topNavbar--center">
+      <div class="container">
+        <nav>
+          <ul>
+            <li v-for="index in topNavItems" :key="index">
+              <a>Nav item {{ index }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="bottomNavbar" class="bottomNavbar--center">
+      <div class="container">
+        <nav>
+          <ul>
+            <li v-for="index in botNavItems" :key="index">
+              <a>Nav item {{ index }}</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="logo" href="" title="">
+          <img src="/rbmedia_logo_payoff_background.svg" alt="" />
+        </a>
+        <nav>
+          <ul>
+            <li v-for="index in botNavItems" :key="index">
+              <a>Nav item {{ index }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="content-filler"></div>
+  <!-- <script type="application/javascript" src="../js/fixedmenu.js"></script> -->
 </template>
 
 <script>
-import "../sass/header.scss";
-import MyButton from "./Button.vue";
+import "../sass/elements/_header.scss";
+import { reactive, computed } from "vue";
 
 export default {
-  name: "my-header",
-
-  components: { MyButton },
+  name: "header-element",
 
   props: {
-    user: {
-      type: Object,
+    primary: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
+    center: {
+      type: Boolean,
+      required: true,
+      default: false,
     },
   },
 
-  emits: ["login", "logout", "createAccount"],
+  data() {
+    return {
+      botNavItems: 3,
+      topNavItems: 5,
+      lastScrollTop: window.pageYOffset || document.documentElement.scrollTop,
+      scrollDirection: "down",
+    };
+  },
+
+  methods: {
+    fixedMenu() {
+      var topNavbar = document.getElementById("topNavbar");
+      var bottomNavbar = document.getElementById("bottomNavbar");
+      var topNavbarOffsetHeight = topNavbar.offsetHeight;
+      var bottomNavbarOffsetTop = bottomNavbar.offsetTop;
+
+      if (
+        window.pageYOffset >= bottomNavbarOffsetTop &&
+        bottomNavbarOffsetTop != 0
+      ) {
+        document.body.classList.add("fixed-nav");
+      } else if (
+        window.pageYOffset - topNavbarOffsetHeight <
+        bottomNavbarOffsetTop
+      ) {
+        document.body.classList.remove("fixed-nav");
+      }
+    },
+  },
+
+  mounted() {
+    this.fixedMenu();
+    window.addEventListener("scroll", this.fixedMenu);
+  },
+
+  setup(props) {
+    props = reactive(props);
+    return {};
+  },
 };
 </script>

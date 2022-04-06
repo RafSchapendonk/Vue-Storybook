@@ -33,8 +33,7 @@ const font = {
 }
 
 module.exports = {
-    mode: 'jit',
-    content: ["./../src/stories/**/*"],
+    content: ["./src/**/*.{scss,js,vue}"],
     theme: {
         screens: {
             // '2xl': null, 
@@ -49,21 +48,16 @@ module.exports = {
 
         extend: {
             fontFamily: {
-                fontText: ['PT Sans', 'sans-serif'],
-                fontTitle: ['PT Sans Caption', 'sans-serif'],
+                fontText: ['Gotham', 'sans-serif'],
+                fontTitle: ['Gotham bold', 'sans-serif'],
                 fontAwesome: ['"Font Awesome 6 Pro"']
             },
             colors: {
-                lead: '#48A0F0',
-                leadLight: '#E6F2FF',
-                light: '#89BFF0',
-                dark: '#0F2F4D',
-                purple: '#C826F3',
-                text: '#667380',
-                borderGrey: '#D4D8D9',
-                error: 'rgba(255, 0, 0, 0.5)',
-                dgrey: '#3D3D3D',
-                lgrey: '#EEEEEE',
+                lead: '#00E2FF',
+                leadDark: '#0074FF',
+                secondary: '#43FF43',
+                dark: '#17252D',
+                hoverBlue: '#009ecc',
                 placeholder: '#667380',
             },
             margin: {
@@ -134,12 +128,22 @@ module.exports = {
                 'sm': '12px',
                 'mob': '18px',
                 'def': '24px',
-                '30': '30px',
                 'md': '36px',
                 'lg': '48px',
                 'xl': '60px',
             },
             height: {
+                'xs': '6px',
+                'sm': '12px',
+                'mob': '18px',
+                'def': '24px',
+                'md': '36px',
+                'lg': '48px',
+                'xl': '60px',
+                '2xl': '72px',
+                '3xl': '96px'
+            },
+            width: {
                 'xs': '6px',
                 'sm': '12px',
                 'mob': '18px',

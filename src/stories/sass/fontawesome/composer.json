@@ -1,0 +1,15 @@
+{
+    "name": "rb-media/fontawesome",
+    "description": "RB-Media FontAwesome for RB-Media Framework",
+    "authors": [
+        {
+            "name": "RB-Media",
+            "email": "development@rb-media.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RBMedia\\FontAwesome\\": "src/"
+        }
+    }
+}

@@ -1,28 +1,34 @@
-//TopNavbar
+@import '../libs/rbmixins';
+
+/* TopNavbar */
 $topNavFontSize: 15px;
-$topNavItemSpacing: 0px 13px;
-$topNavHeight: 48px;
+$topNavFontSize--Center: 12px;
+$topNavItemSpacing: 0px 14px;
+$topNavHeight: 46px;
 $topNavBackground: #fff;
 
-//BottomNavbar
+/* BottomNavbar */
 $bottomNavFontSize: 19px;
 $bottomNavItemSpacing: 0px 26px;
-$bottomNavHeight: 76px;
-$bottomNavBackground: transparent;
+$bottomNavHeight: 52px;
+$bottomNavHeight--Center: 74px;
+$bottomNavBackground: #fff;
 
-//Fixednavbar
-$fixedNavHeight: 74px;
-$fixedLogoHeight: 30px;
+/* Fixednavbar */
+$fixedNavHeight: 72px;
+$fixedLogoHeight: 55px;
 
-//Mobile Navigation
+/* Mobile Navigation */
 $navResponsiveHeight: 60px;
 $navIconFontSize: 20px;
 $navResponsiveLogo: 50px;
 
-//Other
+/* Other */
 $logoHeight: 74px;
 
 header {
+    @include box-shadow(0, 0, 24px, 0, rgba(0, 0, 0, 0.2));
+
     #topNavbar {
         @apply w-full;
         @apply lg:hidden;
@@ -32,13 +38,6 @@ header {
             @apply flex items-center;
             height: $topNavHeight;
 
-            > a {
-                @apply text-lead font-bold;
-                @apply hover:text-dgrey;
-                font-size: $topNavFontSize;
-                margin-left: 13px;
-            }
-
             nav {
                 @apply ml-auto;
 
@@ -47,18 +46,42 @@ header {
 
                     > li {
                         @apply inline-block;
+                        padding: $topNavItemSpacing;
 
                         a {
-                            @apply font-fontText text-dgrey font-normal inline-block;
-                            @apply hover:text-lead;
+                            @apply font-fontText text-lead font-normal transition-all duration-300;
+                            @apply hover:text-hoverBlue;
                             font-size: $topNavFontSize;
-                            padding: $topNavItemSpacing;
+                        }
+
+                        &:last-child {
+                            padding-right: 0;
+
+                            a {
+                                @apply font-bold;
+                            }
                         }
 
                         &.active {
                             a {
                                 @apply text-lead;
-                                @apply hover:text-dgrey;
+                                @apply hover:text-hoverBlue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.topNavbar--center {
+            > div {
+                nav {
+                    ul {
+                        > li {
+                            a {
+                                @apply font-fontText text-lead font-normal transition-all duration-300;
+                                @apply hover:text-hoverBlue;
+                                font-size: $topNavFontSize--Center;
                             }
                         }
                     }
@@ -71,26 +94,14 @@ header {
         @apply w-full relative z-10;
         background: $bottomNavBackground;
 
-        &.bottomNavbar--transp {
-            @apply bg-transparent;
-
-            nav {
-                li {
-                    a {
-                        @apply text-white;
-                    }
-                }
-            }
-        }
-
         .fa-bars {
-            @apply cursor-pointer absolute inset-y-0 left-def flex items-center z-99;
+            @apply cursor-pointer absolute inset-y-0 left-def flex items-center;
             @apply xl:hidden;
             font-size: $navIconFontSize;
         }
 
         .fa-envelope {
-            @apply cursor-pointer absolute inset-y-0 right-def flex items-center z-99;
+            @apply cursor-pointer absolute inset-y-0 right-def flex items-center;
             @apply xl:hidden;
             font-size: $navIconFontSize;
         }
@@ -103,24 +114,26 @@ header {
                 @apply ml-auto;
                 @apply lg:hidden;
 
+                padding-bottom: 14px;
+
                 ul {
                     @apply float-right;
 
                     > li {
                         @apply inline-block;
+                        padding: $bottomNavItemSpacing;
 
                         a {
-                            @apply font-fontText text-dark font-semibold inline-block;
-                            @apply hover:text-lead;
+                            @apply font-fontText text-lead font-semibold transition-all duration-300;
+                            @apply hover:text-hoverBlue;
                             font-size: $bottomNavFontSize;
                             line-height: 52px;
-                            padding: $bottomNavItemSpacing;
                         }
 
                         &.active {
                             a {
                                 @apply text-lead;
-                                @apply hover:text-dark;
+                                @apply hover:text-hoverBlue;
                             }
                         }
                     }
@@ -136,82 +149,59 @@ header {
             }
 
             .logo {
-                @apply block z-50 transition-none rounded-bl rounded-br;
+                @apply mt-auto block z-50 transition-none;
                 @apply lg:mx-auto;
-                width: 258px;
 
-                > svg {
-                    @apply mx-auto;
+                margin-top: -44px;
+
+                > img {
                     height: $logoHeight;
-                    width: 200px;
-                }
-
-                &:not(.logo--color) {
-                    @apply block;
-                    @apply lg:hidden;
-                }
-
-                @media screen and (min-width: 1177px) {
-                    background: transparent
-                        linear-gradient(106deg, #c826f3 0%, #00defa 100%) 0% 0%
-                        no-repeat padding-box;
                 }
             }
+        }
 
-            .logo--color {
-                @apply xl:hidden;
+        &.bottomNavbar--center {
+            @apply bg-leadDark;
+            > div {
+                @apply flex justify-between;
+                height: $bottomNavHeight--Center;
+        
+                nav {
+                    @apply ml-0 pb-0;
+
+                    ul {
+                        li {
+                        }
+
+                        &:first-child {
+                            > li {
+                                &:last-child {
+                                    padding-right: 26px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .logo {
+                    @apply mt-0;
+                    margin-bottom: calc($logoHeight/-2);
+                }
             }
-        }
-
-        &:before {
-            @apply absolute left-0 w-full right-0;
-            content: "";
-            height: 1px;
-            top: 1px;
-            background: linear-gradient(
-                90deg,
-                rgba(190, 65, 0, 1) 0%,
-                rgba(200, 38, 243, 1) 9%,
-                rgba(200, 38, 243, 1) 10%,
-                rgba(0, 222, 250, 1) 29%,
-                rgba(14, 209, 249, 1) 30%,
-                rgba(22, 215, 195, 1) 62%,
-                rgba(102, 201, 158, 1) 100%
-            );
-            @apply lg:hidden;
-        }
-    }
-}
-
-.language--toggler {
-    @apply font-fontText text-dgrey font-normal transition-colors duration-300 cursor-pointer;
-    @apply hover:text-lead;
-    font-size: $topNavFontSize;
-    padding: $topNavItemSpacing;
-
-    i {
-        font-size: 12px;
-
-        &:first-child {
-            @apply mr-xs;
-        }
-
-        &:last-child {
-            @apply ml-xs;
         }
     }
 }
 
 .mobile-menu {
-    @apply fixed inset-y-0 bg-white hidden transition-all duration-500 px-mob;
+    @apply fixed inset-y-0 bg-white hidden transition-all duration-500;
     @apply lg:block;
     @include box-shadow(0, 0, 12px, 0, rgba(0, 0, 0, 0.2));
     width: 300px;
     left: -400px;
     z-index: 1000;
 
-    .language--toggler {
-        @apply px-0 mt-def;
+    > div {
+        @apply px-def;
     }
 
     nav {
@@ -219,10 +209,6 @@ header {
 
         ul {
             list-style: none;
-
-            a {
-                @apply font-bold;
-            }
         }
 
         li.active {
@@ -234,29 +220,23 @@ header {
         + nav {
             @apply mt-sm;
 
-            a,
-            + a {
-                @apply font-normal;
+            a {
                 font-size: 14px;
-            }
-
-            + a {
-                @apply font-bold text-lead;
             }
         }
     }
 
     .logo {
-        @apply block mt-lg;
+        @apply block mt-def;
     }
 
     #close-menu {
-        @apply absolute top-0 right-0 text-lead cursor-pointer p-def;
+        @apply absolute top-def right-def text-lead;
     }
 }
 
 #overlay {
-    @apply fixed inset-y-0 w-full z-999;
+    @apply fixed inset-y-0 w-full z-10;
     content: "";
     background: rgba(0, 0, 0, 0.5);
     left: -100%;
@@ -281,60 +261,27 @@ header {
             }
 
             #bottomNavbar {
-                @apply bg-white;
                 position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
                 z-index: 1000;
-                @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
+                @include box-shadow(0, 0, 24px, 0, rgba(0, 0, 0, 0.2));
 
                 > div {
                     height: $fixedNavHeight;
 
                     .logo {
-                        background: none;
+                        margin-top: 0;
 
                         > svg {
                             height: $fixedLogoHeight;
                         }
-
-                        &:not(.logo--color) {
-                            @apply hidden;
-                        }
-                    }
-
-                    .logo--color {
-                        @apply block;
                     }
 
                     nav {
                         padding-bottom: 0;
-
-                        li {
-                            a {
-                                @apply text-dark;
-                            }
-                        }
                     }
-                }
-
-                &:before {
-                    @apply top-0 right-0 w-full;
-                    background: linear-gradient(
-                        90deg,
-                        rgba(190, 65, 0, 1) 0%,
-                        rgba(200, 38, 243, 1) 9%,
-                        rgba(200, 38, 243, 1) 10%,
-                        rgba(0, 222, 250, 1) 29%,
-                        rgba(14, 209, 249, 1) 30%,
-                        rgba(22, 215, 195, 1) 62%,
-                        rgba(102, 201, 158, 1) 100%
-                    );
-                }
-
-                &:after {
-                    @apply hidden;
                 }
             }
         }
@@ -347,8 +294,7 @@ header {
 
 @media screen and (max-width: 1176px) {
     header {
-        @apply fixed top-0 inset-x-0 z-99 bg-white;
-        @include box-shadow(0, 0, 24px, 0, rgba(0, 0, 0, 0.2));
+        @apply fixed top-0 inset-x-0 z-50;
 
         #bottomNavbar {
             > div {
@@ -364,4 +310,9 @@ header {
             }
         }
     }
+}
+
+.content-filler {
+    @apply bg-gradient-to-br from-leadDark via-lead to-secondary;
+    height: 3000px;
 }

@@ -1,7 +1,6 @@
 import { create } from '@storybook/theming';
 import logo from './assets/rbmedia_logo_payoff.svg'
 
-
 export default create({
     // All theming options:
 
@@ -14,8 +13,8 @@ export default create({
     // UI
     appBg: 'white',
     appContentBg: 'white',
-    // appBorderColor: 'grey',
-    // appBorderRadius: 4,
+    // appBorderColor: '',
+    // appBorderRadius: ,
 
     // Typography
     fontBase: '"Gotham", sans-serif',
@@ -26,15 +25,15 @@ export default create({
     textInverseColor: 'rgba(255,255,255,0.9)',
 
     // Toolbar default and active colors
-    // barTextColor: 'black',
+    // barTextColor: '',
     barSelectedColor: '#00E2FF',
     barBg: 'white',
 
     // Form colors
-    // inputBg: 'white',
-    // inputBorder: 'silver',
-    // inputTextColor: 'black',
-    // inputBorderRadius: 4,
+    // inputBg: '',
+    // inputBorder: '',
+    // inputTextColor: '',
+    // inputBorderRadius: ,
 
     // Brand data
     brandTitle: 'Storybook RB-Media',

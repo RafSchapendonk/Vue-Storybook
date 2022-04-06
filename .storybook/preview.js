@@ -4,56 +4,56 @@ const screenHeight = '820px'
 
 const customViewports = {
   xxl: {
-    name: '2xl',
+    name: '2xl (1920px)',
     styles: {
       width: '1920px',
       height: screenHeight
     },
   },
   xl: {
-    name: 'xl',
+    name: 'xl (1177px)',
     styles: {
-      width: '1776px',
+      width: '1177px',
       height: screenHeight
     },
   },
   lg: {
-    name: 'xl',
+    name: 'lg (1176px)',
     styles: {
-      width: '1776px',
+      width: '1176px',
       height: screenHeight
     },
   },
   md: {
-    name: 'md',
+    name: 'md (900px)',
     styles: {
       width: '900px',
       height: screenHeight
     },
   },
   sm: {
-    name: 'sm',
+    name: 'sm (768px)',
     styles: {
       width: '768px',
       height: screenHeight
     },
   },
   mob: {
-    name: 'mob',
+    name: 'mob (600px)',
     styles: {
       width: '600px',
       height: screenHeight
     },
   },
   xs: {
-    name: 'xs',
+    name: 'xs (500px)',
     styles: {
       width: '500px',
       height: screenHeight
     },
   },
   min: {
-    name: 'min',
+    name: 'min (360px)',
     styles: {
       width: '360px',
       height: screenHeight
@@ -83,6 +83,7 @@ const palettes = {
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
+    expanded: true,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
@@ -95,7 +96,7 @@ export const parameters = {
     gutter: '50px',
     maxWidth: '1024px',
   },
-  viewport: { defaultViewport: 'responsive', viewports: customViewports },
+  viewport: { viewports: customViewports },
   colorPicker: {
     palettes: [
       {

@@ -1,0 +1,52 @@
+@import '../libs/rbmixins';
+
+.tailwind-config {
+    @apply pb-lg;
+    @apply col-span-3 col-span-4 col-span-12;
+    @apply rounded-none rounded-t-lg rounded-b-lg rounded-lg;
+}
+
+.stb-block__item {
+    @apply bg-lead transition-all overflow-hidden duration-300 relative text-white;
+    @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
+
+    &--responsive {
+        @apply xl:col-span-3;
+        @apply lg:col-span-4;
+        @apply md:col-span-6;
+        @apply sm:col-span-12;
+    }
+
+    .stb-block__inner {
+        padding: 40px 36px 60px 48px;
+    }
+
+    img {
+        @apply block object-cover relative h-full w-full;
+    }
+
+    h3 {
+        @apply font-fontTitle text-h3 mb-def;
+    }
+
+    p {
+        @apply font-fontText overflow-hidden;
+        @include line-clamp(5)
+    }
+
+    i {
+        @apply absolute bottom-lg transition-all duration-300;
+    }
+
+    &:hover {
+        @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.2));
+
+        i {
+            @apply text-dark;
+        }
+    }
+}
+
+.stb-block__wrapper {
+    @apply grid grid-cols-12 gap-def;
+}

@@ -1,3 +1,5 @@
+@import '../libs/rbmixins';
+
 $swiperColor: #e30613 !default;
 $swiperColorDefault: #000 !default;
 
@@ -14,11 +16,11 @@ $swiperColorDefault: #000 !default;
  */
 .swiper-container {
     position: relative;
-    // overflow: hidden;
+    /* overflow: hidden; */
     list-style: none;
-    // box-sizing:content-box;
-    // -webkit-box-sizing:content-box;
-    // -moz-box-sizing:content-box;
+    /* box-sizing:content-box; */
+    /* -webkit-box-sizing:content-box; */
+    /* -moz-box-sizing:content-box; */
     /* Fix of Webkit flickering */
     z-index: 1;
     width: 100%;
@@ -90,8 +92,8 @@ $swiperColorDefault: #000 !default;
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    // width: 100%;
-    // height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     position: relative;
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
@@ -146,100 +148,28 @@ $swiperColorDefault: #000 !default;
     z-index: 10;
 }
 .swiper-container-3d .swiper-slide-shadow-left {
-    background-image: -webkit-gradient(
-        linear,
-        right top,
-        left top,
-        from(rgba(0, 0, 0, 0.5)),
-        to(rgba(0, 0, 0, 0))
-    );
-    background-image: -webkit-linear-gradient(
-        right,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: -o-linear-gradient(
-        right,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 .swiper-container-3d .swiper-slide-shadow-right {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(rgba(0, 0, 0, 0.5)),
-        to(rgba(0, 0, 0, 0))
-    );
-    background-image: -webkit-linear-gradient(
-        left,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: -o-linear-gradient(
-        left,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 .swiper-container-3d .swiper-slide-shadow-top {
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        from(rgba(0, 0, 0, 0.5)),
-        to(rgba(0, 0, 0, 0))
-    );
-    background-image: -webkit-linear-gradient(
-        bottom,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: -o-linear-gradient(
-        bottom,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 .swiper-container-3d .swiper-slide-shadow-bottom {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.5)),
-        to(rgba(0, 0, 0, 0))
-    );
-    background-image: -webkit-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: -o-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0)
-    );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 /* IE10 Windows Phone 8 Fixes */
 .swiper-container-wp8-horizontal,
@@ -254,16 +184,10 @@ $swiperColorDefault: #000 !default;
 }
 .swiper-button-prev,
 .swiper-button-next {
-    position: absolute;
-    top: 50%;
     width: 27px;
-    height: 44px;
-    margin-top: -22px;
+    height: 27px;
     z-index: 10;
     cursor: pointer;
-    background-size: 27px 44px;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
@@ -273,31 +197,13 @@ $swiperColorDefault: #000 !default;
 }
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
     left: 10px;
     right: auto;
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
     right: 10px;
     left: auto;
-}
-.swiper-button-prev.swiper-button-white,
-.swiper-container-rtl .swiper-button-next.swiper-button-white {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
-}
-.swiper-button-next.swiper-button-white,
-.swiper-container-rtl .swiper-button-prev.swiper-button-white {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
-}
-.swiper-button-prev.swiper-button-black,
-.swiper-container-rtl .swiper-button-next.swiper-button-black {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
-}
-.swiper-button-next.swiper-button-black,
-.swiper-container-rtl .swiper-button-prev.swiper-button-black {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
 }
 .swiper-button-lock {
     display: none;
@@ -395,23 +301,18 @@ button.swiper-pagination-bullet {
     -webkit-transform: translate3d(0px, -50%, 0);
     transform: translate3d(0px, -50%, 0);
 }
-.swiper-container-vertical
-    > .swiper-pagination-bullets
-    .swiper-pagination-bullet {
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 6px 0;
     display: block;
 }
-.swiper-container-vertical
-    > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+.swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 8px;
 }
-.swiper-container-vertical
-    > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
-    .swiper-pagination-bullet {
+.swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     display: inline-block;
     -webkit-transition: 200ms top, 200ms -webkit-transform;
     transition: 200ms top, 200ms -webkit-transform;
@@ -419,31 +320,24 @@ button.swiper-pagination-bullet {
     transition: 200ms transform, 200ms top;
     transition: 200ms transform, 200ms top, 200ms -webkit-transform;
 }
-.swiper-container-horizontal
-    > .swiper-pagination-bullets
-    .swiper-pagination-bullet {
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 4px;
 }
-.swiper-container-horizontal
-    > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+.swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     white-space: nowrap;
 }
-.swiper-container-horizontal
-    > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
-    .swiper-pagination-bullet {
+.swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     -webkit-transition: 200ms left, 200ms -webkit-transform;
     transition: 200ms left, 200ms -webkit-transform;
     -o-transition: 200ms transform, 200ms left;
     transition: 200ms transform, 200ms left;
     transition: 200ms transform, 200ms left, 200ms -webkit-transform;
 }
-.swiper-container-horizontal.swiper-container-rtl
-    > .swiper-pagination-bullets-dynamic
-    .swiper-pagination-bullet {
+.swiper-container-horizontal.swiper-container-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     -webkit-transition: 200ms right, 200ms -webkit-transform;
     transition: 200ms right, 200ms -webkit-transform;
     -o-transition: 200ms transform, 200ms right;
@@ -469,24 +363,20 @@ button.swiper-pagination-bullet {
     -ms-transform-origin: left top;
     transform-origin: left top;
 }
-.swiper-container-rtl
-    .swiper-pagination-progressbar
-    .swiper-pagination-progressbar-fill {
+.swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     -webkit-transform-origin: right top;
     -ms-transform-origin: right top;
     transform-origin: right top;
 }
 .swiper-container-horizontal > .swiper-pagination-progressbar,
-.swiper-container-vertical
-    > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+.swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
     width: 100%;
     height: 4px;
     left: 0;
     top: 0;
 }
 .swiper-container-vertical > .swiper-pagination-progressbar,
-.swiper-container-horizontal
-    > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+.swiper-container-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
     width: 4px;
     height: 100%;
     left: 0;
@@ -498,8 +388,7 @@ button.swiper-pagination-bullet {
 .swiper-pagination-progressbar.swiper-pagination-white {
     background: rgba(255, 255, 255, 0.25);
 }
-.swiper-pagination-progressbar.swiper-pagination-white
-    .swiper-pagination-progressbar-fill {
+.swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill {
     background: #ffffff;
 }
 .swiper-pagination-black .swiper-pagination-bullet-active {
@@ -508,8 +397,7 @@ button.swiper-pagination-bullet {
 .swiper-pagination-progressbar.swiper-pagination-black {
     background: rgba(0, 0, 0, 0.25);
 }
-.swiper-pagination-progressbar.swiper-pagination-black
-    .swiper-pagination-progressbar-fill {
+.swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill {
     background: #000000;
 }
 .swiper-pagination-lock {
@@ -578,80 +466,17 @@ button.swiper-pagination-bullet {
 
 .swiper-button-prev,
 .swiper-button-next {
-    background: transparent linear-gradient(104deg, #c826f3 0%, #00defa 100%) 0%
-        0% no-repeat padding-box;
-    border-radius: 100%;
     height: 46px;
     width: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -36px;
-
-    @media screen and (max-width: 600px) {
-        height: 26px;
-        width: 26px;
-    }
-
-    &:after {
-        @include transition();
-        @apply font-fontAwesome text-lead z-2;
-        font-size: 16px;
-        font-weight: 700;
-        letter-spacing: -0.14px;
-    }
-
-    &:hover {
-        @apply bg-lead;
-        &:after {
-            @apply text-white;
-        }
-        .swiper-button-next__inner,
-        .swiper-button-prev__inner {
-            @apply opacity-0;
-        }
-    }
-
-    .swiper-button-next__inner,
-    .swiper-button-prev__inner {
-        @apply bg-white absolute transition-all opacity-100;
-        height: 44px;
-        width: 44px;
-        border-radius: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        @media screen and (max-width: 600px) {
-            height: 24px;
-            width: 24px;
-        }
-    }
 }
 
 .swiper-button-next {
-    @include transition();
-    @apply right-def;
-    @apply mob:right-mob;
-
-    &:after {
-        content: "\f061";
-    }
-
     &.swiper-button-disabled {
         opacity: 0;
     }
 }
 
 .swiper-button-prev {
-    @include transition();
-    @apply left-def;
-    @apply mob:left-mob;
-
-    &:after {
-        content: "\f060";
-    }
-
     &.swiper-button-disabled {
         opacity: 0;
     }

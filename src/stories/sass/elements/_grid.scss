@@ -1,0 +1,21 @@
+
+.tailwind-config {
+    @apply grid-cols-1 grid-cols-2 grid-cols-3 grid-cols-4 grid-cols-5 grid-cols-6 grid-cols-7 grid-cols-8 grid-cols-9 grid-cols-10 grid-cols-11 grid-cols-12;
+    @apply col-span-1 col-span-2 col-span-3 col-span-4 col-span-5 col-span-6 col-span-7 col-span-8 col-span-9 col-span-10 col-span-11 col-span-12;
+    @apply gap-y-xs gap-y-sm gap-y-mob gap-y-def gap-y-md gap-y-lg gap-y-xl;
+    @apply gap-x-xs gap-x-sm gap-x-mob gap-x-def gap-x-md gap-x-lg gap-x-xl;
+}
+
+.grids {
+    @apply grid;
+}
+
+.responsive {
+    @apply col-span-3;
+    @apply md:col-span-6;
+    @apply mob:col-span-12;
+}
+
+.card {
+    @apply grid text-white bg-lead justify-items-center items-center font-fontTitle font-bold text-h2 h-3xl;
+}

@@ -77,7 +77,7 @@
 
 <script>
 import "../sass/page.scss";
-import MyHeader from "./Header.vue";
+import MyHeader from "./HeaderExample.vue";
 
 export default {
   name: "my-page",
