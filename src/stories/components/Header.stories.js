@@ -1,7 +1,7 @@
 import HeaderElement from './Header.vue'
 
 export default {
-    title: 'Components/Header',
+    title: 'Practice-Components/Header',
     component: HeaderElement,
     parameters: {
         storybookCodePanel: {

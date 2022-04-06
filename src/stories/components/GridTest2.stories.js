@@ -1,7 +1,7 @@
 import GridTest2 from './GridTest2.vue'
 
 export default {
-    title: 'Components/TestGrids/GridsTest2',
+    title: 'Practice-Components/TestGrids/GridsTest2',
     component: GridTest2,
     parameters: {
         storybookCodePanel: {

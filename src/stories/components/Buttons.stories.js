@@ -1,7 +1,7 @@
 import Buttons from './Buttons.vue';
 
 export default {
-    title: 'Components/Buttons',
+    title: 'Practice-Components/Buttons',
     component: Buttons,
     argTypes: {
     }

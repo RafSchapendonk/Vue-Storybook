@@ -1,7 +1,7 @@
 import BlockElement from './BlockElement.vue'
 
 export default {
-    title: 'Components/BlockElement',
+    title: 'Practice-Components/BlockElement',
     component: BlockElement,
     parameters: {
         storybookCodePanel: {

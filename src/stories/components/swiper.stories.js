@@ -1,7 +1,7 @@
 import Swiper from './Swiper.vue'
 
 export default {
-    title: 'Components/Swipers/Primary',
+    title: 'Practice-Components/Swipers/Primary',
     component: Swiper,
 }
 
