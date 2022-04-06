@@ -25,3 +25,16 @@
         }
     }
 }
+
+dl {
+    @apply font-fontText;
+
+    dd {
+        @apply ml-md;
+    }
+
+    p,
+    dt {
+        @apply font-bold text-h5;
+    }
+}

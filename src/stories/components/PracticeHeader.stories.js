@@ -1,4 +1,4 @@
-import HeaderElement from './Header.vue'
+import HeaderElement from './PracticeHeader.vue'
 
 export default {
     title: 'Practice-Components/Header',

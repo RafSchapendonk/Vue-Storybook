@@ -1,10 +1,17 @@
 <template>
-  <ul class="summary__ul" :class="ulClassList">
+  <ul v-if="!table" class="summary__ul" :class="ulClassList">
     <li v-for="item in listItems" :key="item" :class="liClassList">
       <i v-if="icon" class="fa-solid fa-check"></i>
-      <h4>Howdy</h4>
+      <h4>{{ label }}</h4>
     </li>
   </ul>
+
+  <dl v-if="table">
+    <template v-for="item in listItems" :key="item">
+      <dt>{{ label }}</dt>
+      <dd>{{ subLabel }}</dd>
+    </template>
+  </dl>
 </template>
 
 <script>
@@ -15,6 +22,12 @@ export default {
   name: "summary-element",
 
   props: {
+    label: {
+      type: String,
+    },
+    subLabel: {
+      type: String,
+    },
     listItems: {
       type: Number,
     },
@@ -22,6 +35,9 @@ export default {
       type: Boolean,
     },
     noBullet: {
+      type: Boolean,
+    },
+    table: {
       type: Boolean,
     },
   },
