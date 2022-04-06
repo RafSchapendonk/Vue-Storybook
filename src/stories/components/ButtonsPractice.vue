@@ -26,10 +26,6 @@ export default {
       type: Boolean,
       default: true,
     },
-    rounded: {
-      type: Boolean,
-      default: true,
-    },
     lead: {
       type: Boolean,
       default: false,
@@ -55,8 +51,7 @@ export default {
         "btn btn-text": true,
         "btn-solid btn-text--white": props.solid,
         "btn-solid--lead btn-text--white": props.lead,
-        "btn--pill": props.pill && !props.rounded,
-        "btn--rounded": props.rounded && !props.pill,
+        "btn-pill": props.pill,
         "btn-transp": !props.solid && !props.lead,
         "btn-text--icon": props.icon,
       })),

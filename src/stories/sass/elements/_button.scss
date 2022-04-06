@@ -1,37 +1,15 @@
-.storybook-button {
-  @apply rounded-full;
-
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-}
-.storybook-button--lead {
-  @apply bg-lead text-white;
-}
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-}
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
-}
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
-}
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
-}
-
 .btn {
   @apply inline-block;
   padding: 10px 24px;
   font-size: 20px;
+
+  &--rounded {
+    @apply rounded-8;
+  }
+
+  &--pill {
+    @apply rounded-full;
+  }
 }
 
 .btn-pill {
@@ -43,48 +21,36 @@
   @apply xs:w-full;
 
   &--lead {
-      @apply bg-lead text-white;
-      @apply hover:bg-white;
+    @apply bg-lead text-white transition-all duration-300;
+    @apply hover:bg-hoverBlue;
   }
 }
 
 .btn-transp {
-  @apply border-solid border-2 border-lead font-fontTitle text-center;
-}
-
-.btn-icon {
-  @apply rounded-l-full rounded-tr-full h-xl w-xl flex items-center justify-center absolute bottom-0;
-  left: -82px;
-
-  &.btn-icon--lead {
-      @apply bg-lead text-white;
-  }
-
-  &.btn-icon--reversed {
-      @apply rounded-r-full rounded-tl-full;
-  }
+  @apply border-solid border-2 border-lead font-fontTitle text-center transition-all duration-300;
+  @apply hover:border-hoverBlue;
 }
 
 .btn-text {
-  @apply font-fontTitle;
-  @apply text-lead;
+  @apply font-fontTitle transition-all text-lead duration-300;
+  @apply hover:text-hoverBlue;
 
   font-size: clamp(
-      calc(20px * 0.8),
-      calc(calc(20px * 0.8) + ((22 - (20 * 0.8)) * ((100vw - 360px) / (1230 - 360)))),
-      20px
+    calc(20px * 0.8),
+    calc(calc(20px * 0.8) + ((22 - (20 * 0.8)) * ((100vw - 360px) / (1230 - 360)))),
+    20px
   );
 
-  &--white {
-      @apply text-white;
-      @apply hover:text-secondary;
+  &--white { 
+    @apply text-white;
+    @apply hover:text-white;
   }
 
   &--icon {
-      &:after {
-          @apply font-fontAwesome ml-sm;
-          content: "\f061";
-          font-size: 16px;
-      }
+    &:after {
+      @apply font-fontAwesome ml-sm;
+      content: "\f061";
+      font-size: 16px;
+    }
   }
 }
