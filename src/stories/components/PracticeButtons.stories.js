@@ -1,4 +1,4 @@
-import Buttons from './ButtonsPractice.vue';
+import Buttons from './PracticeButtons.vue';
 
 export default {
     title: 'Practice-Components/Buttons',
