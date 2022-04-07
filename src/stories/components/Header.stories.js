@@ -25,12 +25,16 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({});
+Primary.parameters = { controls: { exclude: ['primary', 'center'] } };
 Primary.args = {
-    primary: true
+    primary: true,
+    languageSwitch: false
 }
 
 export const Center = Template.bind({});
+Center.parameters = { controls: { exclude: ['primary', 'center'] } };
 Center.args = {
     primary: false,
-    center: true
+    center: true,
+    languageSwitch: false
 }

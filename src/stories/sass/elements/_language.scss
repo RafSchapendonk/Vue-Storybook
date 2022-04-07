@@ -1,12 +1,29 @@
+@import '../libs/rbmixins';
+
 body.language--active {
     .language__select {
         @apply flex;
     }
 }
 
+.language--toggler {
+    @apply font-fontText text-placeholder transition-all duration-300 cursor-pointer text-default flex flex-row items-center;
+    @apply hover:text-lead;
+
+    p {
+        @apply px-sm;
+        font-size: 16px;
+    }
+
+    i {
+        font-size: 14px;
+    }
+}
+
 .language__select {
-    @apply fixed inset-0 z-50 flex items-center justify-center;
+    @apply fixed inset-0 z-50 flex items-center justify-center font-fontText;
     @apply hidden;
+    z-index: 1000;
 }
 
 .language__select-inner {
@@ -15,7 +32,7 @@ body.language--active {
     width: 360px;
 
     .language--select--closer {
-        @apply absolute top-0 right-0 flex items-center justify-center cursor-pointer transition-all duration-300 text-text z-2;
+        @apply absolute top-0 right-0 flex items-center justify-center cursor-pointer transition-all duration-300 z-2;
         @apply hover:text-lead;
         height: 50px;
         width: 50px;
@@ -30,19 +47,9 @@ body.language--active {
         @apply relative;
 
         &:before {
-            @apply absolute bottom-0 right-0 w-full;
+            @apply absolute bottom-0 right-0 w-full bg-lead;
             content: "";
             height: 1px;
-            background: linear-gradient(
-                90deg,
-                rgba(190, 65, 0, 1) 0%,
-                rgba(200, 38, 243, 1) 9%,
-                rgba(200, 38, 243, 1) 10%,
-                rgba(0, 222, 250, 1) 29%,
-                rgba(14, 209, 249, 1) 30%,
-                rgba(22, 215, 195, 1) 62%,
-                rgba(102, 201, 158, 1) 100%
-            );
         }
     }
 

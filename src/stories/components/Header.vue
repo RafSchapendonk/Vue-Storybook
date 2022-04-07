@@ -1,5 +1,5 @@
 <template>
-  <header v-if="primary" class="header--primary">
+  <header :class="classes">
     <div id="topNavbar">
       <div class="container">
         <nav>
@@ -7,60 +7,62 @@
             <li v-for="index in topNavItems" :key="index">
               <a>Nav item {{ index }}</a>
             </li>
+            <template v-if="languageSwitch">
+              <!-- ↓↓↓ { file="inc/languages.tpl"} ↓↓↓ -->
+              <li class="language--toggler">
+                <i class="fa-light fa-globe"></i>
+                <p>English</p>
+                <i class="fa-light fa-angle-down"></i>
+              </li>
+              <!-- ↑↑↑ -->
+            </template>
           </ul>
         </nav>
       </div>
     </div>
-    <div id="bottomNavbar">
-      <div class="container">
-        <a class="logo" href="" title="">
-          <img src="/rbmedia_logo_payoff.svg" alt="" />
-        </a>
-        <nav>
-          <ul>
-            <li v-for="index in botNavItems" :key="index">
-              <a>Nav item {{ index }}</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
 
-  <header v-if="center" class="header--center">
-    <div id="topNavbar">
-      <div class="container">
-        <nav>
-          <ul>
-            <li v-for="index in topNavItems" :key="index">
-              <a>Nav item {{ index }}</a>
-            </li>
-          </ul>
-        </nav>
+    <template v-if="primary && !center">
+      <div id="bottomNavbar">
+        <div class="container">
+          <i class="fa-regular fa-bars" id="menu-trigger"></i>
+          <a class="logo" href="" title="">
+            <img src="/rbmedia_logo_payoff.svg" alt="" />
+          </a>
+          <nav>
+            <ul>
+              <li v-for="index in botNavItems" :key="index">
+                <a>Nav item {{ index }}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-    <div id="bottomNavbar">
-      <div class="container">
-        <i class="fa-regular fa-bars" id="menu-trigger"></i>
-        <nav>
-          <ul>
-            <li v-for="index in botNavItems" :key="index">
-              <a>Nav item {{ index }}</a>
-            </li>
-          </ul>
-        </nav>
-        <a class="logo" href="" title="">
-          <img src="/rbmedia_logo_payoff.svg" alt="" />
-        </a>
-        <nav>
-          <ul>
-            <li v-for="index in botNavItems" :key="index">
-              <a>Nav item {{ index }}</a>
-            </li>
-          </ul>
-        </nav>
+    </template>
+
+    <template v-if="center">
+      <div id="bottomNavbar">
+        <div class="container">
+          <i class="fa-regular fa-bars" id="menu-trigger"></i>
+          <nav>
+            <ul>
+              <li v-for="index in botNavItems" :key="index">
+                <a>Nav item {{ index }}</a>
+              </li>
+            </ul>
+          </nav>
+          <a class="logo" href="" title="">
+            <img src="/rbmedia_logo_payoff.svg" alt="" />
+          </a>
+          <nav>
+            <ul>
+              <li v-for="index in botNavItems" :key="index">
+                <a>Nav item {{ index }}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
+    </template>
   </header>
 
   <main>
@@ -68,6 +70,16 @@
       <a class="logo" href="" title="">
         <img src="/rbmedia_logo_payoff.svg" alt="" />
       </a>
+      <i class="fa-solid fa-xmark" id="close-menu"></i>
+      <template v-if="languageSwitch">
+        <!-- ↓↓↓ { file="inc/languages.tpl"} ↓↓↓ -->
+        <div class="language--toggler">
+          <i class="fa-light fa-globe"></i>
+          <p>English</p>
+          <i class="fa-light fa-angle-down"></i>
+        </div>
+        <!-- ↑↑↑ -->
+      </template>
       <nav>
         <ul>
           <li v-for="index in botNavItems" :key="index">
@@ -82,17 +94,38 @@
           </li>
         </ul>
       </nav>
-      <i class="fa-solid fa-xmark" id="close-menu"></i>
     </div>
+
     <div id="overlay">
       <!-- -->
     </div>
+
+    <div v-if="languageSwitch" class="language__select">
+      <div class="language__select-inner">
+        <div class="language--select--closer">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        <div class="language__select--header">
+          <h4>Language</h4>
+        </div>
+        <ul>
+          <li class="active">
+            <a href=""> English </a>
+          </li>
+          <li class="">
+            <a href=""> Nederlands </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="content-filler"></div>
   </main>
 </template>
 
 <script>
 import "../sass/elements/_header.scss";
+import "../sass/elements/_language.scss";
 import { reactive, computed } from "vue";
 
 export default {
@@ -105,6 +138,11 @@ export default {
       default: true,
     },
     center: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    languageSwitch: {
       type: Boolean,
       required: true,
       default: false,
@@ -182,18 +220,88 @@ export default {
         document.querySelector("body").classList.remove("mobile-open");
       }
     },
+
+    multiLanguage() {
+      var languageToggle = document.querySelectorAll(".language--toggler");
+      const ref = this;
+
+      if (languageToggle.length > 0) {
+        for (var i = 0; i < languageToggle.length; i++) {
+          languageToggle[i].addEventListener("click", function (e) {
+            document
+              .querySelector("body")
+              .classList.add("overlay--active", "language--active");
+            ref.closeItems(
+              ".language__select-inner",
+              ".language--select--closer",
+              ["overlay--active", "language--active"]
+            );
+            var mq = window.matchMedia("(max-width: 1176px)");
+            if (mq.matches) {
+              document.querySelector("body").classList.remove("mobile-open");
+            }
+            e.stopPropagation();
+          });
+        }
+      }
+
+      this.closeItems(".language__select-inner", ".language--select--closer", [
+        "overlay--active",
+        "language--active",
+      ]);
+    },
+
+    closeItems(subjectSelector, closeSelector, classesToRemoveFromBody) {
+      if (subjectSelector.length != 0) {
+        var subjectElement = document.querySelector(subjectSelector);
+      }
+
+      if (closeSelector.length != 0) {
+        var closeElement = document.querySelector(closeSelector);
+      }
+
+      if (closeElement != undefined) {
+        closeElement.addEventListener("click", function (e) {
+          classesToRemoveFromBody.forEach((classToRemoveFromBody) => {
+            document
+              .querySelector("body")
+              .classList.remove(classToRemoveFromBody);
+          });
+        });
+      }
+
+      if (subjectElement != undefined) {
+        subjectElement.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      document.addEventListener("click", function (e) {
+        classesToRemoveFromBody.forEach((classToRemoveFromBody) => {
+          document
+            .querySelector("body")
+            .classList.remove(classToRemoveFromBody);
+        });
+      });
+    },
   },
 
   mounted() {
     this.fixedMenu();
     this.openMenuMobile();
     this.closeMenuMobile();
+    this.multiLanguage();
     window.addEventListener("scroll", this.fixedMenu);
   },
 
   setup(props) {
     props = reactive(props);
-    return {};
+    return {
+      classes: computed(() => ({
+        "header--primary": props.primary && !props.center,
+        "header--center": props.center && !props.primary,
+      })),
+    };
   },
 };
 </script>
