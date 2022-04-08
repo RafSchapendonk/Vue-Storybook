@@ -17,3 +17,8 @@ $fa-font-path: "./fontawesome/fonts";
 @import "./fontawesome/scss/regular.scss";
 @import "./fontawesome/scss/solid.scss";
 @import "./fontawesome/scss/brands.scss";
+
+.content-filler {
+    @apply bg-gradient-to-br from-leadDark via-lead to-secondary;
+    height: 3000px;
+}

@@ -7,8 +7,13 @@ body.language--active {
 }
 
 .language--toggler {
-    @apply font-fontText text-placeholder transition-all duration-300 cursor-pointer text-default flex flex-row items-center;
+    @apply font-fontText text-placeholder transition-all duration-300 cursor-pointer text-default;
     @apply hover:text-lead;
+
+    
+    .language--toggler-inner {
+        @apply flex flex-row items-center
+    }
 
     p {
         @apply px-sm;

@@ -10,9 +10,11 @@
             <template v-if="languageSwitch">
               <!-- ↓↓↓ { file="inc/languages.tpl"} ↓↓↓ -->
               <li class="language--toggler">
-                <i class="fa-light fa-globe"></i>
-                <p>English</p>
-                <i class="fa-light fa-angle-down"></i>
+                <div class="language--toggler-inner">
+                  <i class="fa-light fa-globe"></i>
+                  <p>English</p>
+                  <i class="fa-light fa-angle-down"></i>
+                </div>
               </li>
               <!-- ↑↑↑ -->
             </template>
@@ -74,9 +76,11 @@
       <template v-if="languageSwitch">
         <!-- ↓↓↓ { file="inc/languages.tpl"} ↓↓↓ -->
         <div class="language--toggler">
-          <i class="fa-light fa-globe"></i>
-          <p>English</p>
-          <i class="fa-light fa-angle-down"></i>
+          <div class="language--toggler-inner">
+            <i class="fa-light fa-globe"></i>
+            <p>English</p>
+            <i class="fa-light fa-angle-down"></i>
+          </div>
         </div>
         <!-- ↑↑↑ -->
       </template>
@@ -146,6 +150,31 @@ export default {
       type: Boolean,
       required: true,
       default: false,
+    },
+    headerScrollType: {
+      type: Object,
+      validator: function () {
+        return {
+          none: {
+            name: "none",
+            class: "",
+          },
+          headerShrink: {
+            name: "headerShrink",
+            class: "header--shrink",
+          },
+          headerTransparent: {
+            name: "headerTransparent",
+            class: "header--transparent",
+          },
+        };
+      },
+    },
+  },
+
+  watch: {
+    headerShrink: function () {
+      console.log("test");
     },
   },
 
@@ -300,6 +329,7 @@ export default {
       classes: computed(() => ({
         "header--primary": props.primary && !props.center,
         "header--center": props.center && !props.primary,
+        [`${props.headerScrollType.class}`]: true,
       })),
     };
   },

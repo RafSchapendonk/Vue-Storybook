@@ -138,7 +138,8 @@ header {
                 }
 
                 .logo {
-                    @apply mt-auto block z-50 transition-none;
+                    @apply mt-auto block z-50 transition-all duration-300;
+                    @apply hover:scale-110;
                     @apply lg:mx-auto;
 
                     margin-top: -44px;
@@ -174,6 +175,12 @@ header {
                             @apply inline-block;
                             padding: $topNavItemSpacing;
 
+                            &.language--toggler {
+                                .language--toggler-inner {
+                                    font-size: 16px;
+                                }
+                            }
+
                             a {
                                 @apply font-fontText text-lead font-normal transition-all duration-300;
                                 @apply hover:text-hoverBlue;
@@ -187,6 +194,7 @@ header {
                                 }
                             }
                         }
+
                     }
                 }
             }
@@ -240,7 +248,8 @@ header {
                 }
 
                 .logo {
-                    @apply mt-auto block z-50 transition-none;
+                    @apply mt-auto block z-50 transition-all duration-300;
+                    @apply hover:scale-110;
                     @apply lg:mx-auto;
 
                     > img {
@@ -356,6 +365,33 @@ header {
             }
         }
 
+        .header--shrink {
+            #bottomNavbar {
+
+                > div {
+                    height: $fixedNavHeight - 10px;
+
+                    .logo {
+                        > img {
+                            height: $fixedLogoHeight - 10px;
+                        }
+                    }
+
+                    li {
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header--transparent {
+            #bottomNavbar {
+                @apply bg-white/[.50];
+            }
+        }
+
         main {
             padding-top: 98px;
         }
@@ -380,9 +416,4 @@ header {
             }
         }
     }
-}
-
-.content-filler {
-    @apply bg-gradient-to-br from-leadDark via-lead to-secondary;
-    height: 3000px;
 }
