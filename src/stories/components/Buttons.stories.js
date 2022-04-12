@@ -14,6 +14,46 @@ export default {
             ]
         }
     },
+    argTypes: {
+        label: {
+            name: "Label",
+            description: "Changes the text of the button",
+            control: { type: 'text' },
+        },
+        pill: {
+            name: "Pill",
+            description: "Fully rounds the edges of the button",
+            control: { type: 'boolean' },
+        },
+        rounded: {
+            name: "Rounded",
+            description: "Partially rounds the edges of the button",
+            control: { type: 'boolean' },
+        },
+        lead: {
+            name: "Lead",
+            description: "Fills the button with the projects lead color",
+            control: { type: 'boolean' },
+        },
+        solid: {
+            name: "Solid",
+            description: "Gives the button a solid background color",
+            control: { type: 'Boolean' },
+        },
+        icon: {
+            name: "Icon",
+            description: "Adds an icon to the button",
+            control: { type: 'boolean' },
+        },
+        loadmore: {
+            name: "Loadmore",
+            description: "Gives the button the necessary values for a loadmore button",
+            control: { type: 'boolean' },
+        },
+    },
+    args: {
+        label: 'Button',
+    }
 }
 
 const Template = (args) => ({
@@ -25,7 +65,7 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({});
-Primary.parameters = { controls: { include: ['label', 'icon'] } };
+Primary.parameters = { controls: { include: ['Label', 'Icon'] } };
 Primary.args = {
     lead: true,
     pill: false,
@@ -34,7 +74,7 @@ Primary.args = {
 };
 
 export const Ghost = Template.bind({});
-Ghost.parameters = { controls: { include: ['label', 'icon'] } };
+Ghost.parameters = { controls: { include: ['Label', 'Icon'] } };
 Ghost.args = {
     pill: false,
     rounded: true,
@@ -42,7 +82,7 @@ Ghost.args = {
 };
 
 export const Icon = Template.bind({});
-Icon.parameters = { controls: { include: ['label', 'lead'] } };
+Icon.parameters = { controls: { include: ['Label', 'Icon'] } };
 Icon.args = {
     pill: false,
     rounded: true,
@@ -52,7 +92,7 @@ Icon.args = {
 }
 
 export const LoadMore = Template.bind({});
-LoadMore.parameters = { controls: { include: ['label', 'icon', 'lead'] } };
+LoadMore.parameters = { controls: { include: ['Label', 'Icon', 'Lead'] } };
 LoadMore.args = {
     pill: false,
     rounded: true,
@@ -62,7 +102,7 @@ LoadMore.args = {
 }
 
 export const NotRounded = Template.bind({});
-NotRounded.parameters = { controls: { include: ['label', 'icon', 'lead'] } };
+NotRounded.parameters = { controls: { include: ['Label', 'Icon', 'Lead'] } };
 NotRounded.args = {
     lead: true,
     pill: false,
@@ -71,7 +111,7 @@ NotRounded.args = {
 }
 
 export const Rounded = Template.bind({});
-Rounded.parameters = { controls: { include: ['label', 'icon', 'lead'] } };
+Rounded.parameters = { controls: { include: ['Label', 'Icon', 'Lead'] } };
 Rounded.args = {
     lead: true,
     pill: false,
@@ -80,7 +120,7 @@ Rounded.args = {
 }
 
 export const Pill = Template.bind({});
-Pill.parameters = { controls: { include: ['label', 'icon', 'lead'] } };
+Pill.parameters = { controls: { include: ['Label', 'Icon', 'Lead'] } };
 Pill.args = {
     lead: true,
     pill: true,

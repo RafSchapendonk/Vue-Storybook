@@ -329,7 +329,10 @@ export default {
       classes: computed(() => ({
         "header--primary": props.primary && !props.center,
         "header--center": props.center && !props.primary,
-        [`${props.headerScrollType.class}`]: true,
+
+        [props.headerScrollType
+          ? `${props.headerScrollType.class}`
+          : "undefined"]: true,
       })),
     };
   },

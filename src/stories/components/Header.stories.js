@@ -35,10 +35,27 @@ export default {
     },
 
     argTypes: {
+        primary: {
+            name: "Primary",
+            description: "Aligns the logo to the left and the navigation items to the right.",
+            control: { type: 'boolean' },
+        },
+        center: {
+            name: "Center",
+            description: "Centers the logo and the navigation items.",
+            control: { type: 'boolean' },
+        },
+        languageSwitch: {
+            name: "Language switch",
+            description: "Adds a language switch to the top navigation.",
+            control: { type: 'boolean' },
+        },
         headerScrollType: {
+            name: "Header scroll type",
+            description: "Determines the scroll behaviour of the header (Note: Not available in seperate canvas).",
             options: Object.keys(headerScrollTypes), // An array of serializable values
             mapping: headerScrollTypes, // Maps serializable option values to complex arg values
-            defaultValue: headerScrollTypes.none.name,
+            defaultValue: headerScrollTypes.none,
             control: {
                 type: 'select', // Type 'select' is automatically inferred when 'options' is defined
                 labels: {
@@ -61,7 +78,7 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({});
-Primary.parameters = { controls: { exclude: ['primary', 'center'] } };
+Primary.parameters = { controls: { exclude: ['Primary', 'Center'] } };
 Primary.args = {
     primary: true,
     center: false,
@@ -70,7 +87,7 @@ Primary.args = {
 }
 
 export const Center = Template.bind({});
-Center.parameters = { controls: { exclude: ['primary', 'center'] } };
+Center.parameters = { controls: { exclude: ['Primary', 'Center'] } };
 Center.args = {
     primary: false,
     center: true,
@@ -79,7 +96,7 @@ Center.args = {
 }
 
 export const ShrinkOnScroll = Template.bind({});
-ShrinkOnScroll.parameters = { controls: { exclude: ['primary', 'center'] } };
+ShrinkOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type'] } };
 ShrinkOnScroll.args = {
     primary: true,
     center: false,
@@ -88,10 +105,10 @@ ShrinkOnScroll.args = {
 }
 
 export const TransparentOnScroll = Template.bind({});
-TransparentOnScroll.parameters = { controls: { exclude: ['primary', 'center', 'headerShrink'] } };
+TransparentOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type'] } };
 TransparentOnScroll.args = {
     primary: true,
     center: false,
     languageSwitch: false,
-    headerScrollType: headerScrollTypes.headerTransparent.name
+    headerScrollType: headerScrollTypes.headerTransparent,
 }

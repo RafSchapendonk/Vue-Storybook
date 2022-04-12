@@ -11,6 +11,7 @@ $topNavBackground: #fff;
 $bottomNavFontSize: 19px;
 $bottomNavItemSpacing: 0px 26px;
 $bottomNavHeight: 52px;
+$bottomNavHeightMobileMenu: 74px;
 $bottomNavHeight--Center: 74px;
 $bottomNavBackground: #fff;
 
@@ -99,6 +100,10 @@ header {
                 @apply flex items-center;
                 height: $bottomNavHeight;
 
+                @media screen and (max-width: 1177px) {
+                    height: $bottomNavHeightMobileMenu;
+                }
+
                 nav {
                     @apply ml-auto;
                     @apply lg:hidden;
@@ -138,11 +143,15 @@ header {
                 }
 
                 .logo {
-                    @apply mt-auto block z-50 transition-all duration-300;
+                    @apply block z-50 transition-all duration-300;
                     @apply hover:scale-110;
                     @apply lg:mx-auto;
 
                     margin-top: -44px;
+
+                    @media screen and (max-width: 1177px) {
+                        margin-top: 0;
+                    }
 
                     > img {
                         height: $logoHeight;
