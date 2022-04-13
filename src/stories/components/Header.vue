@@ -7,10 +7,18 @@
             <li v-for="index in topNavItems" :key="index">
               <a>Nav item {{ index }}</a>
             </li>
+            <template v-if="phoneNumber">
+              <li class="phone-number list-item--unique">
+                <a class="phone list-item--unique-inner" href="tel:">
+                  <i class="fa-light fa-phone"></i>
+                  <p>076 78 51 526</p>
+                </a>
+              </li>
+            </template>
             <template v-if="languageSwitch">
               <!-- ↓↓↓ { file="inc/languages.tpl"} ↓↓↓ -->
-              <li class="language--toggler">
-                <div class="language--toggler-inner">
+              <li class="language--toggler list-item--unique">
+                <div class="language--toggler-inner list-item--unique-inner">
                   <i class="fa-light fa-globe"></i>
                   <p>English</p>
                   <i class="fa-light fa-angle-down"></i>
@@ -37,11 +45,14 @@
               </li>
             </ul>
           </nav>
+          <a class="contact-us" href="mailto:">
+            <i class="fa-light fa-envelope"></i>
+          </a>
         </div>
       </div>
     </template>
 
-    <template v-if="center">
+    <template v-if="center && !primary">
       <div id="bottomNavbar">
         <div class="container">
           <i class="fa-regular fa-bars" id="menu-trigger"></i>
@@ -73,10 +84,18 @@
         <img src="/rbmedia_logo_payoff.svg" alt="" />
       </a>
       <i class="fa-solid fa-xmark" id="close-menu"></i>
+      <template v-if="phoneNumber">
+        <div class="phone-number list-item--unique">
+          <a class="phone list-item--unique-inner" href="tel:">
+            <i class="fa-light fa-phone"></i>
+            <p>076 78 51 526</p>
+          </a>
+        </div>
+      </template>
       <template v-if="languageSwitch">
         <!-- ↓↓↓ { file="inc/languages.tpl"} ↓↓↓ -->
-        <div class="language--toggler">
-          <div class="language--toggler-inner">
+        <div class="language--toggler list-item--unique">
+          <div class="language--toggler-inner list-item--unique-inner">
             <i class="fa-light fa-globe"></i>
             <p>English</p>
             <i class="fa-light fa-angle-down"></i>
@@ -148,7 +167,12 @@ export default {
     },
     languageSwitch: {
       type: Boolean,
-      required: true,
+      required: false,
+      default: false,
+    },
+    phoneNumber: {
+      type: Boolean,
+      required: false,
       default: false,
     },
     headerScrollType: {

@@ -6,25 +6,6 @@ body.language--active {
     }
 }
 
-.language--toggler {
-    @apply font-fontText text-placeholder transition-all duration-300 cursor-pointer text-default;
-    @apply hover:text-lead;
-
-    
-    .language--toggler-inner {
-        @apply flex flex-row items-center
-    }
-
-    p {
-        @apply px-sm;
-        font-size: 16px;
-    }
-
-    i {
-        font-size: 14px;
-    }
-}
-
 .language__select {
     @apply fixed inset-0 z-50 flex items-center justify-center font-fontText;
     @apply hidden;

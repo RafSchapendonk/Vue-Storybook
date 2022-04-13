@@ -47,7 +47,12 @@ export default {
         },
         languageSwitch: {
             name: "Language switch",
-            description: "Adds a language switch to the top navigation.",
+            description: "Adds a language switch to the top navigation and mobile menu.",
+            control: { type: 'boolean' },
+        },
+        phoneNumber: {
+            name: "Phone number",
+            description: "Adds a phone number to the top navigation and mobile menu.",
             control: { type: 'boolean' },
         },
         headerScrollType: {
@@ -83,6 +88,7 @@ Primary.args = {
     primary: true,
     center: false,
     languageSwitch: false,
+    phoneNumber: false,
     headerScrollType: headerScrollTypes.none.name,
 }
 
@@ -92,6 +98,7 @@ Center.args = {
     primary: false,
     center: true,
     languageSwitch: false,
+    phoneNumber: false,
     headerScrollType: headerScrollTypes.none.name,
 }
 
@@ -101,6 +108,7 @@ ShrinkOnScroll.args = {
     primary: true,
     center: false,
     languageSwitch: false,
+    phoneNumber: false,
     headerScrollType: headerScrollTypes.headerShrink.name,
 }
 

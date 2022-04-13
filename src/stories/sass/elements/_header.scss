@@ -58,10 +58,6 @@ header {
 
                             &:last-child {
                                 padding-right: 0;
-
-                                a {
-                                    @apply font-bold;
-                                }
                             }
 
                             &.active {
@@ -72,10 +68,6 @@ header {
                             }
                         }
                     }
-                }
-
-                .language--toggler {
-                    padding-left: 28px;
                 }
             }
         }
@@ -270,6 +262,30 @@ header {
     }
 }
 
+.list-item--unique {
+    @apply font-fontText text-lead transition-all duration-300 cursor-pointer text-default;
+    @apply hover:text-hoverBlue;
+    
+    .list-item--unique-inner {
+        @apply flex flex-row items-center
+    }
+
+    p {
+        @apply pl-sm;
+        font-size: 16px;
+    }
+
+    .language--toggler-inner {
+        p {
+            @apply px-sm;
+        }
+    }
+
+    i {
+        font-size: 14px;
+    }
+}
+
 .mobile-menu {
     @apply fixed inset-y-0 bg-white hidden transition-all duration-300 px-mob;
     @apply lg:block;
@@ -279,7 +295,7 @@ header {
     z-index: 1000;
 
     nav {
-        @apply mt-def font-fontText;
+        @apply mt-sm font-fontText;
 
         ul {
             list-style: none;
