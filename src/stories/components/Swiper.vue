@@ -8,7 +8,7 @@
     <swiper-slide v-for="item in imgs" :key="item.url">
       <img :src="item.url" />
       <div>
-        <h2>Howdy</h2>
+        <h2>Hello</h2>
       </div>
     </swiper-slide>
   </swiper>

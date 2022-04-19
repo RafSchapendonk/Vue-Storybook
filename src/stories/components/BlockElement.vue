@@ -52,7 +52,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Howdy",
+      default: "Title",
     },
     content: {
       type: String,
