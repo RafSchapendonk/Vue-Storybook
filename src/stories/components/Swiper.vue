@@ -16,8 +16,8 @@
 
 <script>
 import { reactive, computed } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
+// import { Swiper, SwiperSlide } from "swiper/vue";
+// import "swiper/css";
 // import "../sass/elements/_swiper.scss";
 
 export default {
@@ -25,6 +25,12 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  mounted() {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '../js/swiper.js';
+    document.body.appendChild(script);
   },
   data() {
     return {
