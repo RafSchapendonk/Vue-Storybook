@@ -10,6 +10,7 @@
       </div>
       <div class="stb-block__inner">
         <h3>{{ titleFirstBlock }}</h3>
+        <p v-if="category" class="stb-block__category">{{ categoryText }}</p>
         <div>
           <p :class="contentClasses">{{ contentFirstBlock }}</p>
         </div>
@@ -32,6 +33,7 @@
       </div>
       <div class="stb-block__inner">
         <h3>{{ title }}</h3>
+        <p v-if="category" class="stb-block__category">{{ categoryText }}</p>
         <div>
           <p :class="contentClasses">{{ content }}</p>
         </div>
@@ -79,6 +81,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    category: {
+      type: Boolean,
+      default: false,
+    },
+    categoryText: {
+      type: String,
+      default: "Category",
+    },
+    imageBackground: {
+      type: Boolean,
+      default: false,
+    },
     colSpan: {
       type: String,
       validator: function () {
@@ -120,12 +134,13 @@ export default {
     props = reactive(props);
     return {
       contentClasses: computed(() => ({
-        "pb-lg": props.icon,
+        "mb-lg": props.icon,
       })),
       blockItemClasses: computed(() => ({
         [`${props.colSpan}`]: !props.responsive,
         [`${props.blockBorder}`]: true,
         "stb-block__item--responsive": props.responsive,
+        "stb-block__item--bg-image": props.imageBackground
       })),
       imgClasses: computed(() => ({
         [`${props.imgBorder}`]: true,

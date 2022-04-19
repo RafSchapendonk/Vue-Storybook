@@ -50,6 +50,16 @@ export default {
             description: "Switch that adds an icon at the bottom of all block elements.",
             control: { type: 'boolean' }
         },
+        category: {
+            name: "Category",
+            description: "Switch that adds a category inside of all block elements.",
+            control: { type: 'boolean' }
+        },
+        categoryText: {
+            name: "Category text",
+            description: "Text that is inside of the category label.",
+            control: { type: 'text' }
+        },
         responsive: {
             name: "Responsive",
             description: "Switch that gives every block element a responsive class. If set to true this switch also disables the ability to edit the 'Block span' control.",
@@ -72,7 +82,7 @@ export default {
             description: "Gives the image insed the block element a border-radius.",
             control: { type: 'select' },
             options: ["rounded-none", "rounded-t-2xl", "rounded-b-2xl", "rounded-2xl"]
-        }
+        },
     },
     args: {
         titleFirstBlock: "Hello there",

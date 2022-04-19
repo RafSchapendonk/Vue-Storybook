@@ -17,8 +17,17 @@
         @apply sm:col-span-12;
     }
 
+    &--bg-image {
+        @apply bg-cover bg-center bg-no-repeat;
+        background-image: url('https://picsum.photos/id/1042/1920/1080');
+    }
+
     .stb-block__inner {
         padding: 40px 36px 60px 48px;
+    }
+
+    .stb-block__category {
+        @apply rounded-full w-min bg-white text-lead px-sm py-xs mb-sm;
     }
 
     img {
@@ -30,8 +39,8 @@
     }
 
     p {
+        @include line-clamp(5);
         @apply font-fontText overflow-hidden;
-        @include line-clamp(5)
     }
 
     i {
@@ -40,9 +49,10 @@
 
     &:hover {
         @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.2));
+        @apply cursor-pointer;
 
         i {
-            @apply text-dark;
+            @apply text-hoverBlue;
         }
     }
 }
