@@ -16,6 +16,8 @@ export default {
     },
     argTypes: {
         colCount: {
+            name: "Column count",
+            description: "The number of columns in the grid.",
             control: { type: 'select' },
             options: [
                 1,
@@ -33,6 +35,8 @@ export default {
             ],
         },
         colSpan: {
+            name: "Column span",
+            description: "The number of columns the element spans.",
             control: { type: 'select' },
             options: [
                 1,
@@ -49,7 +53,19 @@ export default {
                 12,
             ],
         },
+        toggleBottomRow: { 
+            name: "Toggle bottom row",
+            description: "Adds a second row to the grid.",
+            control: { type: 'boolean' },
+        },
+        responsive: {
+            name: "Responsive",
+            description: "Adds a responsive class to the grid.",
+            control: { type: 'boolean' },
+        },
         xGap: {
+            name: "X gap",
+            description: "The gap between columns.",
             control: { type: 'select' },
             options: [
                 "xs",
@@ -62,6 +78,8 @@ export default {
             ]
         },
         yGap: {
+            name: "Y gap",
+            description: "The gap between rows.",
             control: { type: 'select' },
             options: [
                 "xs",

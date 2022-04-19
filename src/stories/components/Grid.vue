@@ -27,32 +27,36 @@ export default {
       validator: function () {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       },
+      default: 12,
     },
     colSpan: {
       type: Number,
       validator: function () {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       },
+      default: 1,
+    },
+    toggleBottomRow: {
+      type: Boolean,
+      default: false,
+    },
+    responsive: {
+      type: Boolean,
+      default: false,
     },
     xGap: {
       type: String,
       validator: function () {
         return ["xs", "sm", "mob", "def", "md", "lg", "xl"];
       },
-    },
-    toggleBottomRow: {
-      type: Boolean,
-      default: false,
+      default: "def",
     },
     yGap: {
       type: String,
       validator: function () {
         return ["xs", "sm", "mob", "def", "md", "lg", "xl"];
       },
-    },
-    responsive: {
-      type: Boolean,
-      default: false,
+      default: "def",
     },
   },
 
