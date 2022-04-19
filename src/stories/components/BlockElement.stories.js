@@ -60,6 +60,11 @@ export default {
             description: "Text that is inside of the category label.",
             control: { type: 'text' }
         },
+        imageBackground: {
+            name: "Image background",
+            description: "Switch that adds a background image to the block element.",
+            control: { type: 'boolean' }
+        },
         responsive: {
             name: "Responsive",
             description: "Switch that gives every block element a responsive class. If set to true this switch also disables the ability to edit the 'Block span' control.",
@@ -100,11 +105,35 @@ const Template = (args) => ({
     },
     template: '<blockElement v-bind="args" />',
 })
-
 export const Primary = Template.bind({});
 
 export const Responsive = Template.bind({});
 Responsive.parameters = { controls: { exclude: ['colSpan'] } };
 Responsive.args = {
+    responsive: true
+}
+
+export const WithImage = Template.bind({});
+WithImage.args = {
+    image: true,
+    responsive: true
+}
+
+export const WithBackgroundImage = Template.bind({});
+WithBackgroundImage.args = {
+    imageBackground: true,
+    responsive: true
+}
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+    icon: true,
+    responsive: true
+}
+
+export const WithCategory = Template.bind({}); 
+WithCategory.args = {
+    category: true,
+    categoryText: "Block with category",
     responsive: true
 }
