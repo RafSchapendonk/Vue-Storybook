@@ -1,7 +1,7 @@
 import Grid from './Grid.vue'
 
 export default {
-    title: 'Practice-Components/Grids',
+    title: 'Components/Grids',
     component: Grid,
     parameters: {
         storybookCodePanel: {
