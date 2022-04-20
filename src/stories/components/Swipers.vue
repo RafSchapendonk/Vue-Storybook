@@ -31,6 +31,7 @@
 <script>
 import { reactive, computed } from "vue";
 import "../sass/elements/_swiper.scss";
+import "../sass/elements/_default-overview.scss";
 
 export default {
     name: "Swiper",
