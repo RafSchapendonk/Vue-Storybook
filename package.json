@@ -20,6 +20,7 @@
     "core-js": "^3.8.3",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^7.4.2",
+    "postcss-scss": "^4.0.3",
     "sass": "^1.49.9",
     "sass-loader": "^10.2.1",
     "storybook-addon-grid": "^0.0.14",

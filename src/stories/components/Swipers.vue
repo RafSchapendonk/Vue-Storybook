@@ -1,20 +1,12 @@
 <template>
-    <!-- <div class="swiper-container faq__swiper-container active-scrollbar" data-slider-max-width="9999" data-slider-name="faq-slider">
-        <div class="swiper-wrapper">
-            <div v-for="item in imgs" :key="item" class="swiper-slide faq__category">
-                <img :src="item.url" alt="">
-            </div>
-        </div>
-    </div> -->
-
     <div class="default-overview--overflow-hidden">
-        <div class="default-overview default-overview--product">
-            <div class="default-overview__slider swiper-container"  data-slider-max-width="9000" data-slider-name="products-slider">
-                <div class="product-overview__inner swiper-wrapper">
-                    <div v-for="item in imgs" :key="item" class="product-overview__product swiper-slide">
-                        <div class="product-overview__product--inner">
+        <div class="default-overview">
+            <div class="default-overview__slider swiper-container"  data-slider-max-width="9000" data-slider-name="">
+                <div class="swiper-wrapper">
+                    <div v-for="item in imgs" :key="item" class="swiper-slide">
+                        <div class="swiper-slide__inner">
                             <img :src="item.url" alt="">
-                            <div class="product-overview__product--content">
+                            <div class="swiper-slide__content">
                                 <h3 class="">Title</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.</p>
                             </div>
@@ -22,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-scrollbar"></div>
+                <div v-if="scrollbar" class="swiper-scrollbar"></div>
             </div>
         </div>
     </div>
@@ -52,7 +44,12 @@ export default {
             ],
         };
     },
-    props: {},
+    props: {
+        scrollbar: {
+            type: Boolean,
+            default: false,
+        },
+    },  
     setup(props) {
     },
 }

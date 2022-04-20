@@ -481,3 +481,33 @@ button.swiper-pagination-bullet {
         opacity: 0;
     }
 }
+
+/* Scrollbar */
+.swiper-scrollbar {
+    @apply relative overflow-hidden bg-placeholder;
+    border-radius: 10px;
+    -ms-touch-action: none;
+}
+.swiper-container-horizontal > .swiper-scrollbar {
+    @apply absolute left-0 z-50 w-full;
+    height: 4px;
+}
+.swiper-container-vertical > .swiper-scrollbar {
+    position: absolute;
+    right: 3px;
+    top: 1%;
+    z-index: 50;
+    width: 5px;
+    height: 98%;
+    padding: 4px;
+}
+.swiper-scrollbar-drag {
+    @apply h-full w-full relative left-0 top-0 cursor-pointer bg-lead;
+    border-radius: 10px;
+}
+.swiper-scrollbar-cursor-drag {
+    @apply cursor-move;
+}
+.swiper-scrollbar-lock {
+    @apply hidden;
+}

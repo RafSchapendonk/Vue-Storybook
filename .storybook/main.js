@@ -21,6 +21,8 @@ module.exports = {
           loader: 'postcss-loader',
           options: {
             postcssOptions: {
+              ident: 'postcss-scss',
+              syntax: 'postcss-scss',
               plugins: [
                 require('autoprefixer'),
                 require('tailwindcss'),
