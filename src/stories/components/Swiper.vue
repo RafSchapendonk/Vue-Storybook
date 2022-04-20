@@ -22,14 +22,10 @@ import { reactive, computed } from "vue";
 
 export default {
   name: "swiper-comp",
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
   mounted() {
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = '../js/swiper.js';
+    script.src = './js/swiper.js';
     document.body.appendChild(script);
   },
   data() {

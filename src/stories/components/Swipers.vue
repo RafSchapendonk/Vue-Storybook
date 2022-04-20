@@ -34,7 +34,7 @@ import "../sass/elements/_swiper.scss";
 
 export default {
     name: "Swiper",
-    mounted() {
+    beforeCreate() {
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = '../js/swiper.js';

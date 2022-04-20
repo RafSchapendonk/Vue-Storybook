@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import logo from './assets/rbmedia_logo_payoff.svg'
+import logo from './static/rbmedia_logo_payoff.svg'
 
 export default create({
     // All theming options:

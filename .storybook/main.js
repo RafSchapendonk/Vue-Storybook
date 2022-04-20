@@ -6,7 +6,7 @@ module.exports = {
   },
   "stories": [
     "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|vue|ts|tsx)"
+    "../src/**/*.stories.@(js|vue|ts|tsx)",
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -57,6 +57,6 @@ module.exports = {
       },
     },
   ],
-  staticDirs: ['./assets'],
-  "framework": "@storybook/vue3"
+  staticDirs: ['./static',],
+  "framework": "@storybook/vue3",
 }
