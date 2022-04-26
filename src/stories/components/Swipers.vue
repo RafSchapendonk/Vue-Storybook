@@ -14,7 +14,6 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="scrollbar" class="swiper-scrollbar"></div>
             </div>
         </div>
     </div>
@@ -44,12 +43,6 @@ export default {
             ],
         };
     },
-    props: {
-        scrollbar: {
-            type: Boolean,
-            default: false,
-        },
-    },  
     setup(props) {
     },
 }

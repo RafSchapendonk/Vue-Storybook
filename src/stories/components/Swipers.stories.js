@@ -38,8 +38,3 @@ const Template = (args) => ({
 export const Primary = Template.bind({})
 Primary.args = {
 }
-
-export const WithScrollbar = Template.bind({})
-WithScrollbar.args = {
-    scrollbar: true,
-}
