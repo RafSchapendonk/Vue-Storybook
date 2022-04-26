@@ -51,10 +51,10 @@ NoBullets.args = {
     noBullet: true,
 }
 
-export const Tabel = Template.bind({});
-Tabel.parameters = { controls: { include: ['listItems', 'label', 'subLabel'] } };
-Tabel.args = {
-    label: "Summary item in a tabel",
+export const Table = Template.bind({});
+Table.parameters = { controls: { include: ['listItems', 'label', 'subLabel'] } };
+Table.args = {
+    label: "Summary item in a table",
     subLabel: "Sub item",
     listItems: 5,
     icon: false,

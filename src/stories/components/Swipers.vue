@@ -1,7 +1,7 @@
 <template>
     <div class="default-overview--overflow-hidden">
         <div class="default-overview">
-            <div class="default-overview__slider swiper-container"  data-slider-max-width="9000" data-slider-name="">
+            <div class="default-overview__slider swiper-container" data-slider-max-width="9000" data-slider-name="">
                 <div class="swiper-wrapper">
                     <div v-for="item in imgs" :key="item" class="swiper-slide">
                         <div class="swiper-slide__inner">

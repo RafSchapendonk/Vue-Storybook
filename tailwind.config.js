@@ -59,6 +59,7 @@ module.exports = {
                 dark: '#17252D',
                 hoverBlue: '#009ecc',
                 placeholder: '#667380',
+                error: "rgba(255, 0, 0, 0.5)",
             },
             margin: {
                 'xs': '6px',

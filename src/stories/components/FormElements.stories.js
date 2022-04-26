@@ -1,4 +1,4 @@
-import FormElements from './FormElements.vue';
+import FormElements from './FormElements.vue'
 
 export default {
     title: 'Components/FormElements',
@@ -8,12 +8,29 @@ export default {
             disabled: false,
             files: [
                 {
-                    fileName: '_form.scss',
-                    code: require('!!raw-loader!../sass/elements/_form.scss')
-                }     
+                    fileName: '_form-element.scss',
+                    code: require('!!raw-loader!../sass/elements/_form-element.scss')
+                },
             ]
         }
     },
+    argTypes: {
+        icon: {
+            name: "Icon",
+            description: "Adds an icon to the input field",
+            control: { type: 'boolean' },
+        },
+        rounded: {
+            name: "Rounded",
+            description: "Fully rounds off the border of the input field",
+            control: { type: 'boolean' },
+        },
+        topLabel: {
+            name: "Top Label",
+            description: "Adds a label above the input field",
+            control: { type: 'boolean' },
+        },
+    }
 }
 
 const Template = (args) => ({
@@ -21,7 +38,7 @@ const Template = (args) => ({
     setup() {
         return { args };
     },
-    template: '<form-elements v-bind="args" />'
+    template: '<formElements v-bind="args" />',
 });
 
-export const Pimary = Template.bind({});
+export const Primary = Template.bind({});
