@@ -1,7 +1,7 @@
 <template>
   <ul v-if="!table" class="summary__ul" :class="ulClassList">
     <li v-for="item in listItems" :key="item" :class="liClassList">
-      <i v-if="icon" class="fa-solid fa-check"></i>
+      <i v-if="icon" :class="iconClassList"></i>
       <p>{{ label }}</p>
     </li>
   </ul>
@@ -34,6 +34,13 @@ export default {
     icon: {
       type: Boolean,
     },
+    iconType: {
+      type: String,
+      validator: function () {
+        return ["fa-check", "fa-arrow-right", "fa-chevron-right", "fa-code-commit", "fa-award", "fa-bullhorn", "fa-face-smile", "fa-stroopwafel"];
+      },
+      default: "fa-check",
+    },
     noBullet: {
       type: Boolean,
     },
@@ -52,6 +59,10 @@ export default {
       liClassList: computed(() => ({
         "summary__li": true,
         "summary__li--icon": props.icon,
+      })),
+      iconClassList: computed(() => ({
+        "fa-regular": true,
+        [`${props.iconType}`]: props.icon,
       })),
     };
   },

@@ -1,5 +1,16 @@
 import SummaryElement from './Summary.vue';
 
+const iconTypes = {
+    check: "fa-check",
+    arrow: "fa-arrow-right",
+    chevron: "fa-chevron-right",
+    commit: "fa-code-commit",
+    award: "fa-award",
+    bullhorn: "fa-bullhorn",
+    smile: "fa-face-smile",
+    stroopwafel: "fa-stroopwafel",
+}
+
 export default {
     title: 'Components/Summary',
     component: SummaryElement,
@@ -14,6 +25,29 @@ export default {
             ]
         }
     },
+
+    argTypes: {
+        iconType: {
+            name: "Icon type",
+            description: "The type of icon to display.",
+            options: Object.keys(iconTypes), // An array of serializable values
+            mapping: iconTypes,
+            defaultValue: iconTypes.check,
+            control: { 
+                type: 'select', 
+                icons: {
+                    check: "Check",
+                    arrow: "Arrow",
+                    chevron: "Chevron",
+                    commit: "Commit",
+                    award: "Award",
+                    bullhorn: "Bullhorn",
+                    smile: "Smile",
+                    stroopwafel: "Stroopwafel",
+                }
+            },
+        },
+    }
 }
 
 const Template = (args) => ({
@@ -34,7 +68,7 @@ Primary.args = {
 }
 
 export const FontAwesome = Template.bind({});
-FontAwesome.parameters = { controls: { include: ['listItems', 'label'] } };
+FontAwesome.parameters = { controls: { include: ['listItems', 'label', 'Icon type'] } };
 FontAwesome.args = {
     label: "Summary item with fontawesome icon",
     listItems: 5,
