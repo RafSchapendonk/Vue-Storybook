@@ -1,3 +1,9 @@
+.summary__wrapper {
+    &--centered {
+        @apply flex justify-center items-center;
+    }
+}
+
 .summary__ul {
     @apply pl-xs ml-0 font-fontText;
 

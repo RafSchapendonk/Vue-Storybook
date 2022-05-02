@@ -1,17 +1,22 @@
 <template>
-  <ul v-if="!table" class="summary__ul" :class="ulClassList">
-    <li v-for="item in listItems" :key="item" :class="liClassList">
-      <i v-if="icon" :class="iconClassList"></i>
-      <p>{{ label }}</p>
-    </li>
-  </ul>
+  <div v-if="!table" class="summary__wrapper" :class="wrapperClassList">
+    <ul class="summary__ul" :class="ulClassList">
+      <li v-for="item in listItems" :key="item" :class="liClassList">
+        <i v-if="icon" :class="iconClassList"></i>
+        <p>{{ label }}</p>
+      </li>
+    </ul>
+  </div>
 
-  <dl v-if="table">
-    <template v-for="item in listItems" :key="item">
-      <dt>{{ label }}</dt>
-      <dd>{{ subLabel }}</dd>
-    </template>
-  </dl>
+
+  <div v-if="table" class="summary__wrapper" :class="wrapperClassList">
+    <dl>
+      <template v-for="item in listItems" :key="item">
+        <dt>{{ label }}</dt>
+        <dd>{{ subLabel }}</dd>
+      </template>
+    </dl>
+  </div>
 </template>
 
 <script>
@@ -47,11 +52,19 @@ export default {
     table: {
       type: Boolean,
     },
+    centered: {
+      type: Boolean,
+    },
   },
 
   setup(props) {
     props = reactive(props);
     return {
+      wrapperClassList: computed(() => {
+        return {
+          "summary__wrapper--centered": props.centered,
+        };
+      }),
       ulClassList: computed(() => ({
         "fa-ul": props.icon,
         "summary__ul--no-bullet": props.noBullet,

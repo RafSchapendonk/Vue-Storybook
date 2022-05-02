@@ -59,7 +59,7 @@ const Template = (args) => ({
 });
 
 export const Primary = Template.bind({});
-Primary.parameters = { controls: { include: ['listItems', 'label'] } };
+Primary.parameters = { controls: { include: ['listItems', 'label', 'centered'] } };
 Primary.args = {
     label: "Summary item with bullet",
     listItems: 5,
@@ -68,7 +68,7 @@ Primary.args = {
 }
 
 export const FontAwesome = Template.bind({});
-FontAwesome.parameters = { controls: { include: ['listItems', 'label', 'Icon type'] } };
+FontAwesome.parameters = { controls: { include: ['listItems', 'label', 'Icon type', 'centered'] } };
 FontAwesome.args = {
     label: "Summary item with fontawesome icon",
     listItems: 5,
@@ -77,7 +77,7 @@ FontAwesome.args = {
 }
 
 export const NoBullets = Template.bind({});
-NoBullets.parameters = { controls: { include: ['listItems', 'label'] } };
+NoBullets.parameters = { controls: { include: ['listItems', 'label', 'centered'] } };
 NoBullets.args = {
     label: "Summary item without bullets",
     listItems: 5,
@@ -86,7 +86,7 @@ NoBullets.args = {
 }
 
 export const Table = Template.bind({});
-Table.parameters = { controls: { include: ['listItems', 'label', 'subLabel'] } };
+Table.parameters = { controls: { include: ['listItems', 'label', 'subLabel', 'centered'] } };
 Table.args = {
     label: "Summary item in a table",
     subLabel: "Sub item",
