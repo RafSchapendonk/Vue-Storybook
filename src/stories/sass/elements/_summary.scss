@@ -9,7 +9,7 @@
         @apply list-none;
     }
 
-    li {
+    .summary__li {
         &.summary__li--icon {
             @apply flex flex-row
         }
@@ -18,7 +18,7 @@
             @apply text-lead pt-xs;
         }
 
-        h4 {
+        p {
             @apply text-default font-normal pl-sm;
             color: #4d4d4d;
             break-inside: avoid;

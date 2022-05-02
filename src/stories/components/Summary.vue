@@ -2,7 +2,7 @@
   <ul v-if="!table" class="summary__ul" :class="ulClassList">
     <li v-for="item in listItems" :key="item" :class="liClassList">
       <i v-if="icon" class="fa-solid fa-check"></i>
-      <h4>{{ label }}</h4>
+      <p>{{ label }}</p>
     </li>
   </ul>
 
@@ -50,6 +50,7 @@ export default {
         "summary__ul--no-bullet": props.noBullet,
       })),
       liClassList: computed(() => ({
+        "summary__li": true,
         "summary__li--icon": props.icon,
       })),
     };
