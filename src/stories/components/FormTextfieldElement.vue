@@ -19,7 +19,7 @@
             </template>
         </component>
         <label v-if="componentType === 'checkbox' || componentType === 'radio'" class="form" :for="componentId">{{ labelText }}</label>
-        <label class="file-upload__label" v-if="componentType === 'file'" :for="componentId">
+        <label class="file-upload__label" :class="labelClass" v-if="componentType === 'file'" :for="componentId">
             <i v-if="icon" class="fa fa-cloud-upload"></i>
             <p> test</p>
         </label>
@@ -71,6 +71,10 @@ export default {
             default: ""
         },
         labelText: {
+            type: String,
+            default: ""
+        },
+        labelClass: {
             type: String,
             default: ""
         },

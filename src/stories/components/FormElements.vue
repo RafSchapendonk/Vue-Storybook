@@ -115,6 +115,7 @@
                 :componentName="'file'"
                 :componentValue="''"
                 :componentClass="componentClasses"
+                :labelClass="labelClassesFileUpload"
                 :required="'required'" 
 
                 :icon="icon"
@@ -167,6 +168,10 @@ export default {
             divClassesFileUpload: computed(() => ({
                 "file-upload": true,
                 "icon icon-file": props.icon,
+            })),
+            labelClassesFileUpload: computed(() => ({
+                "file-upload__label": true,
+                "icon": props.icon,
             })),
             componentClasses: computed(() => ({
                 "rounded": props.rounded,

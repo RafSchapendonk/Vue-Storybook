@@ -287,7 +287,7 @@ form {
 
     .file-upload__label {
         @apply flex items-center transition-colors duration-500 border border-solid w-full pr-def py-sm cursor-pointer;
-        padding-left: 48px;
+        padding-left: 24px;
         outline: 0;
         height: $inputHeight;
         font-size: $inputFontSize;
@@ -296,6 +296,10 @@ form {
         background: $inputBackground;
         border-color: $inputBorderColor;
         color: $inputPlaceHolderColor; 
+
+        &.icon {
+            padding-left: 48px;
+        }
 
         i {
             @apply font-fontAwesome text-lead left-md z-1 pointer-events-none;
