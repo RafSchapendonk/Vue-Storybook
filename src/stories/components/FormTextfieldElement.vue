@@ -1,6 +1,6 @@
 <template>
-    <div :id="divId" :class="divClass">
-        <label v-if="componentType != 'checkbox' && componentType != 'radio'" class="form" :for="componentId">{{ labelText }}</label>
+    <div v-if="componentType != 'checkbox' && componentType != 'radio'" :id="divId" :class="divClass">
+        <label class="field__label" :for="componentId">{{ labelText }}</label>
         <component
             :is="componentTag"
             :type="componentType"
@@ -18,11 +18,30 @@
                 <option value="option3">Option 3</option>
             </template>
         </component>
-        <label v-if="componentType === 'checkbox' || componentType === 'radio'" class="form" :for="componentId">{{ labelText }}</label>
-        <label class="file-upload__label" :class="labelClass" v-if="componentType === 'file'" :for="componentId">
+        <label :class="labelClass" v-if="componentType === 'file'" :for="componentId">
             <i v-if="icon" class="fa fa-cloud-upload"></i>
-            <p> test</p>
+            <em>Select a file...</em>
         </label>
+        <span v-if="error">Dit is een verplicht veld</span>
+    </div>
+
+    <div v-if="componentType == 'checkbox' || componentType == 'radio'" :class="divClass" class="type-check">
+        <ul :class="ulClasses">
+            <li v-for="index in selectElements" :key="index" :class="liClasses">
+                <component
+                    :is="componentTag"
+                    :type="componentType"
+                    :id="componentId + index"
+                    :name="componentName"
+                    :value="componentValue"
+                    :class="componentClass"
+                    :placeholder="placeholder"
+                    :required="required"
+                >
+                </component>
+                <label class="form" :for="componentId  + index">{{ labelText }}</label>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -66,6 +85,10 @@ export default {
             type: Object,
             default: ""
         },
+        divTag: {
+            type: Object,
+            default: "div"
+        },
         componentTag: {
             type: Object,
             default: ""
@@ -78,7 +101,23 @@ export default {
             type: String,
             default: ""
         },
+        ulClasses: {
+            type: String,
+            default: ""
+        },
+        liClasses: {
+            type: String,
+            default: ""
+        },
+        selectElements: {
+            type: Number,
+            default: 1
+        },
         icon: {
+            type: Boolean,
+            default: false
+        },
+        error: {
             type: Boolean,
             default: false
         }

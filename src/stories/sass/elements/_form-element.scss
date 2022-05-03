@@ -6,7 +6,7 @@ $textareaBorderRadius: 6px;
 
 $inputFontSize: 20px;
 $checkboxFontSize: 15px;
-$checkboxLineHeight: 24px;
+$checkboxLineHeight: 36px;
 
 $inputBackground: #fff;
 $inputBorderColor: #d8e3f0;
@@ -75,13 +75,17 @@ form {
         }
     }
 
+    .field__label {
+        @apply block pb-xs;
+    }
+
     input[type="text"],
     input[type="email"],
     input[type="number"],
     input[type="date"],
     select,
     textarea {
-        @apply transition-colors duration-500 border border-solid w-full pr-def py-sm;
+        @apply transition-colors duration-300 border border-solid w-full pr-def py-sm;
         padding-left: 24px;
         outline: 0;
         height: $inputHeight;
@@ -168,19 +172,19 @@ form {
 
     .radioButtons,
     .checkBoxes {
-        @apply flex mb-xs;
-        @apply sm:flex-col;
-        
+        @apply list-none;
+
         .radio-option,
         .check-option {
-            @apply w-6/12;
-            @apply sm:w-full;
-            min-height: 40px;
             input + label {
+                @apply w-6/12;
+                @apply sm:w-full;
+                min-height: 40px;
                 font-size: 19px !important;
                 color: #667380;
             }
-            + .radio-option {
+                +.radio-option,
+                +.check-option {
                 @apply sm:mt-xs;
             }
         }
@@ -194,9 +198,9 @@ form {
 
     .radioButtons .radio-option,
     .checkBoxes .check-option,
-    ul.checkBoxes li {
+    li {
         input {
-            @apply absolute cursor-pointer appearance-none border-none opacity-0;
+            @apply absolute left-0 cursor-pointer appearance-none border-none opacity-0;
             width: 1px;
             height: 1px;
             top: 15px;
@@ -236,26 +240,27 @@ form {
                 }
             }
         }
+    }
 
-        .mark-error {
-            &:not(.date-picker-x-container) {
-                ul.checkBoxes {
-                    li {
-                        input {
-                            + label {
-                                @apply text-error;
-                            }
+    .mark-error {
+        &:not(.date-picker-x-container) {
+            .checkBoxes,
+            .radioButtons {
+                li {
+                    input {
+                        + label {
+                            @apply text-error;
+                        }
 
-                            + label {
-                                &:before {
-                                    @apply border-error border border-solid;
-                                }
+                        + label {
+                            &:before {
+                                @apply border-error border border-solid;
                             }
                         }
                     }
-                    + span {
-                        @apply mt-sm;
-                    }
+                }
+                + span {
+                    @apply mt-sm;
                 }
             }
         }
@@ -286,7 +291,7 @@ form {
     }
 
     .file-upload__label {
-        @apply flex items-center transition-colors duration-500 border border-solid w-full pr-def py-sm cursor-pointer;
+        @apply flex items-center transition-colors duration-300 border border-solid w-full pr-def py-sm cursor-pointer;
         padding-left: 24px;
         outline: 0;
         height: $inputHeight;
@@ -302,7 +307,7 @@ form {
         }
 
         i {
-            @apply font-fontAwesome text-lead left-md z-1 pointer-events-none;
+            @apply font-fontAwesome transition-colors duration-300 text-lead left-md z-1 pointer-events-none;
             @apply xs:left-sm;
             position: absolute;
             top: 32px;
@@ -312,6 +317,14 @@ form {
             width: 20px;
             text-align: center;
         }
+
+        &:hover {
+            @apply bg-lead text-white border-lead;
+
+            i {
+                @apply text-white;
+            }
+        }
     }
 
     .mark-error {
@@ -320,14 +333,13 @@ form {
             input[type="email"],
             input[type="number"],
             input[type="date"],
-            input[type="date"],
             select,
             textarea {
                 @apply border-error border border-solid;
             }
 
             span {
-                @apply text-error block;
+                @apply text-error block pt-xs;
                 font-size: 12px;
             }
         }
@@ -340,6 +352,10 @@ form {
             }
         }
     }
+}
+
+.actioncontainer {
+    @apply mt-mob;
 }
 
 input[type="file"] {

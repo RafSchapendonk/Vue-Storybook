@@ -30,6 +30,23 @@ export default {
             description: "Adds a label above the input field",
             control: { type: 'boolean' },
         },
+        error: {
+            name: "Error",
+            description: "Adds an error message below the input field",
+            control: { type: 'boolean' },
+        },
+        selectElements: {
+            name: "Select elements",
+            description: "The number of select elements in the form",
+            control: { type: 'select' },
+            options: [
+                1,
+                2,
+                3,
+                4,
+                5,
+            ],
+        },
     }
 }
 
@@ -42,3 +59,8 @@ const Template = (args) => ({
 });
 
 export const Primary = Template.bind({});
+
+export const Error = Template.bind({});
+Error.args = {
+    error: true
+}

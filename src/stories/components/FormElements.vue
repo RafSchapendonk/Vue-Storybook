@@ -1,65 +1,45 @@
 <template>
     <form id="form">
-        <div class="checkBoxes">
-            <Textfield 
-                :divId="''" 
-                :divClass="'check-option'"
+        <Textfield 
+            :divId="''" 
+            :divClass="divClassesCheckBoxes"
 
-                :componentTag="'input'"
-                :componentType="'checkbox'"
-                :componentId="'checkBox'"
-                :componentName="''"
-                :componentValue="''"
-                :componentClass="''"
-                :required="'required'" 
+            :componentTag="'input'"
+            :componentType="'checkbox'"
+            :componentId="'checkBox'"
+            :componentName="''"
+            :componentValue="''"
+            :componentClass="''"
 
-                labelText="Howdy"
-            />
-            <Textfield 
-                :divId="''" 
-                :divClass="'check-option'"
+            :ulClasses="'checkBoxes'"
+            :liClasses="'check-option'"
+            :selectElements="selectElements"
 
-                :componentTag="'input'"
-                :componentType="'checkbox'"
-                :componentId="'checkBox2'"
-                :componentName="''"
-                :componentValue="''"
-                :componentClass="''"
-                :required="'required'" 
+            :error="error"
+            :required="'required'" 
 
-                labelText="Howdy"
-            />
-        </div>
-        <div class="radioButtons">
-            <Textfield 
-                :divId="''" 
-                :divClass="'radio-option'"
+            labelText="Checkbox"
+        />
+        <Textfield 
+            :divId="''" 
+            :divClass="divClassesRadioButtons"
 
-                :componentTag="'input'"
-                :componentType="'radio'"
-                :componentId="'radioButton'"
-                :componentName="''"
-                :componentValue="''"
-                :componentClass="''"
-                :required="'required'" 
+            :componentTag="'input'"
+            :componentType="'radio'"
+            :componentId="'radioButton'"
+            :componentName="''"
+            :componentValue="''"
+            :componentClass="''"
 
-                labelText="Howdy"
-            />
-            <Textfield 
-                :divId="''" 
-                :divClass="'radio-option'"
+            :ulClasses="'radioButtons'"
+            :liClasses="'radio-option'"
+            :selectElements="selectElements"
 
-                :componentTag="'input'"
-                :componentType="'radio'"
-                :componentId="'radioButton2'"
-                :componentName="''"
-                :componentValue="''"
-                :componentClass="''"
-                :required="'required'" 
+            :error="error"
+            :required="'required'" 
 
-                labelText="Howdy"
-            />
-        </div>
+            labelText="Radio button"
+        />
         <fieldset>
             <Textfield 
                 :divId="'input'" 
@@ -71,10 +51,12 @@
                 :componentName="'textField'"
                 :componentValue="''"
                 :componentClass="componentClasses"
+
+                :error="error"
                 :placeholder="'Input field'"
                 :required="'required'" 
 
-                labelText="Howdy"
+                labelText="Input field"
             />
             <Textfield 
                 :divId="'textFieldDiv'" 
@@ -86,10 +68,12 @@
                 :componentName="'textarea'"
                 :componentValue="''"
                 :componentClass="componentClasses"
+
+                :error="error"
                 :placeholder="'Text area'"
                 :required="'required'" 
                 
-                labelText="Howdy"
+                labelText="Text area"
             />
             <Textfield 
                 :divId="'selectDiv'" 
@@ -101,9 +85,11 @@
                 :componentName="'select'"
                 :componentValue="''"
                 :componentClass="componentClasses"
+
+                :error="error"
                 :required="'required'" 
 
-                labelText="Howdy"
+                labelText="Select"
             />
             <Textfield
                 :divId="'fileUploadDiv'" 
@@ -114,16 +100,18 @@
                 :componentId="'file'"
                 :componentName="'file'"
                 :componentValue="''"
-                :componentClass="componentClasses"
+                :componentClass="componentClassesFileUpload"
                 :labelClass="labelClassesFileUpload"
+
+                :error="error"
                 :required="'required'" 
 
                 :icon="icon"
-                labelText="Howdy"
+                labelText="File upload"
             />
         </fieldset>
         <div class="actioncontainer">
-            <a class="btn btn--pill btn-solid btn-solid--lead" onclick=" document.getElementById('form').requestSubmit();return false;">
+            <a class="btn btn--pill btn-solid btn-solid--lead" onclick="document.getElementById('form').requestSubmit();return false;">
                 Bericht versturen
             </a>
         </div>
@@ -149,6 +137,27 @@ export default {
             type: Boolean,
             default: true,
         },
+        error: {
+            type: Boolean,
+            default: false,
+        },
+        selectElements: {
+            type: Number,
+            default: 1,
+        },
+    },
+    beforeCreate() {
+        var scriptSrc = document.getElementById('../js/rbm.handle.js')
+        if (scriptSrc) {
+            scriptSrc.remove();
+            console.log("scriptSrc available");
+        } else{
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.id = '../js/rbm.handle.js';
+        script.src = '../js/rbm.handle.js';
+        document.body.appendChild(script);
+    }
     },
     setup(props) {
         props = reactive(props);
@@ -156,24 +165,40 @@ export default {
             divClassesTextField: computed(() => ({
                 "textfield": true,
                 "icon icon-user": props.icon,
+                "mark-error": props.error,
             })),
             divClassesTextArea: computed(() => ({
                 "textfield": true,
                 "icon icon-comment": props.icon,
+                "mark-error": props.error,
             })),
             divClassesSelect: computed(() => ({
                 "selectbox": true,
                 "icon icon-stroopwafel": props.icon,
+                "mark-error": props.error,
             })),
             divClassesFileUpload: computed(() => ({
                 "file-upload": true,
                 "icon icon-file": props.icon,
+                "mark-error": props.error,
+            })),
+            divClassesCheckBoxes: computed(() => ({
+                "check-option": true,
+                "mark-error": props.error,
+            })),
+            divClassesRadioButtons: computed(() => ({
+                "radio-option": true,
+                "mark-error": props.error,
             })),
             labelClassesFileUpload: computed(() => ({
                 "file-upload__label": true,
                 "icon": props.icon,
             })),
             componentClasses: computed(() => ({
+                "rounded": props.rounded,
+            })),
+            componentClassesFileUpload: computed(() => ({
+                "inputfile": true,
                 "rounded": props.rounded,
             })),
         };
