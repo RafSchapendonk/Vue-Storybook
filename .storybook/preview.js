@@ -90,6 +90,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: 'fullscreen',
   grid: {
     gridOn: false,
     columns: 12,

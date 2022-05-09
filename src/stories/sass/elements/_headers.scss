@@ -1,0 +1,95 @@
+.default__header {
+    @apply relative font-fontTitle;
+
+    // &::before {
+    //     content: "";
+    //     @apply absolute bottom-0 w-full bg-dark z-1 block;
+    //     @apply sm:hidden;
+    //     height: 135px;
+    // }
+
+    &:after {
+        @apply absolute inset-x-0 top-0;
+        @apply mob:h-full;
+        content: "";
+        background: transparent
+            linear-gradient(180deg, #36485500 0%, #364855 100%) 0% 0% no-repeat
+            padding-box;
+    }
+
+    .default__header-inner {
+        @apply container grid grid-cols-12 gap-def z-1 relative;
+        @apply lg:px-def;
+        @apply sm:px-mob;
+    
+        .default__header-inner--content {
+            @apply col-span-5 text-white relative z-2 pt-2xl pb-2xl mt-sm;
+            @apply md:col-span-6;
+            @apply sm:col-span-12 sm:text-dark sm:pt-def;
+
+            h1 {
+                @apply text-white text-h1 uppercase m-0;
+                em {
+                    @apply not-italic text-lead;
+                }
+        
+                + p {
+                    @apply mt-def pt-xs;
+                }
+            }
+        
+            > p {
+                font-size: clamp(
+                    calc(20px * 0.9),
+                    calc(
+                        calc(20px * 0.9) +
+                            ((20 - (20 * 0.9)) * ((100vw - 360px) / (1230 - 360)))
+                    ),
+                    20px
+                );
+            }
+
+            .default-usp__title {
+                @apply text-h3 text-white mb-def my-def pt-md;
+                padding-top: 40px;
+                em {
+                    @apply not-italic text-lead;
+                }
+                @apply sm:pt-0 sm:mb-0 sm:text-dark;
+            }
+        }
+    
+        &:after {
+            @apply absolute inset-0;
+            @apply sm:hidden;
+            content: "";
+            background: transparent
+                linear-gradient(270deg, #36485500 0%, #364855 100%) 0% 0% no-repeat
+                padding-box;
+            width: calc((100% / 12 * 8) + ((100vw - 100%) / 2));
+            margin-left: calc(0px - ((100vw - 100%) / 2));
+    
+            @media screen and (max-width: 1176px) {
+                width: calc((100% / 12 * 8) + 24px);
+                margin-left: -24px;
+            }
+    
+            @media screen and (max-width: 768px) {
+                width: calc((100% / 12 * 8) + 18px);
+                margin-left: -18px;
+            }
+        }
+    }
+    
+    .default__header-image {
+        @apply absolute inset-0;
+        @apply sm:relative;
+        @media screen and (max-width: 769px) {
+            min-height: 170px;
+    
+            img {
+                min-height: 170px;
+            }
+        }
+    }
+}

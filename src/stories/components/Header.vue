@@ -142,7 +142,7 @@
       </div>
     </div>
 
-    <div class="content-filler"></div>
+    <div v-if="contentFiller" class="content-filler"></div>
   </main>
 </template>
 
@@ -174,6 +174,11 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    contentFiller: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
     headerScrollType: {
       type: Object,

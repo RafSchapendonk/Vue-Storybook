@@ -55,6 +55,12 @@ export default {
             description: "Adds a phone number to the top navigation and mobile menu.",
             control: { type: 'boolean' },
         },
+        contentFiller: {
+            name: "Content filler",
+            description: "Adds a filler element to the content area.",
+            control: { type: 'boolean' },
+            defaultValue: true,
+        },
         headerScrollType: {
             name: "Header scroll type",
             description: "Determines the scroll behaviour of the header (Note: Not available in seperate canvas).",
@@ -83,7 +89,7 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({});
-Primary.parameters = { controls: { exclude: ['Primary', 'Center'] } };
+Primary.parameters = { controls: { exclude: ['Primary', 'Center', 'Content filler'] } };
 Primary.args = {
     primary: true,
     center: false,
@@ -93,7 +99,7 @@ Primary.args = {
 }
 
 export const Center = Template.bind({});
-Center.parameters = { controls: { exclude: ['Primary', 'Center'] } };
+Center.parameters = { controls: { exclude: ['Primary', 'Center', 'Content filler'] } };
 Center.args = {
     primary: false,
     center: true,
@@ -103,7 +109,7 @@ Center.args = {
 }
 
 export const ShrinkOnScroll = Template.bind({});
-ShrinkOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type'] } };
+ShrinkOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type', 'Content filler'] } };
 ShrinkOnScroll.args = {
     primary: true,
     center: false,
@@ -113,7 +119,7 @@ ShrinkOnScroll.args = {
 }
 
 export const TransparentOnScroll = Template.bind({});
-TransparentOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type'] } };
+TransparentOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type', 'Content filler'] } };
 TransparentOnScroll.args = {
     primary: true,
     center: false,

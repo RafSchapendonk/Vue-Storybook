@@ -6,31 +6,26 @@ const multiplier = {
     xxl: 0.6,
 }
 
-const font = {
-    'p-fontSize': 19,
-    'p-lineHeight': 31,
-    'p-multiplier': multiplier.md,
-
-    'h1-fontSize': 70,
-    'h1-lineHeight': 74,
-    'h1-multiplier': multiplier.xxl,
-
-    'h2-fontSize': 48,
-    'h2-lineHeight': 50,
-    'h2-multiplier': multiplier.xxl,
-
-    'h3-fontSize': 30,
-    'h3-lineHeight': 40,
-    'h3-multiplier': multiplier.lg,
-
-    'h4-fontSize': 24,
-    'h4-lineHeight': 32,
-    'h4-multiplier': multiplier.lg,
-
-    'h5-fontSize': 22,
-    'h5-lineHeight': 31,
-    'h5-multiplier': multiplier.lg,
-}
+const fontSizesList = [
+    {
+        name: "default", fontSize: 19, lineHeight: 31, multiplier: multiplier.md
+    },
+    {
+        name: "h1", fontSize: 50, lineHeight: 48, multiplier: multiplier.xxl
+    },
+    {
+        name: "h2", fontSize: 40, lineHeight: 44, multiplier: multiplier.xxl
+    },
+    {
+        name: "h3", fontSize: 30, lineHeight: 40, multiplier: multiplier.lg
+    },
+    {
+        name: "h4", fontSize: 24, lineHeight: 32, multiplier: multiplier.lg
+    },
+    {
+        name: "h5", fontSize: 22, lineHeight: 31, multiplier: multiplier.lg
+    },
+];
 
 module.exports = {
     content: ["./src/**/*.{scss,js,vue}"],
@@ -155,50 +150,7 @@ module.exports = {
                 '2xl': '72px',
                 '3xl': '96px'
             },
-            fontSize: {
-                'default': [
-                    `clamp(${font['p-fontSize'] * font['p-multiplier']}px, calc(${font['p-fontSize'] * font['p-multiplier']}px + ((${font['p-fontSize']} - ${font['p-fontSize'] * font['p-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['p-fontSize']}px)`,
-                    {
-                        lineHeight: `clamp(${font['p-lineHeight'] * font['p-multiplier']}px, calc(${font['p-lineHeight'] * font['p-multiplier']}px + ((${font['p-lineHeight']} - ${font['p-lineHeight'] * font['p-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['p-lineHeight']}px)`,
-                    }
-                ],
-
-                'h1': [
-                    `clamp(${font['h1-fontSize'] * font['h1-multiplier']}px, calc(${font['h1-fontSize'] * font['h1-multiplier']}px + ((${font['h1-fontSize']} - ${font['h1-fontSize'] * font['h1-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h1-fontSize']}px)`,
-                    {
-                        lineHeight: `clamp(${font['h1-lineHeight'] * font['h1-multiplier']}px, calc(${font['h1-lineHeight'] * font['h1-multiplier']}px + ((${font['h1-lineHeight']} - ${font['h1-lineHeight'] * font['h1-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h1-lineHeight']}px)`,
-                    }
-                ],
-
-                'h2': [
-                    `clamp(${font['h2-fontSize'] * font['h2-multiplier']}px, calc(${font['h2-fontSize'] * font['h2-multiplier']}px + ((${font['h2-fontSize']} - ${font['h2-fontSize'] * font['h2-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h2-fontSize']}px)`,
-                    {
-                        lineHeight: `clamp(${font['h2-lineHeight'] * font['h2-multiplier']}px, calc(${font['h2-lineHeight'] * font['h2-multiplier']}px + ((${font['h2-lineHeight']} - ${font['h2-lineHeight'] * font['h2-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h2-lineHeight']}px)`,
-                        letterSpacing: "-1.92px"
-                    }
-                ],
-
-                'h3': [
-                    `clamp(${font['h3-fontSize'] * font['h3-multiplier']}px, calc(${font['h3-fontSize'] * font['h3-multiplier']}px + ((${font['h3-fontSize']} - ${font['h3-fontSize'] * font['h3-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h3-fontSize']}px)`,
-                    {
-                        lineHeight: `clamp(${font['h3-lineHeight'] * font['h3-multiplier']}px, calc(${font['h3-lineHeight'] * font['h3-multiplier']}px + ((${font['h3-lineHeight']} - ${font['h3-lineHeight'] * font['h3-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h3-lineHeight']}px)`,
-                    }
-                ],
-
-                'h4': [
-                    `clamp(${font['h4-fontSize'] * font['h4-multiplier']}px, calc(${font['h4-fontSize'] * font['h4-multiplier']}px + ((${font['h4-fontSize']} - ${font['h4-fontSize'] * font['h4-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h4-fontSize']}px)`,
-                    {
-                        lineHeight: `clamp(${font['h4-lineHeight'] * font['h4-multiplier']}px, calc(${font['h4-lineHeight'] * font['h4-multiplier']}px + ((${font['h4-lineHeight']} - ${font['h4-lineHeight'] * font['h4-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h4-lineHeight']}px)`,
-                    }
-                ],
-
-                'h5': [
-                    `clamp(${font['h5-fontSize'] * font['h5-multiplier']}px, calc(${font['h5-fontSize'] * font['h5-multiplier']}px + ((${font['h5-fontSize']} - ${font['h5-fontSize'] * font['h5-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h5-fontSize']}px)`,
-                    {
-                        lineHeight: `clamp(${font['h5-lineHeight'] * font['h5-multiplier']}px, calc(${font['h5-lineHeight'] * font['h5-multiplier']}px + ((${font['h5-lineHeight']} - ${font['h5-lineHeight'] * font['h5-multiplier']}) * ((100vw - 360px) / (1230 - 360)))), ${font['h5-lineHeight']}px)`,
-                    }
-                ],
-            },
+            fontSize: loadFontSizes(fontSizesList),
         },
     },
     variants: {
@@ -209,4 +161,42 @@ module.exports = {
         require('tailwindcss'),
         require('autoprefixer'),
     ],
+}
+
+function loadFontSizes(fontList) {
+    var response = {};
+    fontList.forEach((element) => {
+        response[element.name] = fontClamp(
+            element.fontSize,
+            element.lineHeight,
+            element.multiplier,
+            element.fontSizeMob,
+            element.lineHeightMob
+        );
+    });
+
+    return response;
+}
+
+function fontClamp(
+    fontsize,
+    lineheight,
+    multiplier = null,
+    fontsizeMob = 0,
+    lineheightMob = 0
+) {
+    var useMultiplier = multiplier != null ? multiplier : 1;
+    var useFontSize = fontsize;
+    var useFontSizeMob =
+        fontsizeMob > 0 ? fontsizeMob : useFontSize * useMultiplier;
+    var useLineHeight = lineheight;
+    var useLineHeightMob =
+        lineheightMob > 0 ? lineheightMob : useLineHeight * useMultiplier;
+
+    return [
+        `clamp(${useFontSizeMob}px, calc(${useFontSizeMob}px + ((${fontsize} - ${useFontSizeMob}) * ((100vw - 360px) / (1230 - 360)))), ${useFontSize}px)`,
+        {
+            lineHeight: `clamp(${useLineHeightMob}px, calc(${useLineHeightMob}px + ((${lineheight} - ${useLineHeightMob}) * ((100vw - 360px) / (1230 - 360)))), ${useLineHeight}px)`,
+        },
+    ];
 }
