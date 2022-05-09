@@ -1,6 +1,6 @@
 <template>
     <div v-if="componentType != 'checkbox' && componentType != 'radio'" :id="divId" :class="divClass">
-        <label class="field__label" :for="componentId">{{ labelText }}</label>
+        <label v-if="topLabel" class="field__label" :for="componentId">{{ labelText }}</label>
         <component
             :is="componentTag"
             :type="componentType"
@@ -118,6 +118,10 @@ export default {
             default: false
         },
         error: {
+            type: Boolean,
+            default: false
+        },
+        topLabel: {
             type: Boolean,
             default: false
         }

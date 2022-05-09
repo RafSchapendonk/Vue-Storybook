@@ -1,4 +1,5 @@
 import '../src/stories/sass/index.scss';
+import './static/js/rbm.handle.js';
 
 const screenHeight = '820px'
 

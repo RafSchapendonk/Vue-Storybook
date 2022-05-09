@@ -13,11 +13,11 @@
 
             :ulClasses="'checkBoxes'"
             :liClasses="'check-option'"
-            :selectElements="selectElements"
 
+            :selectElements="selectElements"
             :error="error"
             :required="'required'" 
-
+            
             labelText="Checkbox"
         />
         <Textfield 
@@ -33,8 +33,8 @@
 
             :ulClasses="'radioButtons'"
             :liClasses="'radio-option'"
-            :selectElements="selectElements"
 
+            :selectElements="selectElements"
             :error="error"
             :required="'required'" 
 
@@ -55,7 +55,8 @@
                 :error="error"
                 :placeholder="'Input field'"
                 :required="'required'" 
-
+                
+                :topLabel="topLabel"
                 labelText="Input field"
             />
             <Textfield 
@@ -73,6 +74,7 @@
                 :placeholder="'Text area'"
                 :required="'required'" 
                 
+                :topLabel="topLabel"
                 labelText="Text area"
             />
             <Textfield 
@@ -89,6 +91,7 @@
                 :error="error"
                 :required="'required'" 
 
+                :topLabel="topLabel"
                 labelText="Select"
             />
             <Textfield
@@ -107,6 +110,7 @@
                 :required="'required'" 
 
                 :icon="icon"
+                :topLabel="topLabel"
                 labelText="File upload"
             />
         </fieldset>
@@ -133,10 +137,6 @@ export default {
             type: Boolean,
             default: false,
         },
-        rounded: {
-            type: Boolean,
-            default: true,
-        },
         error: {
             type: Boolean,
             default: false,
@@ -145,6 +145,10 @@ export default {
             type: Number,
             default: 1,
         },
+        topLabel: {
+            type: Boolean,
+            default: false,
+        }
     },
     beforeCreate() {
         var scriptSrc = document.getElementById('../js/rbm.handle.js')
@@ -152,12 +156,12 @@ export default {
             scriptSrc.remove();
             console.log("scriptSrc available");
         } else{
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.id = '../js/rbm.handle.js';
-        script.src = '../js/rbm.handle.js';
-        document.body.appendChild(script);
-    }
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.id = '../js/rbm.handle.js';
+            script.src = '../js/rbm.handle.js';
+            document.body.appendChild(script);
+        }
     },
     setup(props) {
         props = reactive(props);
@@ -194,12 +198,8 @@ export default {
                 "file-upload__label": true,
                 "icon": props.icon,
             })),
-            componentClasses: computed(() => ({
-                "rounded": props.rounded,
-            })),
             componentClassesFileUpload: computed(() => ({
                 "inputfile": true,
-                "rounded": props.rounded,
             })),
         };
     },

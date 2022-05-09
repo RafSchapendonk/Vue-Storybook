@@ -20,11 +20,6 @@ export default {
             description: "Adds an icon to the input field",
             control: { type: 'boolean' },
         },
-        rounded: {
-            name: "Rounded",
-            description: "Fully rounds off the border of the input field",
-            control: { type: 'boolean' },
-        },
         topLabel: {
             name: "Top Label",
             description: "Adds a label above the input field",
@@ -59,6 +54,16 @@ const Template = (args) => ({
 });
 
 export const Primary = Template.bind({});
+
+export const LabelTop = Template.bind({});
+LabelTop.args = {
+    topLabel: true,
+};
+
+export const Icons = Template.bind({});
+Icons.args = {
+    icon: true,
+};
 
 export const Error = Template.bind({});
 Error.args = {

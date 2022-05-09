@@ -28,12 +28,12 @@ form {
                 @apply xs:left-sm;
                 content: "";
                 position: absolute;
-                top: 32px;
+                top: 16px;
                 left: 18px;
                 font-size: 18px;
                 font-weight: 200;
                 width: 20px;
-                text-align: center;
+                text-align: center;    
             }
 
             &.icon {
@@ -44,6 +44,10 @@ form {
                 select,
                 textarea {
                     padding-left: 48px;
+                }
+
+                &:before {
+                    top: 38px;
                 }
             }
 
@@ -304,13 +308,17 @@ form {
 
         &.icon {
             padding-left: 48px;
+
+            i {
+                top: 38px;
+            }
         }
 
         i {
             @apply font-fontAwesome transition-colors duration-300 text-lead left-md z-1 pointer-events-none;
             @apply xs:left-sm;
             position: absolute;
-            top: 32px;
+            top: 16px;
             left: 18px;
             font-size: 18px;
             font-weight: 200;
