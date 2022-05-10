@@ -16,7 +16,7 @@ const headerScrollTypes = {
 };
 
 export default {
-    title: 'Components/Header',
+    title: 'Components/Headers/Navigation',
     component: HeaderElement,
     parameters: {
         storybookCodePanel: {

@@ -1,7 +1,7 @@
 import IntroText from './IntroText.vue'
 
 export default {
-    title: 'Components/IntroText',
+    title: 'Components/Headers/Header',
     component: IntroText,
     parameters: {
         storybookCodePanel: {
@@ -14,6 +14,24 @@ export default {
             ]
         }
     },
+
+    argTypes: {
+        gradient: {
+            name: "Gradient",
+            description: "Adds a gradient to the the header.",
+            control: { type: 'boolean' },
+        },
+        uspItems: {
+            name: "USP Items",
+            description: "Adds USP items to the header.",
+            control: { type: 'boolean' },
+        },
+        navigation: {
+            name: "Navigation",
+            description: "Adds navigation to the header.",
+            control: { type: 'boolean' },
+        },
+    }
 }
 
 const Template = (args) => ({
@@ -21,7 +39,18 @@ const Template = (args) => ({
     setup() {
         return { args };
     },
-    template: '<intro-text :v-bind="args" />',
+    template: '<intro-text v-bind="args" />',
 })
 
 export const Primary = Template.bind({})
+
+export const Gradient = Template.bind({})
+Gradient.args = {
+    gradient: true,
+}
+
+export const USP = Template.bind({})
+USP.args = {
+    uspItems: true,
+    gradient: true,
+}

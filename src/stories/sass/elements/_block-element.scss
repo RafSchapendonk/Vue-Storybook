@@ -7,12 +7,10 @@
 }
 
 .stb-block__item {
-    @apply bg-lead transition-all overflow-hidden duration-300 relative text-white;
+    @apply bg-lead col-span-4 transition-all overflow-hidden duration-300 relative text-white;
     @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
 
     &--responsive {
-        @apply xl:col-span-3;
-        @apply lg:col-span-4;
         @apply md:col-span-6;
         @apply sm:col-span-12;
     }

@@ -52,6 +52,7 @@ module.exports = {
                 leadDark: '#0074FF',
                 secondary: '#43FF43',
                 dark: '#17252D',
+                darkLight: '#4d4d4d',
                 hoverBlue: '#009ecc',
                 placeholder: '#667380',
                 error: "rgba(255, 0, 0, 0.5)",
