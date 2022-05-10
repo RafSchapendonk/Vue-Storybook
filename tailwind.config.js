@@ -8,7 +8,7 @@ const multiplier = {
 
 const fontSizesList = [
     {
-        name: "default", fontSize: 19, lineHeight: 31, multiplier: multiplier.md
+        name: "default", fontSize: 19, lineHeight: 22, multiplier: multiplier.md
     },
     {
         name: "h1", fontSize: 50, lineHeight: 48, multiplier: multiplier.xxl

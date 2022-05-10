@@ -1,0 +1,96 @@
+@import '../libs/rbmixins';
+
+.paragraph__grid {
+    @apply grid font-fontText text-default grid-cols-12 gap-lg;
+    @apply sm:gap-md;
+    @apply xs:gap-def;
+
+    &:not(:last-of-type) {
+        @apply mb-lg pb-xs;
+        @apply sm:mb-def;
+    }
+}
+
+.paragraph__content--full {
+    @apply col-span-12 px-1-col;
+    @apply sm:px-0;
+}
+
+.paragraph__content--half {
+    @apply col-span-6 flex items-center;
+    @apply md:col-span-12;
+
+    > div {
+        @apply w-full;
+    }
+}
+
+.paragraph__image--right {
+    @apply order-2;
+    @apply md:order-1;
+}
+
+.paragraph__content--left {
+    @apply order-1;
+    @apply md:order-2;
+}
+
+.paragraphs__video {
+    @apply w-full;
+
+    .asp-976x465,
+    .asp-576x384,
+    .asp-16x9,
+    .asp-4x3 {
+        > .content {
+            @apply transition-all duration-500;
+            @apply hover:opacity-80;
+
+            .playbtn {
+                @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.06));
+                @apply absolute m-auto flex justify-center items-center cursor-pointer bg-white text-dark left-def rounded;
+                padding: 14px 34px 14px 20px;
+                bottom: -24px;
+
+                i {
+                    @apply text-lead mr-sm;
+                    font-size: clamp(
+                        calc(18px * 0.9),
+                        calc(
+                            calc(18px * 0.9) +
+                                (
+                                    (18 - (18 * 0.9)) *
+                                        ((100vw - 360px) / (1230 - 360))
+                                )
+                        ),
+                        18px
+                    );
+                }
+
+                p {
+                    @apply uppercase font-bold;
+                    font-size: clamp(
+                        calc(16px * 0.9),
+                        calc(
+                            calc(16px * 0.9) +
+                                (
+                                    (16 - (16 * 0.9)) *
+                                        ((100vw - 360px) / (1230 - 360))
+                                )
+                        ),
+                        16px
+                    );
+                }
+            }
+
+            .play-video {
+                @apply absolute inset-0 cursor-pointer;
+            }
+
+            iframe {
+                @apply inset-0 block h-auto w-full;
+                max-width: auto;
+            }
+        }
+    }
+}
