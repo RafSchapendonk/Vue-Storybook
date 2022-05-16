@@ -1,11 +1,12 @@
 .summary__wrapper {
+    @apply pl-lg;
     &--centered {
-        @apply flex justify-center items-center;
+        @apply flex justify-center items-center pl-0;
     }
 }
 
 .summary__ul {
-    @apply pl-xs ml-0 font-fontText;
+    @apply ml-0 font-fontText;
 
     &--decimal {
         @apply list-decimal;
@@ -21,7 +22,8 @@
         }
 
         i {
-            @apply text-lead pt-xs;
+            @apply text-lead;
+            padding-top: 4px;
         }
 
         p {
