@@ -31,6 +31,16 @@ export default {
             description: "Places a video instead of an image",
             control: { type: 'boolean' },
         },
+        overlapRight: {
+            name: "Overlap Right",
+            description: "Overlaps the image to the right",
+            control: { type: 'boolean' },
+        },
+        overlapLeft: {
+            name: "Overlap Left",
+            description: "Overlaps the image to the left",
+            control: { type: 'boolean' },
+        },
     }
 }
 
@@ -50,10 +60,11 @@ ImageRight.args = {
 }
 
 export const ImageLeft = Template.bind({})
-ImageLeft.parameters = { controls: { hideNoControlsWarning: true, include: [] }};
+ImageLeft.parameters = { controls: { hideNoControlsWarning: true, include: ['Overlap Right'] }};
 ImageLeft.args = {
     imageRight: false,
     imageLeft: true,
+    overlapRight: false,
 }
 
 export const VideoRight = Template.bind({})

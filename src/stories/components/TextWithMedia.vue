@@ -20,8 +20,8 @@
             </div> 
             <div :class="contentWrapperClass" class="paragraph__content--half paragraph__content--left"> 
                 <div> 
-                    <h2>Lorem ipsum dolor sit amet, </h2> 
-                    <p>consectetur adipiscing elit. Nunc pharetra orci ut pulvinar fringilla. Sed imperdiet sodales est. Phasellus venenatis turpis leo, vitae rhoncus tellus finibus et. Donec ornare justo nec bibendum ornare. Maecenas quis blandit enim. Aenean lacus dolor, facilisis sed mauris non, auctor euismod eros.</p> 
+                    <h2 class="paragraph__title">Lorem ipsum dolor sit amet, </h2> 
+                    <p class="paragraph__text">consectetur adipiscing elit. Nunc pharetra orci ut pulvinar fringilla. Sed imperdiet sodales est. Phasellus venenatis turpis leo, vitae rhoncus tellus finibus et. Donec ornare justo nec bibendum ornare. Maecenas quis blandit enim. Aenean lacus dolor, facilisis sed mauris non, auctor euismod eros.</p> 
                 </div>
             </div> 
         </div>
@@ -49,6 +49,14 @@ export default {
             type: Boolean,
             default: false,
         },
+        overlapRight: {
+            type: Boolean,
+            default: false,
+        },
+        overlapLeft: {
+            type: Boolean,
+            default: false,
+        },
     },
     beforeCreate() {
         var scriptSrc = document.getElementById('../js/rbm.handle.js')
@@ -70,11 +78,13 @@ export default {
             imageWrapperClass: computed(() => ({
                 "paragraph__content--half": true,
                 "paragraph__image--right": props.imageRight && !props.imageLeft,
+                "paragraph__image--right-overlap": props.overlapRight && !props.overlapLeft,
                 "paragraph__image--left": props.imageLeft && !props.imageRight,
             })),
             contentWrapperClass: computed(() => ({
                 "paragraph__content--half": true,
                 "paragraph__content--right": props.imageLeft && !props.imageRight,
+                "paragraph__content--right-overlap": props.overlapRight && !props.overlapLeft,
                 "paragraph__content--left": props.imageRight && !props.imageLeft,
             })),
         }

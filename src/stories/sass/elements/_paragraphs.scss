@@ -25,14 +25,33 @@
     }
 }
 
-.paragraph__image--right {
-    @apply order-2;
-    @apply md:order-1;
+.paragraph__title {
+    @apply font-bold text-lead;
 }
 
-.paragraph__content--left {
-    @apply order-1;
-    @apply md:order-2;
+.paragraph__image{
+    &--right {
+    @apply order-2;
+    @apply md:order-1;
+    }
+    
+    &--right-overlap {
+        @apply col-end-7 row-start-1;
+    }
+}
+
+.paragraph__content{
+    &--left {
+        @apply order-1;
+        @apply md:order-2;
+    }
+
+    &--right-overlap {
+        @apply col-start-6 row-start-1 col-span-7;
+        >div {
+            @apply bg-white p-sm;
+        }
+    }    
 }
 
 .paragraphs__video {
