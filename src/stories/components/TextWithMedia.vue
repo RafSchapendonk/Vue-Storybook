@@ -80,12 +80,14 @@ export default {
                 "paragraph__image--right": props.imageRight && !props.imageLeft,
                 "paragraph__image--right-overlap": props.overlapRight && !props.overlapLeft,
                 "paragraph__image--left": props.imageLeft && !props.imageRight,
+                "paragraph__image--left-overlap": props.overlapLeft && !props.overlapRight,
             })),
             contentWrapperClass: computed(() => ({
                 "paragraph__content--half": true,
                 "paragraph__content--right": props.imageLeft && !props.imageRight,
                 "paragraph__content--right-overlap": props.overlapRight && !props.overlapLeft,
                 "paragraph__content--left": props.imageRight && !props.imageLeft,
+                "paragraph__content--left-overlap": props.overlapLeft && !props.overlapRight,
             })),
         }
     },

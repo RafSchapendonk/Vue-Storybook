@@ -53,10 +53,11 @@ const Template = (args) => ({
 })
 
 export const ImageRight = Template.bind({})
-ImageRight.parameters = { controls: { hideNoControlsWarning: true, include: [] }};
+ImageRight.parameters = { controls: { hideNoControlsWarning: true, include: ['Overlap Left'] }};
 ImageRight.args = {
     imageRight: true,
     imageLeft: false,
+    overlapLeft: false,
 }
 
 export const ImageLeft = Template.bind({})
