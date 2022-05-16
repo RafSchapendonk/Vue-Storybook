@@ -88,7 +88,7 @@ Icon.args = {
     rounded: true,
     icon: true,
     lead: true,
-    label: 'Primary',
+    label: 'Icon',
 }
 
 export const LoadMore = Template.bind({});

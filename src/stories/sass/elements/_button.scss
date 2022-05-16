@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-block;
+  @apply inline-block border-solid border-2 border-lead ;
   padding: 10px 24px;
   font-size: 20px;
 
@@ -18,12 +18,12 @@
 
   &--lead {
     @apply bg-lead text-white transition-all duration-300;
-    @apply hover:bg-hoverBlue;
+    @apply hover:bg-hoverBlue hover:border-hoverBlue;
   }
 }
 
 .btn-transp {
-  @apply border-solid border-2 border-lead font-fontTitle text-center transition-all duration-300;
+  @apply font-fontTitle text-center transition-all duration-300;
   @apply hover:border-hoverBlue;
 }
 
