@@ -4,7 +4,7 @@
             <div :class="imageWrapperClass">
                 <img v-if="!video" class="img-full-w" src="https://picsum.photos/id/237/1920/1080">  
                 <div v-if="video" class="paragraphs__video">
-                    <div class="asp-576x384">
+                    <div class="asp-16x9">
                         <div class="content">
                             <picture>
                                 <source srcset="https://picsum.photos/id/237/1920/1080" type="image/webp" />
@@ -12,7 +12,6 @@
                             </picture>
                             <div class="playbtn">
                                 <i class="fa-light fa-play"></i>
-                                <p>Play video</p>
                             </div>
                             <span class="play-video" data-src="https://www.youtube.com/embed/TVtjd7-jYDk?rel=0&showinfo=0&autoplay=1&loop=1&playlist=TVtjd7-jYDk"></span>
                         </div>
@@ -32,6 +31,7 @@
 <script>
 import "../sass/elements/_paragraphs.scss"
 import "../sass/elements/_default-classes.scss"
+import "../sass/elements/_aspects.scss"
 import { reactive, computed } from '@vue/reactivity'
 
 export default {

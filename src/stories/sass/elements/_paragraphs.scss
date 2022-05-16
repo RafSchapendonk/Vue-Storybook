@@ -47,40 +47,12 @@
             @apply hover:opacity-80;
 
             .playbtn {
-                @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.06));
-                @apply absolute m-auto flex justify-center items-center cursor-pointer bg-white text-dark left-def rounded;
-                padding: 14px 34px 14px 20px;
-                bottom: -24px;
-
-                i {
-                    @apply text-lead mr-sm;
-                    font-size: clamp(
-                        calc(18px * 0.9),
-                        calc(
-                            calc(18px * 0.9) +
-                                (
-                                    (18 - (18 * 0.9)) *
-                                        ((100vw - 360px) / (1230 - 360))
-                                )
-                        ),
-                        18px
-                    );
-                }
-
-                p {
-                    @apply uppercase font-bold;
-                    font-size: clamp(
-                        calc(16px * 0.9),
-                        calc(
-                            calc(16px * 0.9) +
-                                (
-                                    (16 - (16 * 0.9)) *
-                                        ((100vw - 360px) / (1230 - 360))
-                                )
-                        ),
-                        16px
-                    );
-                }
+                @apply absolute inset-0 m-auto flex justify-center items-center cursor-pointer bg-lead text-white z-2 rounded-full;
+                height: 60px;
+                width: 60px;
+                font-size: 18px;
+                letter-spacing: -0.36px;
+                pointer-events: none;
             }
 
             .play-video {
@@ -88,7 +60,7 @@
             }
 
             iframe {
-                @apply inset-0 block h-auto w-full;
+                @apply inset-0 block w-full h-full;
                 max-width: auto;
             }
         }
