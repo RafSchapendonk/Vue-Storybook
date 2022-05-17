@@ -359,7 +359,7 @@ export default {
         "header--primary": props.primary && !props.center,
         "header--center": props.center && !props.primary,
 
-        [props.headerScrollType ? `${props.headerScrollType.class}` : "undefined"]: true,
+        [props.headerScrollType ? `${props.headerScrollType.class}` : ""]: true,
       })),
     };
   },

@@ -16,12 +16,12 @@
                     Online media zijn enorm in ontwikkeling. En dat zullen ze voorlopig ook wel blijven. Volop kansen voor bedrijven om zich te profileren en nieuwe verdienmodellen te ontdekken.
                 </p>
                 <template v-if="uspItems">
-                <h2 class="default-usp__title">
-                    <p>
-                        Bekijk ons 
-                        <em>werk!</em>
-                    </p>
-                </h2>
+                    <h2 class="default-usp__title">
+                        <p>
+                            Bekijk ons 
+                            <em>werk!</em>
+                        </p>
+                    </h2>
                 </template>
             </div>
         </div>
@@ -51,6 +51,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        overlay: {
+            type: Boolean,
+            default: false,
+        },
         uspItems: {
             type: Boolean,
             default: false,
@@ -65,7 +69,8 @@ export default {
         return {
             innerClasses: computed(() => ({
                 "default__header-inner": true,
-                "default__header-inner--gradient": props.gradient,
+                "default__header-inner--gradient": props.gradient && !props.overlay,
+                "default__header-inner--overlay": props.overlay && !props.gradient,
             })),
             headerClasses: computed(() => ({
                 "default__header": true,

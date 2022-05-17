@@ -18,7 +18,12 @@ export default {
     argTypes: {
         gradient: {
             name: "Gradient",
-            description: "Adds a gradient to the the header.",
+            description: "Adds a gradient to the the header (only works when Overlay is set to false).",
+            control: { type: 'boolean' },
+        },
+        overlay: {
+            name: "Overlay",
+            description: "Adds an overlay to the header (only works when Gradient is set to false).",
             control: { type: 'boolean' },
         },
         uspItems: {
@@ -47,6 +52,12 @@ export const Primary = Template.bind({})
 export const Gradient = Template.bind({})
 Gradient.args = {
     gradient: true,
+}
+
+export const Overlay = Template.bind({})
+Overlay.args = {
+    overlay: true,
+    gradient: false,
 }
 
 export const USP = Template.bind({})
