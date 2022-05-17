@@ -87,16 +87,23 @@
                     margin-left: -18px;
                 }
             }
-        }
 
-        
-        &--overlay {
-            &::before {
-                @apply absolute inset-0 opacity-75;
-                content: "";
-                background-color: #364855;
+            &.default__header-inner--twocol {
+                &:after {
+                    @apply left-1/2 ml-0;
+                    width: calc((50% / 12 * 8) + ((50vw - 50%) / 2));
+                }
             }
         }
+
+        // &--overlay {
+        //     &::before {
+        //         @apply absolute inset-0 opacity-75;
+        //         @apply sm:hidden;
+        //         content: "";
+        //         background-color: #364855;
+        //     }
+        // }
     }
     
     .default__header-image {
@@ -108,6 +115,29 @@
             img {
                 min-height: 170px;
             }
+        }
+
+        &--overlay {
+            &::before {
+                @apply absolute inset-0 opacity-75;
+                @apply sm:hidden;
+                content: "";
+                background-color: #364855;
+            }
+        }
+    }
+
+    .default__header-content {
+        @apply flex;
+        .default__header-block {
+            @apply w-1/2 h-full absolute;
+            @apply sm:hidden;
+            background-color: #364855; 
+        }
+        .default__header-image {
+            @apply w-1/2;
+            @apply sm:w-full;
+            left: inherit;
         }
     }
 }

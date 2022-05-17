@@ -26,6 +26,11 @@ export default {
             description: "Adds an overlay to the header (only works when Gradient is set to false).",
             control: { type: 'boolean' },
         },
+        twocol: {
+            name: "Two Column",
+            description: "Adds a two column layout to the header.",
+            control: { type: 'boolean' },
+        },
         uspItems: {
             name: "USP Items",
             description: "Adds USP items to the header.",
@@ -58,6 +63,13 @@ export const Overlay = Template.bind({})
 Overlay.args = {
     overlay: true,
     gradient: false,
+}
+
+export const TwoColumn = Template.bind({})
+TwoColumn.args = {
+    twocol: true,
+    gradient: false,
+    overlay: false,
 }
 
 export const USP = Template.bind({})
