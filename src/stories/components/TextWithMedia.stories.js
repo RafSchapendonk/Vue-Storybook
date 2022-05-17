@@ -11,6 +11,14 @@ export default {
                     fileName: '_paragraphs.scss',
                     code: require('!!raw-loader!../sass/elements/_paragraphs.scss')
                 },
+                {
+                    fileName: '_default-classes.scss',
+                    code: require('!!raw-loader!../sass/elements/_default-classes.scss')
+                },
+                {
+                    fileName: '_aspects.scss',
+                    code: require('!!raw-loader!../sass/elements/_aspects.scss')
+                },
             ]
         }
     },
