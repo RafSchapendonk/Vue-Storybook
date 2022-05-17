@@ -1,5 +1,10 @@
 @import '../libs/rbmixins';
 
+.paragraph__overview--default {
+    @apply mb-2xl;
+    @apply md:mb-lg;
+}
+
 .paragraph__grid {
     @apply grid font-fontText text-default grid-cols-12 gap-lg;
     @apply sm:gap-md;
@@ -95,4 +100,33 @@
             }
         }
     }
+}
+
+.paragraph-item__twocol {
+    @apply container grid grid-cols-12 gap-def text-default font-fontText;
+    @apply lg:px-def lg:gap-0;
+    @apply sm:px-mob;
+}
+
+.paragraph-item__content {
+    @apply col-span-8 pr-md;
+    @apply lg:col-span-12 lg:pr-0;
+}
+
+.paragraph-item__paragraphs--row {
+    @apply mb-2xl;
+    @apply md:mb-lg;
+
+    &:not(:last-of-type) {
+        @apply mb-xl;
+        @apply mob:mb-def;
+    }
+
+    p + ul {
+        @apply mt-sm;
+    }
+}
+
+.paragraph-item__title {
+    @apply font-bold text-lead mb-xs;
 }
