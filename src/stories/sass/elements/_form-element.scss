@@ -107,6 +107,10 @@ form {
         &:focus {
             border-color: $inputBorderColorFocus;
         }
+
+        &:focus-visible {
+            outline: none;
+        }
     }
 
     .selectbox {
