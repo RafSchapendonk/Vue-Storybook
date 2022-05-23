@@ -1,2 +1,32 @@
 <link rel="shortcut icon" href="/rbfavicon.ico">
 <link rel="icon" type="image/png" href="/rbfavicon.png" sizes="192x192">
+
+<style>
+    #storybook-explorer-menu svg {
+        color: #00E2FF;
+    }
+    #storybook-explorer-menu button[aria-expanded="true"],
+    #storybook-explorer-menu button:focus,
+    #storybook-explorer-menu a[data-selected]:hover {
+        background-color: rgba(0, 204, 255, 0.1);
+    }
+
+    #storybook-explorer-menu a[data-selected="true"],
+    #storybook-explorer-menu a[data-selected="true"]:hover {
+        background-color: #00E2FF;
+        color: #F3FCFF;
+    }
+
+    #storybook-explorer-menu a[data-selected="true"] svg {
+        color: #F3FCFF;
+    }
+
+    .os-content button:hover {
+        background-color: rgba(0, 226, 255, 0.1);
+        color: #00E2FF;
+    }
+
+    .os-content button:hover svg {
+        color: #00E2FF;
+    }
+</style>

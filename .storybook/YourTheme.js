@@ -7,14 +7,14 @@ export default create({
     base: 'light',
 
     // Colors
-    colorPrimary: '#0074FF',
+    colorPrimary: '#00E2FF',
     colorSecondary: '#00E2FF',
 
     // UI
-    appBg: 'white',
+    appBg: '#F3FCFF',
     appContentBg: 'white',
     // appBorderColor: '',
-    // appBorderRadius: ,
+    appBorderRadius: 4,
 
     // Typography
     fontBase: '"Gotham", sans-serif',
@@ -22,7 +22,8 @@ export default create({
 
     // Text colors
     textColor: 'black',
-    textInverseColor: 'rgba(255,255,255,0.9)',
+    textInverseColor: '#ff5371',
+    // textMutedColor: '',
 
     // Toolbar default and active colors
     // barTextColor: '',
@@ -33,7 +34,7 @@ export default create({
     // inputBg: '',
     // inputBorder: '',
     // inputTextColor: '',
-    // inputBorderRadius: ,
+    inputBorderRadius: 4,
 
     // Brand data
     brandTitle: 'Storybook RB-Media',
