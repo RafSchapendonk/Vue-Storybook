@@ -41,7 +41,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@pbutlewski/storybook-html",
     "@storybook/addon-a11y",
-    "storybook-color-picker",
+    // "storybook-color-picker",
     "storybook-code-panel/register",
     require.resolve('storybook-addon-grid/preset'),
     {
