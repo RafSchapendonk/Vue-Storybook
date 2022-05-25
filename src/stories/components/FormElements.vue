@@ -169,21 +169,25 @@ export default {
             divClassesTextField: computed(() => ({
                 "textfield": true,
                 "icon icon-user": props.icon,
+                "form--top-label": props.topLabel,
                 "mark-error": props.error,
             })),
             divClassesTextArea: computed(() => ({
                 "textfield": true,
                 "icon icon-comment": props.icon,
+                "form--top-label": props.topLabel,
                 "mark-error": props.error,
             })),
             divClassesSelect: computed(() => ({
                 "selectbox": true,
                 "icon icon-stroopwafel": props.icon,
+                "form--top-label": props.topLabel,
                 "mark-error": props.error,
             })),
             divClassesFileUpload: computed(() => ({
                 "file-upload": true,
                 "icon icon-file": props.icon,
+                "form--top-label": props.topLabel,
                 "mark-error": props.error,
             })),
             divClassesCheckBoxes: computed(() => ({

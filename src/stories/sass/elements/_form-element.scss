@@ -73,6 +73,13 @@ form {
                 }
             }
         }
+
+        .form--top-label {
+            &:before,
+            &:after {
+                top: 38px;
+            }
+        }
     }
 
     .field__label {
@@ -328,6 +335,14 @@ form {
             i {
                 @apply text-white;
             }
+        }
+    }
+
+    .field__label +
+    .inputfile +
+    .file-upload__label {
+        i {
+            top: 38px;    
         }
     }
 
