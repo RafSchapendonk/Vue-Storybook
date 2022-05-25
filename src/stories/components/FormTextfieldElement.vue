@@ -32,7 +32,7 @@
                     :is="componentTag"
                     :type="componentType"
                     :id="componentId + index"
-                    :name="componentName"
+                    name="drone"
                     :value="componentValue"
                     :class="componentClass"
                     :placeholder="placeholder"
