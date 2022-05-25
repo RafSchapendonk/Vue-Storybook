@@ -188,7 +188,7 @@ form {
         .radio-option,
         .check-option {
             input + label {
-                @apply w-6/12;
+                @apply w-6/12 mb-xs;
                 @apply sm:w-full;
                 min-height: 40px;
                 font-size: 19px !important;
