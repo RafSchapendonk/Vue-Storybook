@@ -166,6 +166,10 @@ form {
         @apply pb-sm;
         min-height: $textAreaHeight;
         border-radius: $textareaBorderRadius;
+
+        &.scalable {
+            min-height: 0;
+        }
     }
 
     .check {

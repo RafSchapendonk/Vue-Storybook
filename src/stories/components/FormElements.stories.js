@@ -42,6 +42,11 @@ export default {
                 5,
             ],
         },
+        scalable: {
+            name: "Scalable",
+            description: "Makes the textarea scale with the text inside (requires page reload)",
+            control: { type: 'boolean' },
+        },
     }
 }
 
@@ -63,6 +68,11 @@ LabelTop.args = {
 export const Icons = Template.bind({});
 Icons.args = {
     icon: true,
+};
+
+export const Scalable = Template.bind({});
+Scalable.args = {
+    scalable: true,
 };
 
 export const Error = Template.bind({});

@@ -22,7 +22,33 @@
     openMenuMobile();
     closeMenuMobile();
     uploadfields();
+    textAreaHeight();
 });
+
+window.addEventListener("resize", function () {
+    textAreaHeight();
+});
+
+function textAreaHeight() {
+    var textAreaField = document.getElementsByClassName("scalable");
+
+    if (textAreaField.length != 0) {
+        for (var i = 0; i < textAreaField.length; i++) {
+            textAreaField[i].setAttribute(
+                "style",
+                "height:" +
+                textAreaField[i].scrollHeight +
+                "px;overflow-y:hidden;"
+            );
+            textAreaField[i].addEventListener("input", OnInput, false);
+        }
+
+        function OnInput(e) {
+            this.style.height = "auto";
+            this.style.height = this.scrollHeight + "px";
+        }
+    }
+}
 
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect(), top = rect.top, height = rect.height,

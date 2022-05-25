@@ -68,7 +68,7 @@
                 :componentId="'textarea'"
                 :componentName="'textarea'"
                 :componentValue="''"
-                :componentClass="componentClasses"
+                :componentClass="componentClassesTextArea"
 
                 :error="error"
                 :placeholder="'Text area'"
@@ -148,7 +148,11 @@ export default {
         topLabel: {
             type: Boolean,
             default: false,
-        }
+        },
+        scalable: {
+            type: Boolean,
+            default: false,
+        },
     },
     beforeCreate() {
         var scriptSrc = document.getElementById('../js/rbm.handle.js')
@@ -204,6 +208,9 @@ export default {
             })),
             componentClassesFileUpload: computed(() => ({
                 "inputfile": true,
+            })),
+            componentClassesTextArea: computed(() => ({
+                "scalable": props.scalable,
             })),
         };
     },
