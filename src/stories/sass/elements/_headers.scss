@@ -22,7 +22,6 @@
         }
     }
 
-
     .default__header-inner {
         @apply container grid grid-cols-12 gap-def relative;
         @apply lg:px-def;
@@ -31,7 +30,7 @@
         .default__header-inner--content {
             @apply col-span-5 text-white relative z-2 pt-2xl pb-2xl mt-sm;
             @apply md:col-span-6;
-            @apply sm:col-span-12 sm:text-darkLight sm:pt-def;
+            @apply sm:col-span-12 sm:text-darkLight sm:pt-def sm:pb-md;
 
             h1 {
                 @apply text-white text-h1 uppercase m-0;
@@ -140,6 +139,17 @@
             left: inherit;
         }
     }
+
+    .default__header-inner--twocol {
+        @media screen and (max-width: 768px) {
+            background-color: #364855;
+        }
+        .default__header-inner--content {
+            p {  
+                @apply sm:text-white;
+            }
+        }
+    }
 }
 
 .usp-wrapper {
@@ -148,6 +158,6 @@
     @apply sm:px-mob;
     margin-top: -88px;
     @media screen and (max-width: 768px) {
-        margin-top: -64px;
+        margin-top: -30px;
     }
 }
