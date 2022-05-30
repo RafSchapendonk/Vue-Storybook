@@ -52,6 +52,10 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({})
+Primary.args = {
+    rounded: true,
+    pill: false,
+}
 
 export const Icon = Template.bind({})
 Icon.parameters = { controls: { exclude: ['Icon'] } };

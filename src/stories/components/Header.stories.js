@@ -27,8 +27,8 @@ export default {
                     code: require('!!raw-loader!../sass/elements/_header.scss')
                 },
                 {
-                    fileName: '_language.scss',
-                    code: require('!!raw-loader!../sass/elements/_language.scss')
+                    fileName: '_modal.scss',
+                    code: require('!!raw-loader!../sass/elements/_modal.scss')
                 }
             ]
         }

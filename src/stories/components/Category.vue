@@ -1,15 +1,47 @@
 <template>
     <div class="category__wrapper">
+         <div class="category__modal-button">
+            <a class="btn btn-text btn-transp" :class="classes">test</a>
+        </div>
         <div class="swiper-container" data-slider-max-width="9000" data-slider-name="vacancy-link-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a class="btn btn-text btn-solid--lead btn-text--white btn--rounded" :class="classes" href="">test</a>
+                    <a class="btn btn-text btn-solid--lead btn-text--white" :class="classes" href="">category 1</a>
                 </div>
                 <div v-for="item in categoryItems" :key="item"  class="swiper-slide">
-                    <a class="btn btn-text btn--rounded btn-transp" :class="classes" href="">test</a>
+                    <a class="btn btn-text btn-transp" :class="classes" href="">category {{ item + 1 }}</a>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div id="overlay">
+      <!-- -->
+    </div>
+
+    <div class="modal__select">
+      <div class="modal__select-inner">
+        <div class="modal__select-closer">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        <div class="modal__select--header">
+          <h4>Categories</h4>
+        </div>
+        <ul>
+          <li class="active">
+            <a href=""> category 1 </a>
+          </li>
+          <li class="">
+            <a href=""> category 2 </a>
+          </li>
+          <li class="">
+            <a href=""> category 3 </a>
+          </li>
+          <li class="">
+            <a href=""> category 4 </a>
+          </li>
+        </ul>
+      </div>
     </div>
 </template>
 
@@ -17,14 +49,23 @@
 import { reactive, computed } from '@vue/reactivity'
 import "../sass/elements/_category.scss"
 import "../sass/elements/_button.scss";
+import "../sass/elements/_modal.scss";
 
 export default {
     name: "category",
-    beforeCreate() {
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = '../js/swiper.js';
-        document.body.appendChild(script);
+
+    methods: {
+        createScript(scriptSrc) {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = scriptSrc;
+            document.body.appendChild(script);
+        },
+    },
+
+    beforeMount() {
+        this.createScript('../js/swiper.js')
+        this.createScript('../js/rbm.handle.js')
     },
 
     props: {

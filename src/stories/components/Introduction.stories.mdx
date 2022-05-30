@@ -1,44 +1,49 @@
 import { Meta } from "@storybook/addon-docs";
 
+
 <Meta title="RB-Media/Introduction" />
 
 <style>{`
-  .logo-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    padding: 50px 0;
-  }
+  .introduction__wrapper {}
+    .logo-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      padding: 50px 0;
+    }
 
-  .fa-solid {
-    max-width: 10%;
-    font-size: 40px;
-    font-family: "Font Awesome 6 Pro";
-    font-weight: 900;
-    color: #333333;
-  }
+    .fa-solid {
+      max-width: 10%;
+      font-size: 40px;
+      font-family: "Font Awesome 6 Pro";
+      font-weight: 900;
+      color: #333333;
+    }
 
-  .logo-storybook {
-    padding: 0px 5%;
-  }
+    .logo-storybook {
+      padding: 0px 5%;
+    }
 
-  .sbdocs-img {
-    max-height: 150px;
-    max-width: 45%;
-  }
+    .sbdocs-img {
+      max-height: 150px;
+      max-width: 45%;
+    }
 
-  .sbdocs-h2 {
-    font-weight: 700;
-    padding-bottom: 0;
-    border-bottom: none;
-  }  
+    .sbdocs-h2 {
+      font-weight: 700;
+      padding-bottom: 0;
+      border-bottom: none;
+    }  
+  }
 `}</style>
 
-<div class="logo-wrapper">
-  <img src="/rbmedia_logo_payoff.svg" alt="RB-Media Logo" />
-  <i class="fa-solid fa-xmark"></i>
-  <img class="logo-storybook" src="/storybook_logo.png" alt="Storybook Logo" />
+<div class="introduction__wrapper">
+  <div class="logo-wrapper">
+    <img src="/rbmedia_logo_payoff.svg" alt="RB-Media Logo" />
+    <i class="fa-solid fa-xmark"></i>
+    <img class="logo-storybook" src="/storybook_logo.png" alt="Storybook Logo" />
+  </div>
 </div>
 
 # Introduction to the RB-Media Storybook

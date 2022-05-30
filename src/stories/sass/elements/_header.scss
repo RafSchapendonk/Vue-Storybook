@@ -176,8 +176,8 @@ header {
                             @apply inline-block;
                             padding: $topNavItemSpacing;
 
-                            &.language--toggler {
-                                .language--toggler-inner {
+                            &.modal--toggler {
+                                .modal--toggler-inner {
                                     font-size: 16px;
                                 }
                             }
@@ -267,7 +267,11 @@ header {
     @apply hover:text-hoverBlue;
     
     .list-item--unique-inner {
-        @apply flex flex-row items-center
+        @apply flex flex-row items-center;
+
+        p + i {
+            @apply pl-xs;
+        }
     }
 
     p {
@@ -275,7 +279,7 @@ header {
         font-size: 16px;
     }
 
-    .language--toggler-inner {
+    .modal--toggler-inner {
         p {
             @apply px-sm;
         }

@@ -123,12 +123,12 @@
       <!-- -->
     </div>
 
-    <div v-if="languageSwitch" class="language__select">
-      <div class="language__select-inner">
-        <div class="language--select--closer">
+    <div v-if="languageSwitch" class="modal__select">
+      <div class="modal__select-inner">
+        <div class="modal__select-closer">
           <i class="fa-solid fa-x"></i>
         </div>
-        <div class="language__select--header">
+        <div class="modal__select--header">
           <h4>Language</h4>
         </div>
         <ul>
@@ -148,7 +148,7 @@
 
 <script>
 import "../sass/elements/_header.scss";
-import "../sass/elements/_language.scss";
+import "../sass/elements/_modal.scss";
 import { reactive, computed } from "vue";
 
 export default {
@@ -288,11 +288,11 @@ export default {
           languageToggle[i].addEventListener("click", function (e) {
             document
               .querySelector("body")
-              .classList.add("overlay--active", "language--active");
+              .classList.add("overlay--active", "modal--active");
             ref.closeItems(
-              ".language__select-inner",
-              ".language--select--closer",
-              ["overlay--active", "language--active"]
+              ".modal__select-inner",
+              ".modal__select-closer",
+              ["overlay--active", "modal--active"]
             );
             var mq = window.matchMedia("(max-width: 1176px)");
             if (mq.matches) {
@@ -303,9 +303,9 @@ export default {
         }
       }
 
-      this.closeItems(".language__select-inner", ".language--select--closer", [
+      this.closeItems(".modal__select-inner", ".modal__select-closer", [
         "overlay--active",
-        "language--active",
+        "modal--active",
       ]);
     },
 

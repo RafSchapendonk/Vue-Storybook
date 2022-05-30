@@ -23,6 +23,7 @@
     closeMenuMobile();
     uploadfields();
     textAreaHeight();
+    modal();
 });
 
 window.addEventListener("resize", function () {
@@ -297,4 +298,24 @@ function uploadfields() {
             });
         });
     }
+}
+
+function modal() {
+    var modalToggle = document.querySelectorAll(".category__modal-button");
+
+    if (modalToggle.length > 0) {
+        for (var i = 0; i < modalToggle.length; i++) {
+            modalToggle[i].addEventListener("click", function (e) {
+                document
+                    .querySelector("body")
+                    .classList.add("overlay--active", "modal--active");
+                e.stopPropagation();
+            });
+        }
+    }
+
+    closeItems(".modal__select-inner", ".modal__select-closer", [
+        "overlay--active",
+        "modal--active",
+    ]);
 }

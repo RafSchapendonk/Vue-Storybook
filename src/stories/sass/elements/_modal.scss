@@ -1,35 +1,35 @@
 @import '../libs/rbmixins';
 
-body.language--active {
-    .language__select {
+body.modal--active {
+    .modal__select {
         @apply flex;
     }
 }
 
-.language__select {
+.modal__select {
     @apply fixed inset-0 z-50 flex items-center justify-center font-fontText;
     @apply hidden;
     z-index: 1000;
 }
 
-.language__select-inner {
+.modal__select-inner {
     @apply bg-white relative rounded overflow-hidden;
     @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
     width: 360px;
 
-    .language--select--closer {
-        @apply absolute top-0 right-0 flex items-center justify-center cursor-pointer transition-all duration-300 z-2;
+    .modal__select-closer {
+        @apply absolute top-0 right-0 flex items-center justify-center cursor-pointer transition-all duration-300 z-2 pl-xs;
         @apply hover:text-lead;
         height: 50px;
         width: 50px;
         font-size: 12px;
     }
 
-    .language__select--header {
+    .modal__select--header {
         @apply px-def py-mob;
     }
 
-    .language__select--header {
+    .modal__select--header {
         @apply relative;
 
         &:before {
@@ -43,7 +43,7 @@ body.language--active {
         @apply relative m-0 list-none p-def pb-sm;
 
         li {
-            @apply mb-sm transition-all duration-300 relative;
+            @apply mb-mob transition-all duration-300 relative;
             @apply hover:border-lead;
 
             &:after {

@@ -1,6 +1,19 @@
 .category__wrapper {
     @apply pb-3xl pt-sm;
     @apply md:pb-lg;
+    
+    .category__modal-button {
+        @apply hidden;
+        @apply sm:block;
+
+        .btn {
+            @apply w-full;
+        }
+    }
+
+    .category__modal-button + .swiper-container {
+        @apply sm:hidden;
+    }
 
     .swiper-container {
         &.slider-active {
