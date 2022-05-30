@@ -17,8 +17,11 @@
 }
 
 .paragraph__content--full {
-    @apply col-span-12 px-1-col;
-    @apply sm:px-0;
+    @apply col-span-12 px-1-col pt-md;
+    @apply sm:px-mob;
+    h4 {
+        @apply font-bold text-lead mb-xs;
+    }
 }
 
 .paragraph__content--half {
