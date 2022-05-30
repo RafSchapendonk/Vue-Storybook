@@ -31,6 +31,7 @@ footer {
 
     .footer__contact__top {
         @apply text-h4 font-normal mb-2xl;
+        @apply lg:mb-def;
     }
 
     .footer__sitemap {
@@ -38,11 +39,10 @@ footer {
         @apply mob:col-span-12 mob:text-center;
     }
     .footer__contact_link {
-        @apply block whitespace-nowrap font-bold mb-xs;
+        @apply block whitespace-nowrap font-bold mb-xs transition-all duration-300 text-h4;
         @apply hover:text-lead;
-        font-size: 22px;
         letter-spacing: -0.22px;
-        @apply sm:text-h3 sm:mb-0;
+        @apply sm:mb-0;
 
         i {
             @apply mr-xs;
@@ -51,15 +51,16 @@ footer {
 
     .footer__sitemap {
         .h4 {
-            @apply mb-mob;
+            @apply mb-mob text-h4;
         }
         a {
-            @apply block mb-xs text-h4;
+            @apply block mb-xs text-h5 transition-all duration-300;
             @apply hover:text-lead;
         }
     }
 
     .footer__contact-socials {
+        @apply  transition-all duration-300;
         @apply hover:text-lead;
 
         &:not(:last-child) {
@@ -90,6 +91,7 @@ footer {
         @apply lg:col-span-12;
         a,
         span {
+            @apply transition-all duration-300;
             @apply mob:block;
             font-size: $copyrightFontSize;
             color: $copyrightColor;
