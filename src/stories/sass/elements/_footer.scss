@@ -1,6 +1,3 @@
-$linkFontSize: 20px;
-$linkLineHeight: 22px;
-$socialFontSize: 20px;
 $copyrightFontSize: 13px;
 $copyrightColor: #4d4d4d;
 
@@ -18,7 +15,7 @@ footer {
     }
 
     .footer__wrapper {
-        @apply col-span-8 grid grid-cols-12 gap-md;
+        @apply col-span-8 grid grid-cols-12 gap-y-md;
         @apply lg:col-span-12 lg:text-center;
 
         .footer__sitemap {
@@ -64,7 +61,7 @@ footer {
         .h4 {
             @apply mb-mob text-h4;
         }
-        a {
+        .footer__item {
             @apply block mb-xs text-h5 transition-all duration-300;
             @apply hover:text-lead;
         }
@@ -76,6 +73,12 @@ footer {
 
         &:not(:last-child) {
             @apply mr-def;
+        }
+    }
+
+    .footer__link {
+        @media screen and (max-width: 600px) {
+            line-height: 40px !important;
         }
     }
 
@@ -120,6 +123,7 @@ footer {
                 content: "|";
                 color: $copyrightColor;
             }
+            @apply mob:pt-sm;
         }
     }
 

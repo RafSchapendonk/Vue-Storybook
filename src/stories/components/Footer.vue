@@ -13,39 +13,39 @@
                         </p>
                     </div>
                     <div class="footer__contact__bottom">
-                        <a class="footer__contact_link" href="tel:"><i class="fa-light fa-phone-flip fa-fw"></i> 076 785 1526</a>
-                        <a class="footer__contact_link" href="mailto:"><i class="fa-light fa-envelope fa-fw"></i> support@rb-media.nl</a>
+                        <a class="footer__contact_link footer__link" href="tel:"><i class="fa-light fa-phone-flip fa-fw"></i> 076 785 1526</a>
+                        <a class="footer__contact_link footer__link" href="mailto:"><i class="fa-light fa-envelope fa-fw"></i> support@rb-media.nl</a>
                     </div>
                 </div>
                 <div class="footer__wrapper">
                     <div class="footer__sitemap">
                         <div class="h4">Footer-menu 1</div>
                         <div>
-                            <a class="footer__item" href="" title="">Menu-item 1</a>
-                            <a class="footer__item" href="" title="">Menu-item 2</a>
-                            <a class="footer__item" href="" title="">Menu-item 3</a>
-                            <a class="footer__item" href="" title="">Menu-item 4</a>
-                            <a class="footer__item" href="" title="">Menu-item 5</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 1</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 2</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 3</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 4</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 5</a>
                         </div>
                     </div>
                     <div class="footer__sitemap">
                         <div class="h4">Footer-menu 2</div>
                         <div>
-                            <a class="footer__item" href="" title="">Menu-item 1</a>
-                            <a class="footer__item" href="" title="">Menu-item 2</a>
-                            <a class="footer__item" href="" title="">Menu-item 3</a>
-                            <a class="footer__item" href="" title="">Menu-item 4</a>
-                            <a class="footer__item" href="" title="">Menu-item 5</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 1</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 2</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 3</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 4</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 5</a>
                         </div>
                     </div>
                     <div class="footer__sitemap">
                         <div class="h4">Footer-menu 3</div>
                         <div>
-                            <a class="footer__item" href="" title="">Menu-item 1</a>
-                            <a class="footer__item" href="" title="">Menu-item 2</a>
-                            <a class="footer__item" href="" title="">Menu-item 3</a>
-                            <a class="footer__item" href="" title="">Menu-item 4</a>
-                            <a class="footer__item" href="" title="">Menu-item 5</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 1</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 2</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 3</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 4</a>
+                            <a class="footer__item footer__link" href="" title="">Menu-item 5</a>
                         </div>
                     </div>
                 </div>
