@@ -17,21 +17,32 @@ footer {
         @apply md:mb-def;
     }
 
-    .footer__contact,
-    .footer__sitemap {
-        @apply col-span-3;
-        @apply lg:col-span-6 lg:text-center;
+    .footer__wrapper {
+        @apply col-span-8 grid grid-cols-12 gap-md;
+        @apply lg:col-span-12 lg:text-center;
+
+        .footer__sitemap {
+            @apply col-span-4;
+            @apply lg:col-span-6;
+            @apply mob:col-span-12;
+        }
     }
 
     .footer__contact {
-        @apply font-fontText flex flex-col;
-        @apply mob:col-span-12;
-        @apply mob:text-center;
+        @apply col-span-4 font-fontText flex flex-col;
+        @apply lg:col-span-12 lg:text-center;
     }
 
     .footer__contact__top {
         @apply text-h4 font-normal mb-2xl;
         @apply lg:mb-def;
+
+        .logo {
+            img {
+                @apply lg:mx-auto;
+                max-height: 100px;
+            }
+        }
     }
 
     .footer__sitemap {
