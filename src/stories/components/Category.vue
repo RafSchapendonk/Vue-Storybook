@@ -1,6 +1,6 @@
 <template>
     <div class="category__wrapper">
-         <div class="category__modal-button">
+         <div v-if="categoryModal" class="category__modal-button">
             <a class="btn btn-text btn-transp" :class="classes">test</a>
         </div>
         <div class="swiper-container" data-slider-max-width="9000" data-slider-name="vacancy-link-slider">
@@ -15,11 +15,11 @@
         </div>
     </div>
     
-    <div id="overlay">
+    <div v-if="categoryModal" id="overlay">
       <!-- -->
     </div>
 
-    <div class="modal__select">
+    <div v-if="categoryModal" class="modal__select">
       <div class="modal__select-inner">
         <div class="modal__select-closer">
           <i class="fa-solid fa-x"></i>
@@ -55,36 +55,40 @@ export default {
     name: "category",
 
     methods: {
-        createScript(scriptSrc) {
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = scriptSrc;
-            document.body.appendChild(script);
-        },
+      createScript(scriptSrc) {
+          const script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = scriptSrc;
+          document.body.appendChild(script);
+      },
     },
 
     beforeMount() {
-        this.createScript('../js/swiper.js')
-        this.createScript('../js/rbm.handle.js')
+      this.createScript('../js/swiper.js')
+      this.createScript('../js/rbm.handle.js')
     },
 
     props: {
-        categoryItems: {
-            type: Number,
-            default: 3
-        },
-        pill: {
-            type: Boolean,
-            default: true,
-        },
-        rounded: {
-            type: Boolean,
-            default: true,
-        },
-        icon: {
-            type: Boolean,
-            default: false,
-        },
+      categoryItems: {
+          type: Number,
+          default: 3
+      },
+      pill: {
+          type: Boolean,
+          default: true,
+      },
+      rounded: {
+          type: Boolean,
+          default: true,
+      },
+      icon: {
+          type: Boolean,
+          default: false,
+      },
+      categoryModal: {
+          type: Boolean,
+          default: false,
+      },
     },
 
     setup(props) {

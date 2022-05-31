@@ -14,7 +14,11 @@ export default {
                 {
                     fileName: '_category.scss',
                     code: require('!!raw-loader!../sass/elements/_category.scss')
-                }
+                },
+                {
+                    fileName: '_modal.scss',
+                    code: require('!!raw-loader!../sass/elements/_modal.scss')
+                },
             ]
         }
     },
@@ -38,6 +42,11 @@ export default {
         icon: {
             name: "Icon",
             description: "Adds an icon to the category item",
+            control: { type: 'boolean' },
+        },
+        categoryModal: {
+            name: "Category modal",
+            description: "Turns the categories into a modal on mobile",
             control: { type: 'boolean' },
         }
     },
@@ -70,4 +79,12 @@ Pill.parameters = { controls: { exclude: ['Pill', 'Rounded'] } };
 Pill.args = {
     pill: true,
     rounded: false,
+}
+
+export const MobileModal = Template.bind({})
+MobileModal.parameters = { controls: { exclude: ['CategoryModal'] } };
+MobileModal.args = {
+    rounded: true,
+    pill: false,
+    categoryModal: true,
 }
