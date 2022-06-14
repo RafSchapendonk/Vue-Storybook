@@ -17,13 +17,13 @@
     }
 
     .summary__li {
+        @apply mb-sm;
         &.summary__li--icon {
-            @apply flex flex-row
+            @apply flex flex-row items-center;
         }
 
         i {
             @apply text-lead;
-            padding-top: 4px;
         }
 
         p {
