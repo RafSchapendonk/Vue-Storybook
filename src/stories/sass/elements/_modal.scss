@@ -7,7 +7,7 @@ body.modal--active {
 }
 
 .modal__select {
-    @apply fixed inset-0 z-50 flex items-center justify-center font-fontText;
+    @apply fixed inset-0 z-50 flex items-center justify-center font-fontText mx-sm;
     @apply hidden;
     z-index: 1000;
 }
