@@ -1,6 +1,6 @@
 <template>
-  <div class="stb-block__wrapper">
-    <div :class="blockItemClasses" class="stb-block__item">
+  <div class="block__wrapper">
+    <div :class="blockItemClasses" class="block__item">
       <div>
         <img
           v-if="image"
@@ -8,9 +8,9 @@
           src="https://picsum.photos/id/237/1920/1080"
         />
       </div>
-      <div class="stb-block__inner">
+      <div class="block__inner">
         <h3>{{ titleFirstBlock }}</h3>
-        <p v-if="category" class="stb-block__category">{{ categoryText }}</p>
+        <p v-if="category" class="block__category">{{ categoryText }}</p>
         <div>
           <p :class="contentClasses">{{ contentFirstBlock }}</p>
         </div>
@@ -22,7 +22,7 @@
       v-for="item in extraBlocks"
       :key="item"
       :class="blockItemClasses"
-      class="stb-block__item"
+      class="block__item"
     >
       <div>
         <img
@@ -31,9 +31,9 @@
           src="https://picsum.photos/id/237/1920/1080"
         />
       </div>
-      <div class="stb-block__inner">
+      <div class="block__inner">
         <h3>{{ title }}</h3>
-        <p v-if="category" class="stb-block__category">{{ categoryText }}</p>
+        <p v-if="category" class="block__category">{{ categoryText }}</p>
         <div>
           <p :class="contentClasses">{{ content }}</p>
         </div>
@@ -139,8 +139,8 @@ export default {
       blockItemClasses: computed(() => ({
         [`${props.colSpan}`]: !props.responsive,
         [`${props.blockBorder}`]: true,
-        "stb-block__item--responsive": props.responsive,
-        "stb-block__item--bg-image": props.imageBackground
+        "block__item--responsive": props.responsive,
+        "block__item--bg-image": props.imageBackground
       })),
       imgClasses: computed(() => ({
         [`${props.imgBorder}`]: true,

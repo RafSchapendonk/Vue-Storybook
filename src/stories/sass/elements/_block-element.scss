@@ -6,7 +6,7 @@
     @apply rounded-none rounded-t-lg rounded-b-lg rounded-lg;
 }
 
-.stb-block__item {
+.block__item {
     @apply bg-lead col-span-4 transition-all overflow-hidden duration-300 relative text-white;
     @include box-shadow(0, 12px, 24px, 0, rgba(0, 0, 0, 0.12));
 
@@ -20,11 +20,11 @@
         background-image: url('https://picsum.photos/id/1042/1920/1080');
     }
 
-    .stb-block__inner {
+    .block__inner {
         padding: 40px 36px 60px 48px;
     }
 
-    .stb-block__category {
+    .block__category {
         @apply rounded-full w-fit bg-white text-lead px-sm py-xs mb-sm;
     }
 
@@ -55,6 +55,6 @@
     }
 }
 
-.stb-block__wrapper {
+.block__wrapper {
     @apply grid grid-cols-12 gap-def;
 }

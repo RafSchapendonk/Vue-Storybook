@@ -18,13 +18,6 @@ export default {
             ]
         }
     },
-    argTypes: {
-        scrollbar: {
-            name: "Scrollbar",
-            description: "Adds a scrollbar to the swiper.",
-            control: { type: 'boolean' },
-        },
-    },
 }
 
 const Template = (args) => ({
@@ -36,5 +29,6 @@ const Template = (args) => ({
 })
 
 export const Primary = Template.bind({})
-Primary.args = {
+Primary.parameters = {
+    controls: { hideNoControlsWarning: true },
 }
