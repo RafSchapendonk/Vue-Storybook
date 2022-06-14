@@ -1,9 +1,8 @@
 <template>
   <div class="block__wrapper">
     <div :class="blockItemClasses" class="block__item">
-      <div>
+      <div  v-if="image">
         <img
-          v-if="image"
           :class="imgClasses"
           src="https://picsum.photos/id/237/1920/1080"
         />
@@ -24,9 +23,8 @@
       :class="blockItemClasses"
       class="block__item"
     >
-      <div>
+      <div v-if="image">
         <img
-          v-if="image"
           :class="imgClasses"
           src="https://picsum.photos/id/237/1920/1080"
         />
