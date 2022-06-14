@@ -73,7 +73,6 @@ export default {
                     // 'labels' maps option values to string labels
                     none: 'None',
                     headerShrink: 'Header shrink on scroll',
-                    headerTransparent: 'Header transparent on scroll',
                 },
             },
         }
@@ -118,11 +117,11 @@ ShrinkOnScroll.args = {
     headerScrollType: headerScrollTypes.headerShrink.name,
 }
 
-export const TransparentOnScroll = Template.bind({});
-TransparentOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type', 'Content filler'] } };
-TransparentOnScroll.args = {
-    primary: true,
-    center: false,
-    languageSwitch: false,
-    headerScrollType: headerScrollTypes.headerTransparent,
-}
+// export const TransparentOnScroll = Template.bind({});
+// TransparentOnScroll.parameters = { controls: { exclude: ['Primary', 'Center', 'Header scroll type', 'Content filler'] } };
+// TransparentOnScroll.args = {
+//     primary: true,
+//     center: false,
+//     languageSwitch: false,
+//     headerScrollType: headerScrollTypes.headerTransparent,
+// }

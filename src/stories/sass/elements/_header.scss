@@ -351,6 +351,8 @@ header {
 }
 
 .mobile-open {
+    @apply overflow-hidden;
+    
     .mobile-menu {
         @apply left-0;
     }

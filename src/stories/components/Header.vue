@@ -73,6 +73,9 @@
               </li>
             </ul>
           </nav>
+          <a class="contact-us" href="mailto:">
+            <i class="fa-light fa-envelope"></i>
+          </a>
         </div>
       </div>
     </template>
