@@ -106,7 +106,7 @@
 }
 
 .paragraph-item__twocol {
-    @apply container grid grid-cols-12 gap-def text-default font-fontText;
+    @apply container grid grid-cols-12 gap-def text-default font-fontText pt-md;
     @apply lg:px-def lg:gap-0;
     @apply sm:px-mob;
 }
