@@ -123,7 +123,6 @@ form {
     .selectbox {
         &:after {
             @apply font-fontAwesome text-lead right-md z-1 pointer-events-none transition-all duration-300;
-            @apply xs:left-sm;
             position: absolute;
             top: 16px;
             font-size: 18px;
@@ -131,6 +130,12 @@ form {
             width: 20px;
             text-align: center;
             content: "\f106";
+        }
+
+        &:not(.icon) {
+            &:after {
+                @apply xs:left-mob;
+            }
         }
 
         &:focus-within {
