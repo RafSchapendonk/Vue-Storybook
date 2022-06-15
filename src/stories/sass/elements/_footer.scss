@@ -118,7 +118,7 @@ footer {
         span + a,
         a + a {
             &:before {
-                @apply pr-sm ml-xs;
+                @apply px-sm;
                 @apply mob:hidden;
                 content: "|";
                 color: $copyrightColor;
