@@ -133,7 +133,7 @@ form {
             content: "\f106";
         }
 
-        &:hover {
+        &:focus-within {
             &:after {
                 @apply rotate-180;
             }
