@@ -387,7 +387,8 @@ form {
 }
 
 input[type="file"] {
-    display: none;
+    @apply absolute opacity-0 w-full;
+    height: $inputHeight;
 }
 
 input[type="date"] {
